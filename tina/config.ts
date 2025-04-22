@@ -35,26 +35,26 @@ export default defineConfig({
         fields: [
           {
             type: "string",
-            name: "Title",
+            name: "title",
             label: "Title",
             isTitle: true,
             required: true,
           },
           {
             type: "string",
-            name: "Type",
+            name: "type",
             label: "Type",
             required: true,
           },
           {
             type: "string",
-            name: "City",
+            name: "city",
             label: "City",
             required: true,
           },
           {
             type: "string",
-            name: "Addres",
+            name: "address",
             label: "Address",
             required: true,
           },
@@ -66,31 +66,31 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "Description",
+            name: "description",
             label: "Description",
             required: true,
           },
           {
             type: "string",
-            name: "Surface",
+            name: "surface",
             label: "Surface",
             required: true,
           },
           {
             type: "string",
-            name: "Floors",
+            name: "floors",
             label: "Floors",
             required: true,
           },
           {
             type: "string",
-            name: "Investor",
+            name: "investor",
             label: "Investor",
             required: true,
           },
           {
             type: "string",
-            name: "Thumbnail",
+            name: "thumbnail",
             label: "Thumbnail image",
             required: true,
             ui: {
@@ -100,7 +100,7 @@ export default defineConfig({
 
           {
             type: "object",
-            name: "Images",
+            name: "images",
             label: "Images",
             list: true,
             fields: [
@@ -114,10 +114,35 @@ export default defineConfig({
             ],
           },
         ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({document}) => `/demo/blog/${document._sys.filename}`,
-        },
+      },
+      {
+        name: "Employees",
+        label: "Employees",
+        path: "content/employees",
+        fields: [
+          {
+            type: "string",
+            name: "full_Name",
+            label: "Full_Name",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "role",
+            label: "Role",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "thumbnail",
+            label: "Thumbnail image",
+            required: true,
+            ui: {
+              component: "image",
+            },
+          },
+        ],
       },
     ],
   },

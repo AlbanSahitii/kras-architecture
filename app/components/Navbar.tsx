@@ -17,11 +17,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`pt-10 p-12 md:bg-inherit flex justify-between items-center ${
-        open ? "sm:bg-white" : "sm:bg-inherit"
-      }`}
+      className={` fixed w-screen pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
-      <img className="rounded-sm" src={Logo50.src} alt="Logo" />
+      <Link href="/">
+        <img className="rounded-sm" src={Logo50.src} alt="Logo" />
+      </Link>
 
       <ol className="hidden md:flex mx-2">
         <li className="mx-2">
