@@ -1,10 +1,10 @@
 "use client";
 import React, {useEffect, useRef, useState, useMemo} from "react";
-import Wallpaper from "../../public/wallpaper1.png";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
 
 import {type Container, type ISourceOptions} from "@tsparticles/engine";
+import Link from "next/link";
 
 const MainpageClient = ({projectsData}) => {
   const [init, setInit] = useState(false);
@@ -14,11 +14,20 @@ const MainpageClient = ({projectsData}) => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log(entry);
+            const imgElement = entry.target.querySelector("img");
+            const h1Element = entry.target.querySelector("h1");
+            if (imgElement) {
+              imgElement.classList.remove("scale-125");
+              imgElement.classList.add("scale-100");
+            }
+            if (h1Element) {
+              h1Element.classList.remove("hidden");
+              h1Element.classList.add("translateX(100px)");
+            }
           }
         });
       },
-      {threshold: 0.5}
+      {threshold: 0.8}
     );
     divRef.current.forEach(ref => {
       if (ref.current) {
@@ -71,7 +80,7 @@ const MainpageClient = ({projectsData}) => {
       },
       detectRetina: true,
       duration: 0,
-      fpsLimit: 240,
+      fpsLimit: 120,
       interactivity: {
         detectsOn: "window",
         events: {
@@ -329,7 +338,7 @@ const MainpageClient = ({projectsData}) => {
             mode: "delete",
             value: 0,
           },
-          value: 80,
+          value: 300,
         },
         opacity: {
           value: 0.5,
@@ -541,29 +550,67 @@ const MainpageClient = ({projectsData}) => {
     };
   }, []);
 
+  console.log(projectsData[0].thumbnail);
   return (
     <>
-      <div className={`w-screen h-screen bg-black-100`}>
+      <div className={`w-lvh h-lvh bg-black`}>
         {init && (
           <Particles
-            className="w-screen h-screen"
+            className="w-full h-full"
             id="tsparticles"
             particlesLoaded={particlesLoaded}
             options={options}
           />
         )}
       </div>
+      <div className="relative">
+        {projectsData.map((item, index) => (
+          <div
+            key={index}
+            ref={divRef.current[index]}
+            className={`relative w-lvh h-lvh bg-black flex flex-col-reverse overflow-hidden`}
+          >
+            <img
+              className="absolute w-full h-full object-fill opacity-50 transition-transform duration-1000 ease-in-out scale-125"
+              src={item.thumbnail}
+              alt={item.title}
+            ></img>
+            <h1
+              className={`absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 transform duration-1000 ease-in-out hidden `}
+            >
+              {item.title}
+            </h1>
+            <div className="z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
+              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+                {item.type}
+              </p>
+              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
+              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+                {item.date}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-      {projectsData.map((item, index) => (
-        <div
-          key={index}
-          ref={divRef.current[index]}
-          className={` w-screen h-screen bg-black-100`}
-        >
-          <img className="w-full h-full object-none" src={item.thumbnail}></img>
-          <hr />
+      <div className="h-lvh w-lvh flex flex-col">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+          fuga ad, voluptatibus eveniet expedita maxime inventore facere magni
+          repudiandae
+        </p>
+        <h1>News</h1>
+        <div className=" overflow-x-auto overflow-y-hidden flex pt-20 px-5 justify-evenly">
+          {projectsData.map((project, index) => (
+            <div key={index} className=" min-w-60 m-5 text-center">
+              <p className="mb-4">{project.title}</p>
+              <img className="h-96" src={project.thumbnail}></img>
+              <p className="mt-4">{project.description}</p>
+            </div>
+          ))}
         </div>
-      ))}
+        <Link href="/about">Learn more about us</Link>
+      </div>
     </>
   );
 };

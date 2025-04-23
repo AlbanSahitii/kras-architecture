@@ -17,23 +17,23 @@ function Navbar() {
 
   return (
     <nav
-      className={` fixed w-screen pt-10 p-12 flex justify-between items-center bg-transparent`}
+      className={` z-50 fixed w-screen pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
         <img className="rounded-sm" src={Logo50.src} alt="Logo" />
       </Link>
-
+      <p>KRAS</p>
       <ol className="hidden md:flex mx-2">
-        <li className="mx-2">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
           <Link href="/projects">Projects</Link>
         </li>
-        <li className="mx-2">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
           <Link href="/about">About Us</Link>
         </li>
-        <li className="mx-2">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
           <Link href="/news">News</Link>
         </li>
-        <li className="mx-2">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
           <Link href="/news">Stories</Link>
         </li>
       </ol>
