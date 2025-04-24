@@ -2,32 +2,78 @@
 import React, {useEffect, useRef, useState, useMemo} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadSlim} from "@tsparticles/slim";
-
+import {animate, inView} from "motion";
+import {useInView, motion} from "motion/react";
 import {type Container, type ISourceOptions} from "@tsparticles/engine";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {Facebook, Instagram, MailIcon, MapPin, Twitter, X} from "lucide-react";
 
 const MainpageClient = ({projectsData}) => {
   const [init, setInit] = useState(false);
   const divRef = useRef(projectsData.map(() => React.createRef()));
+  const parahraphRef = useRef(null);
+  const isInView = useInView(parahraphRef, {once: true});
+  const linkRef = useRef(null);
+  const isLinkInView = useInView(linkRef, {once: true});
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const imgElement = entry.target.querySelector("img");
-            const h1Element = entry.target.querySelector("h1");
+            const h1Element = entry.target.querySelector(".project-title");
+            const pElement = entry.target.querySelectorAll(".custom-p-class");
             if (imgElement) {
-              imgElement.classList.remove("scale-125");
-              imgElement.classList.add("scale-100");
+              inView(imgElement, () => {
+                animate(
+                  imgElement,
+                  {scale: 1},
+                  {duration: 0.1, ease: "easeOut"}
+                );
+              });
             }
             if (h1Element) {
-              h1Element.classList.remove("hidden");
-              h1Element.classList.add("translateX(100px)");
+              animate(
+                h1Element as HTMLElement,
+                {
+                  opacity: [0, 1],
+                  transform: ["translateY(80px)", "translateY(0px)"],
+                },
+                {
+                  duration: 0.9,
+                  ease: "easeOut",
+                }
+              );
+              h1Element.classList.remove("project-title");
+            }
+
+            if (pElement) {
+              for (let i = 0; i < pElement.length; i++) {
+                animate(
+                  pElement[i] as HTMLElement,
+                  {
+                    opacity: [0, 1],
+                    transform: ["translateY(80px)", "translateY(0px)"],
+                  },
+                  {
+                    duration: 1,
+                    ease: "easeOut",
+                  }
+                );
+                pElement[i].classList.remove("custom-p-class");
+              }
             }
           }
         });
       },
-      {threshold: 0.8}
+      {threshold: 0.5}
     );
     divRef.current.forEach(ref => {
       if (ref.current) {
@@ -51,9 +97,7 @@ const MainpageClient = ({projectsData}) => {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
+  const particlesLoaded = async (container?: Container): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(() => {
     return {
@@ -550,10 +594,9 @@ const MainpageClient = ({projectsData}) => {
     };
   }, []);
 
-  console.log(projectsData[0].thumbnail);
   return (
     <>
-      <div className={`w-lvh h-lvh bg-black`}>
+      <section className={`w-lvh h-lvh bg-black`}>
         {init && (
           <Particles
             className="w-full h-full"
@@ -562,8 +605,8 @@ const MainpageClient = ({projectsData}) => {
             options={options}
           />
         )}
-      </div>
-      <div className="relative">
+      </section>
+      <section className="relative">
         {projectsData.map((item, index) => (
           <div
             key={index}
@@ -575,42 +618,92 @@ const MainpageClient = ({projectsData}) => {
               src={item.thumbnail}
               alt={item.title}
             ></img>
-            <h1
-              className={`absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 transform duration-1000 ease-in-out hidden `}
-            >
-              {item.title}
+
+            <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
+              Your content here
             </h1>
-            <div className="z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
-              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+
+            <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">
                 {item.type}
               </p>
-              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
-              <p className="m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">
                 {item.date}
               </p>
             </div>
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="h-lvh w-lvh flex flex-col">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-          fuga ad, voluptatibus eveniet expedita maxime inventore facere magni
-          repudiandae
-        </p>
-        <h1>News</h1>
-        <div className=" overflow-x-auto overflow-y-hidden flex pt-20 px-5 justify-evenly">
-          {projectsData.map((project, index) => (
-            <div key={index} className=" min-w-60 m-5 text-center">
-              <p className="mb-4">{project.title}</p>
-              <img className="h-96" src={project.thumbnail}></img>
-              <p className="mt-4">{project.description}</p>
-            </div>
-          ))}
-        </div>
-        <Link href="/about">Learn more about us</Link>
-      </div>
+      <section className="h-[70lvh] w-lvh flex flex-col justify-center items-center px-10 md:px-20 ">
+        <motion.p
+          ref={parahraphRef}
+          className="text-center text-2xl md:text-4xl transform"
+          initial={{opacity: 0, y: 50}}
+          animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
+          transition={{duration: 0.6}}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut
+          aliquid exercitationem quidem praesentium, iste ea accusamus vel eos,
+          quas ipsa doloribus aspernatur dolore et ex eum minus blanditiis quam.
+        </motion.p>
+        <motion.p
+          className="w-fit  mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out"
+          ref={linkRef}
+          initial={{opacity: 0, y: 30}}
+          animate={{opacity: isLinkInView ? 1 : 0, y: isLinkInView ? 0 : 50}}
+          transition={{duration: 0.4}}
+        >
+          <Link href="/about">Learn more about us</Link>
+        </motion.p>
+      </section>
+
+      <h1 className="text-center text-3xl md:text-5xl ">News</h1>
+
+      <section className=" overflow-x-auto overflow-y-hidden flex pt-10 px-5 justify-evenly">
+        {projectsData.map((project, index) => (
+          <div key={index} className=" min-w-64 max-w-64 m-5 text-center">
+            <p className="mb-4">{project.title}</p>
+            <img className="h-96" src={project.thumbnail}></img>
+            <p className="mt-4">{project.description}</p>
+          </div>
+        ))}
+      </section>
+      <footer className="w-lvh h-[40lvh] flex justify-center items-center ">
+        <Accordion className="w-full mx-5 " type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Address?</AccordionTrigger>
+            <AccordionContent>
+              <MapPin className="inline mr-2" />
+              VR
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Contact Us?</AccordionTrigger>
+
+            <AccordionContent>
+              <MailIcon className="inline mr-2" />
+              kras@kras.com
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Socials?</AccordionTrigger>
+            <AccordionContent className="">
+              <Facebook className="inline mr-2" />
+              <Link href="facebook.com">Facebook</Link>
+            </AccordionContent>
+            <AccordionContent>
+              <Instagram className="inline mr-2" />
+              <Link href="instagram.com">instagram</Link>
+            </AccordionContent>
+            <AccordionContent>
+              <X className="inline mr-2" />
+              <Link href="twitter.com">twitter</Link>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </footer>
     </>
   );
 };
