@@ -24,16 +24,16 @@ function Navbar() {
       </Link>
       <p>KRAS</p>
       <ol className="hidden md:flex mx-2">
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href="/projects">Projects</Link>
         </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href="/about">About Us</Link>
         </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href="/news">News</Link>
         </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-300 ease-in-out">
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href="/news">Stories</Link>
         </li>
       </ol>

@@ -21,6 +21,7 @@ const MainpageClient = ({projectsData}) => {
   const isInView = useInView(parahraphRef, {once: true});
   const linkRef = useRef(null);
   const isLinkInView = useInView(linkRef, {once: true});
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -47,7 +48,7 @@ const MainpageClient = ({projectsData}) => {
                 h1Element as HTMLElement,
                 {
                   opacity: [0, 1],
-                  transform: ["translateY(80px)", "translateY(0px)"],
+                  transform: ["translateY(300px)", "translateY(0px)"],
                 },
                 {
                   duration: 0.9,
@@ -91,6 +92,7 @@ const MainpageClient = ({projectsData}) => {
       });
     };
   }, [projectsData]);
+
   useEffect(() => {
     initParticlesEngine(async engine => {
       await loadFull(engine);
@@ -99,9 +101,7 @@ const MainpageClient = ({projectsData}) => {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
+  const particlesLoaded = async (container?: Container): Promise<void> => {};
 
   const options: ISourceOptions = useMemo(
     () => ({
@@ -195,24 +195,24 @@ const MainpageClient = ({projectsData}) => {
           <div
             key={index}
             ref={divRef.current[index]}
-            className={`relative w-full h-lvh bg-black flex flex-col-reverse overflow-hidden`}
+            className={`relative w-full min-h-lvh bg-black flex flex-col-reverse overflow-hidden`}
           >
             <img
-              className="absolute w-full h-full object-fill opacity-50 transition-transform duration-1000 ease-in-out scale-125"
+              className="absolute w-full min-h-lvh object-cover  opacity-50 transition-transform duration-1000 ease-in-out scale-150"
               src={item.thumbnail}
               alt={item.title}
             ></img>
 
             <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
-              Your content here
+              {item.title}
             </h1>
 
             <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.type}
               </p>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white  ">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.date}
               </p>
             </div>
@@ -228,9 +228,8 @@ const MainpageClient = ({projectsData}) => {
           animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
           transition={{duration: 0.6}}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ut
-          aliquid exercitationem quidem praesentium, iste ea accusamus vel eos,
-          quas ipsa doloribus aspernatur dolore et ex eum minus blanditiis quam.
+          Our focus is on developing aesthetically striking and individual
+          architectural projects that inspire and improve the way people live. .
         </motion.p>
         <motion.p
           className="w-fit mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out"
