@@ -1,12 +1,12 @@
 "use client";
 import React, {useState} from "react";
-import {NavigationMenu} from "../../components/ui/navigation-menu";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu";
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 import Logo50 from "../../public/logo50.png";
 import Link from "next/link";
@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <nav
-      className={` z-50 fixed w-screen pt-10 p-12 flex justify-between items-center bg-transparent`}
+      className={` z-50 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
         <img className="rounded-sm" src={Logo50.src} alt="Logo" />
@@ -37,28 +37,29 @@ function Navbar() {
           <Link href="/news">Stories</Link>
         </li>
       </ol>
-
-      <NavigationMenu className="md:hidden">
-        <DropdownMenu open={open} onOpenChange={setOpen}>
-          <DropdownMenuTrigger onClick={() => setOpen(!open)}>
+      <div className=" md:hidden">
+        <Drawer>
+          <DrawerTrigger>
             <Menu />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-screen">
-            <DropdownMenuItem>
-              <Link href="/projects">Projects</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="/about">About Us</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="/news">News</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Link href="/news">Stories</Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </NavigationMenu>
+          </DrawerTrigger>
+          <DrawerContent className="bg-white text-black ">
+            <DrawerHeader>
+              <DrawerTitle className="font-normal m-3">
+                <Link href="/news">News</Link>
+              </DrawerTitle>
+              <DrawerTitle className="font-normal m-3">
+                <Link href="/projects">Projects</Link>
+              </DrawerTitle>
+              <DrawerTitle className="font-normal m-3">
+                <Link href="/about">About Us</Link>
+              </DrawerTitle>
+              <DrawerTitle className="font-normal m-3">
+                <Link href="/news">Stories</Link>
+              </DrawerTitle>
+            </DrawerHeader>
+          </DrawerContent>
+        </Drawer>
+      </div>
     </nav>
   );
 }

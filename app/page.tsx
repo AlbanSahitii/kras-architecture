@@ -1,10 +1,8 @@
 import MainpageClient from "./components/MainpageClient";
-import {client} from "@/tina/__generated__/client"; // Imports the TinaCMS client instance
-import {ProjectsConnectionQuery} from "@/tina/__generated__/types"; // Imports the generated type for your projects query
+import {client} from "@/tina/__generated__/client";
+import {ProjectsConnectionQuery} from "@/tina/__generated__/types";
 
 const getAllProjectsData = async () => {
-  console.log("Fetching all projects data...");
-
   try {
     const result = await client.queries.ProjectsConnection();
 
@@ -14,12 +12,13 @@ const getAllProjectsData = async () => {
     return projectsList;
   } catch (error) {
     console.error("Failed to fetch all projects:", error);
-    return []; // Return an empty array or handle error
+    return [];
   }
 };
 
 export default async function MainPageServer() {
   const fetchedData = await getAllProjectsData();
+
   const projectsData = fetchedData.map(p => {
     return {
       address: p?.address,
