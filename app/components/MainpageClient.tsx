@@ -6,13 +6,6 @@ import {type Container, type ISourceOptions} from "@tsparticles/engine";
 import {animate, inView} from "motion";
 import {useInView, motion} from "motion/react";
 import Link from "next/link";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {Facebook, Instagram, MailIcon, MapPin, X} from "lucide-react";
 
 const MainpageClient = ({projectsData}) => {
   const [init, setInit] = useState(false);
@@ -103,47 +96,34 @@ const MainpageClient = ({projectsData}) => {
 
   const particlesLoaded = async (container?: Container): Promise<void> => {};
 
-  const options: ISourceOptions = useMemo(
-    () => ({
-      fullScreen: {
+  const options: ISourceOptions = useMemo(() => {
+    return {
+      autoPlay: true,
+      background: {
+        color: {
+          value: "#000000",
+        },
+        opacity: 1,
+      },
+      backgroundMask: {
+        composite: "destination-out",
+        cover: {
+          opacity: 1,
+        },
         enable: false,
       },
-      background: {
-        color: "#000000",
+      clear: true,
+      defaultThemes: {},
+      delay: 0,
+      fullScreen: {
+        enable: false,
+        zIndex: 0,
       },
-      particles: {
-        number: {
-          value: 40,
-          density: {
-            enable: true,
-            area: 800,
-          },
-        },
-        shape: {
-          type: "image",
-          options: {
-            image: {
-              src: "/logo-white.png",
-              height: 100,
-              width: 100,
-            },
-          },
-        },
-        size: {
-          value: 200,
-          random: true,
-        },
-        move: {
-          enable: true,
-          speed: 4,
-          direction: "none",
-          outModes: {
-            default: "out",
-          },
-        },
-      },
+      detectRetina: true,
+      duration: 0,
+      fpsLimit: 120,
       interactivity: {
-        detectsOn: "canvas",
+        detectsOn: "window",
         events: {
           onClick: {
             enable: true,
@@ -152,43 +132,482 @@ const MainpageClient = ({projectsData}) => {
           onHover: {
             enable: true,
             mode: "repulse",
+            parallax: {
+              enable: false,
+              force: 2,
+              smooth: 10,
+            },
           },
           resize: {
+            delay: 0.5,
             enable: true,
           },
         },
         modes: {
-          push: {
+          trail: {
+            delay: 1,
+            pauseOnStop: false,
             quantity: 1,
+          },
+          attract: {
+            distance: 200,
+            duration: 0.4,
+            easing: "ease-out-quad",
+            factor: 1,
+            maxSpeed: 50,
+            speed: 1,
+          },
+          bounce: {
+            distance: 200,
+          },
+          bubble: {
+            distance: 200,
+            duration: 0.4,
+            mix: false,
+            divs: {
+              distance: 200,
+              duration: 0.4,
+              mix: false,
+            },
+          },
+          connect: {
+            distance: 80,
+            links: {
+              opacity: 0.5,
+            },
+            radius: 60,
+          },
+          grab: {
+            distance: 100,
+            links: {
+              blink: false,
+              consent: false,
+              opacity: 1,
+            },
+          },
+          push: {
+            default: true,
+            groups: [],
+            quantity: 4,
+          },
+          remove: {
+            quantity: 2,
           },
           repulse: {
             distance: 200,
             duration: 0.4,
+            factor: 100,
+            speed: 1,
+            maxSpeed: 50,
+            easing: "ease-out-quad",
+            divs: {
+              distance: 200,
+              duration: 0.4,
+              factor: 100,
+              speed: 1,
+              maxSpeed: 50,
+              easing: "ease-out-quad",
+            },
+          },
+          slow: {
+            factor: 3,
+            radius: 200,
+          },
+          particle: {
+            replaceCursor: false,
+            pauseOnStop: false,
+            stopDelay: 0,
+          },
+          light: {
+            area: {
+              gradient: {
+                start: {
+                  value: "#ffffff",
+                },
+                stop: {
+                  value: "#000000",
+                },
+              },
+              radius: 1000,
+            },
+            shadow: {
+              color: {
+                value: "#000000",
+              },
+              length: 2000,
+            },
           },
         },
       },
-    }),
-    []
-  );
+      manualParticles: [],
+      particles: {
+        bounce: {
+          horizontal: {
+            value: 1,
+          },
+          vertical: {
+            value: 1,
+          },
+        },
+        collisions: {
+          absorb: {
+            speed: 2,
+          },
+          bounce: {
+            horizontal: {
+              value: 1,
+            },
+            vertical: {
+              value: 1,
+            },
+          },
+          enable: false,
+          maxSpeed: 50,
+          mode: "bounce",
+          overlap: {
+            enable: true,
+            retries: 0,
+          },
+        },
+        color: {
+          value: "#ff0000",
+          animation: {
+            h: {
+              count: 0,
+              enable: true,
+              speed: 20,
+              decay: 0,
+              delay: 0,
+              sync: true,
+              offset: 0,
+            },
+            s: {
+              count: 0,
+              enable: false,
+              speed: 1,
+              decay: 0,
+              delay: 0,
+              sync: true,
+              offset: 0,
+            },
+            l: {
+              count: 0,
+              enable: false,
+              speed: 1,
+              decay: 0,
+              delay: 0,
+              sync: true,
+              offset: 0,
+            },
+          },
+        },
+        effect: {
+          close: true,
+          fill: true,
+          options: {},
+          type: "replace-text",
+        },
+        groups: {},
+        move: {
+          angle: {
+            offset: 0,
+            value: 90,
+          },
+          attract: {
+            distance: 200,
+            enable: false,
+            rotate: {
+              x: 3000,
+              y: 3000,
+            },
+          },
+          center: {
+            x: 50,
+            y: 50,
+            mode: "percent",
+            radius: 0,
+          },
+          decay: 0,
+          distance: {},
+          direction: "none",
+          drift: 0,
+          enable: true,
+          gravity: {
+            acceleration: 9.81,
+            enable: false,
+            inverse: false,
+            maxSpeed: 50,
+          },
+          path: {
+            clamp: true,
+            delay: {
+              value: 0,
+            },
+            enable: false,
+            options: {},
+          },
+          outModes: {
+            default: "out",
+            bottom: "out",
+            left: "out",
+            right: "out",
+            top: "out",
+          },
+          random: false,
+          size: false,
+          speed: 6,
+          spin: {
+            acceleration: 0,
+            enable: false,
+          },
+          straight: false,
+          trail: {
+            enable: false,
+            length: 10,
+            fill: {},
+          },
+          vibrate: false,
+          warp: false,
+        },
+        number: {
+          density: {
+            enable: true,
+            width: 1920,
+            height: 1080,
+          },
+          limit: {
+            mode: "delete",
+            value: 0,
+          },
+          value: 200,
+        },
+        opacity: {
+          value: 0.5,
+          animation: {
+            count: 0,
+            enable: false,
+            speed: 2,
+            decay: 0,
+            delay: 0,
+            sync: false,
+            mode: "auto",
+            startValue: "random",
+            destroy: "none",
+          },
+        },
+        reduceDuplicates: false,
+        shadow: {
+          blur: 0,
+          color: {
+            value: "#000",
+          },
+          enable: false,
+          offset: {
+            x: 0,
+            y: 0,
+          },
+        },
+        shape: {
+          type: "image",
+          options: {
+            image: [
+              {
+                src: "/logo-white.png",
+                width: 100,
+                height: 100,
+              },
+            ],
+          },
+        },
+        size: {
+          value: {
+            min: 25,
+            max: 75,
+          },
+          animation: {
+            count: 0,
+            enable: false,
+            speed: 5,
+            decay: 0,
+            delay: 0,
+            sync: false,
+            mode: "auto",
+            startValue: "random",
+            destroy: "none",
+          },
+        },
+        stroke: {
+          width: 0,
+        },
+        zIndex: {
+          value: 0,
+          opacityRate: 1,
+          sizeRate: 1,
+          velocityRate: 1,
+        },
+        destroy: {
+          bounds: {},
+          mode: "none",
+          split: {
+            count: 1,
+            factor: {
+              value: 3,
+            },
+            rate: {
+              value: {
+                min: 4,
+                max: 9,
+              },
+            },
+            sizeOffset: true,
+            particles: {},
+          },
+        },
+        roll: {
+          darken: {
+            enable: false,
+            value: 0,
+          },
+          enable: false,
+          enlighten: {
+            enable: false,
+            value: 0,
+          },
+          mode: "vertical",
+          speed: 25,
+        },
+        tilt: {
+          value: 0,
+          animation: {
+            enable: false,
+            speed: 0,
+            decay: 0,
+            sync: false,
+          },
+          direction: "clockwise",
+          enable: false,
+        },
+        twinkle: {
+          lines: {
+            enable: false,
+            frequency: 0.05,
+            opacity: 1,
+          },
+          particles: {
+            enable: false,
+            frequency: 0.05,
+            opacity: 1,
+          },
+        },
+        wobble: {
+          distance: 5,
+          enable: false,
+          speed: {
+            angle: 50,
+            move: 10,
+          },
+        },
+        life: {
+          count: 0,
+          delay: {
+            value: 0,
+            sync: false,
+          },
+          duration: {
+            value: 0,
+            sync: false,
+          },
+        },
+        rotate: {
+          value: 0,
+          animation: {
+            enable: false,
+            speed: 0,
+            decay: 0,
+            sync: false,
+          },
+          direction: "clockwise",
+          path: false,
+        },
+        orbit: {
+          animation: {
+            count: 0,
+            enable: false,
+            speed: 1,
+            decay: 0,
+            delay: 0,
+            sync: false,
+          },
+          enable: false,
+          opacity: 1,
+          rotation: {
+            value: 45,
+          },
+          width: 1,
+        },
+        links: {
+          blink: false,
+          color: {
+            value: "#ffffff",
+          },
+          consent: false,
+          distance: 150,
+          enable: true,
+          frequency: 1,
+          opacity: 0.4,
+          shadow: {
+            blur: 5,
+            color: {
+              value: "#000",
+            },
+            enable: false,
+          },
+          triangles: {
+            enable: false,
+            frequency: 1,
+          },
+          width: 1,
+          warp: false,
+        },
+        repulse: {
+          value: 0,
+          enabled: false,
+          distance: 1,
+          duration: 1,
+          factor: 1,
+          speed: 1,
+        },
+      },
+      pauseOnBlur: true,
+      pauseOnOutsideViewport: true,
+      responsive: [],
+      smooth: false,
+      style: {},
+      themes: [],
+      zLayers: 100,
+      key: "basic",
+      name: "Basic",
+      motion: {
+        disable: false,
+        reduce: {
+          factor: 4,
+          value: true,
+        },
+      },
+    };
+  }, []);
 
   return (
     <>
-      <section className="relative w-full h-screen bg-black">
+      <section className=" z-10 relative w-full h-screen bg-black">
         {init && (
           <Particles
-            className="absolute inset-0 w-full h-full opacity-10"
+            className="absolute inset-0 w-full h-full "
             id="tsparticles"
             particlesLoaded={particlesLoaded}
             options={options}
           />
         )}
-        <div className="absolute top-1/2  right-1/3 transform -translate-y-1/2 w-1/2 flex justify-start items-center px-4 ">
-          <h1 className="text-2xl text-white md:text-4xl">
-            Our work is the creation of inspiring architecture, the sharing of
-            our design vision, supported by our commitment to innovation and
-            sustainability.
-          </h1>
-        </div>
       </section>
       <section className="relative">
         {projectsData.map((item, index) => (
@@ -198,7 +617,7 @@ const MainpageClient = ({projectsData}) => {
             className={`relative w-full min-h-lvh bg-black flex flex-col-reverse overflow-hidden`}
           >
             <img
-              className="absolute w-full min-h-lvh object-cover  opacity-50 transition-transform duration-1000 ease-in-out scale-150"
+              className="absolute w-full min-h-lvh object-cover  opacity-50 transition-transform duration-1000 ease-in-out scale-125"
               src={item.thumbnail}
               alt={item.title}
             ></img>
@@ -211,7 +630,9 @@ const MainpageClient = ({projectsData}) => {
               <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.type}
               </p>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">{`${item.address}, ${item.city}, COUNTRY`}</p>{" "}
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+                {item.city}
+              </p>
               <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.date}
               </p>
@@ -256,46 +677,6 @@ const MainpageClient = ({projectsData}) => {
           </div>
         ))}
       </section>
-      <footer className="relative w-full h-[40lvh] flex justify-center items-center">
-        <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5"></div>
-
-        <div className=" w-full absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
-
-        <div className="relative z-10 text-white w-full m-20 border-none">
-          <Accordion className=" mx-5 z-20 " type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Address?</AccordionTrigger>
-              <AccordionContent>
-                <MapPin className="inline mr-2" />
-                VR
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Contact Us?</AccordionTrigger>
-
-              <AccordionContent>
-                <MailIcon className="inline mr-2" />
-                kras@kras.com
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Socials?</AccordionTrigger>
-              <AccordionContent className="">
-                <Facebook className="inline mr-2" />
-                <Link href="facebook.com">Facebook</Link>
-              </AccordionContent>
-              <AccordionContent>
-                <Instagram className="inline mr-2" />
-                <Link href="instagram.com">instagram</Link>
-              </AccordionContent>
-              <AccordionContent>
-                <X className="inline mr-2" />
-                <Link href="twitter.com">twitter</Link>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </footer>
     </>
   );
 };
