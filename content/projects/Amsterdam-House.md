@@ -9,5 +9,15 @@ surface: 300m2
 floors: '6'
 investor: Albani
 thumbnail: /building-1.jpg
+images:
+  - path: /number-3.png
+  - path: /number-2.jpg
+  - path: /number-1.jpg
+  - path: /number-3.png
+  - path: /number-2.jpg
+  - path: /number-1.jpg
+  - path: /number-3.png
+  - path: /number-2.jpg
+  - path: /number-1.jpg
+  - path: /number-1.jpg
 ---
-
