@@ -52,7 +52,7 @@ function ProjectDetailPageClient({project}) {
         <section>
           <h1 className="text-2xl mb-5">Project Images</h1>
         </section>
-        <section className="flex items-center flex-col md:flex-row md:flex-wrap ">
+        <section className="flex  items-center flex-col md:flex-row md:flex-wrap ">
           {project.images.map((img, index) => (
             <img
               key={index}
