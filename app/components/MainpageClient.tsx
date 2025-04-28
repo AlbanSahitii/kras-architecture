@@ -621,11 +621,11 @@ const MainpageClient = ({projectsData}) => {
               src={item.thumbnail}
               alt={item.title}
             ></img>
-
-            <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
-              {item.title}
-            </h1>
-
+            <Link href={`/project/${item.title}`}>
+              <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
+                {item.title}
+              </h1>
+            </Link>
             <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
               <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.type}
@@ -671,9 +671,11 @@ const MainpageClient = ({projectsData}) => {
             key={index}
             className="text-center min-w-full m-1 md:min-w-96 md:max-w-96 "
           >
-            <p className="mb-4">{project.title}</p>
-            <img className="h-96 max-w-9/10" src={project.thumbnail}></img>
-            <p className="mt-4 truncate">{project.description}</p>
+            <Link href={`/project/${project.title}`}>
+              <p className="mb-4">{project.title}</p>
+              <img className="h-96 max-w-9/10" src={project.thumbnail}></img>
+              <p className="mt-4 truncate">{project.description}</p>
+            </Link>
           </div>
         ))}
       </section>
