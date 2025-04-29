@@ -26,6 +26,12 @@
     ],
     "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/components/ImageModal.tsc"
+  ],
   "exclude": ["node_modules"]
 }

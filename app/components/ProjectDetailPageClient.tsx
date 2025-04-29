@@ -1,25 +1,60 @@
 "use client";
 import Link from "next/link";
 import {notFound} from "next/navigation";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
+import {useInView, motion} from "motion/react";
+import ImagesAlbum from "./ImagesAlbum";
 
-function ProjectDetailPageClient({project}) {
+function ProjectDetailPageClient({project, suggestedProject}) {
+  const projectTitleRef = useRef(null);
+  const projectDescriptionRef = useRef(null);
+  const isProjectTitleInView = useInView(projectTitleRef, {once: true});
+  const isProjectDescriptionInView = useInView(projectDescriptionRef, {
+    once: true,
+  });
+
+  const projectImagesTitleRef = useRef(null);
+  const projectImagesTitleInView = useInView(projectImagesTitleRef, {
+    once: true,
+  });
+
+  const nextProjectParRef = useRef(null);
+  const nextProjectParInView = useInView(nextProjectParRef, {once: true});
+
+  const nextProjectTitleRef = useRef(null);
+  const nextProjectTitleInView = useInView(nextProjectTitleRef, {once: true});
+
+  const nextProjectRef = useRef(null);
+  const nextProjectInView = useInView(nextProjectRef, {once: true});
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const variants = {
+    hidden: {opacity: 0, clipPath: "inset(0 0 0 100%)"},
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0 0 0 0)",
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
-      <div className=" px-3 pt-40 md:px-5">
-        <section>
+      <div className=" px-3 pt-40 md:px-20">
+        <section className="">
           <h1 className="tracking-wide">{project.type}</h1>
           <h1 className="text-2xl md:text-8xl tracking-wider">
             {project.title}
           </h1>
         </section>
         <section className="mt-5 flex justify-center flex-col md:flex-row md:justify-between md:px-20">
-          <div className="flex justify-between  md:flex-none md:pt-32">
-            <div className="mr-10">
+          <div className="flex justify-between  md:flex-none md:pt-32 md:w-1/5">
+            <div className="mr-10 ">
               <p>Date</p>
               <p>{project.date}</p>
             </div>
@@ -28,9 +63,9 @@ function ProjectDetailPageClient({project}) {
               <p>{project.city}</p>
             </div>
           </div>
-          <div className="md:ml-10">
+          <div className=" md:ml-10 md:w-3/5">
             <img
-              className="w-auto mt-10 rounded-lg"
+              className="w-auto mt-10 rounded-lg md:h-5/6 "
               src={project.thumbnail}
             ></img>
           </div>
@@ -38,46 +73,114 @@ function ProjectDetailPageClient({project}) {
       </div>
 
       <div className="p-5 md:mx-60">
-        <h1 className="text-xl mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur{" "}
-        </h1>
-        <p>
+        <motion.h1
+          ref={projectTitleRef}
+          className="text-center text-2xl md:text-4xl transform"
+          initial={{opacity: 0, y: 50}}
+          animate={{
+            opacity: isProjectTitleInView ? 1 : 0,
+            y: isProjectTitleInView ? 0 : 50,
+          }}
+          transition={{duration: 0.6}}
+        >
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit
+        </motion.h1>
+        <motion.p
+          ref={projectDescriptionRef}
+          className="transform my-7"
+          initial={{opacity: 0, y: 50}}
+          animate={{
+            opacity: isProjectDescriptionInView ? 1 : 0,
+            y: isProjectDescriptionInView ? 0 : 50,
+          }}
+          transition={{duration: 0.6}}
+        >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis culpa
           maxime ut earum quaerat officiis sequi eos dolor, explicabo facilis
           dicta harum ex natus, maiores eligendi obcaecati atque quam quis?
-        </p>
+        </motion.p>
       </div>
       <br />
       <div className="p-5 md:mx-20">
         <section>
-          <h1 className="text-2xl mb-5">Project Images</h1>
+          <motion.h1
+            ref={projectImagesTitleRef}
+            className="text-2xl mb-5 transform "
+            initial={{opacity: 0, y: 50}}
+            animate={{
+              opacity: projectImagesTitleInView ? 1 : 0,
+              y: projectImagesTitleInView ? 0 : 50,
+            }}
+            transition={{duration: 0.6}}
+          >
+            Project Images
+          </motion.h1>
         </section>
-        <section className="flex  items-center flex-col md:flex-row md:flex-wrap ">
-          {project.images.map((img, index) => (
-            <img
-              key={index}
-              className=" border border-red-500 w-80 h-auto md:w-80 md:h-80 m-2 "
-              src={img.path}
-            />
-          ))}
+        <section className="px-4 py-8 max-w-6xl  mx-auto ">
+          <ImagesAlbum images={project.images} />
         </section>
       </div>
       <hr className="my-10 w-10/12 place-self-center" />
-      <div className="">
-        <section>
-          <h1>Other Project</h1> <img src={project?.images[0].path}></img>
-        </section>
-        <section>
-          <p></p>
-          <Link href="">
-            <h1>NEXT PROJECT Title</h1>
-          </Link>
+      {suggestedProject && (
+        <div className="p-5 mb-10 flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row">
+          <section className="mb-5 md:w-2/5">
+            <Link href="/project/Future City">
+              <h1 className="mb-5">Other Project</h1>
+              <motion.img
+                ref={nextProjectRef}
+                src={suggestedProject.thumbnail}
+                alt="Next Project Image"
+                variants={variants}
+                initial="hidden"
+                animate={nextProjectInView ? "visible" : "hidden"}
+              />
+            </Link>
+          </section>
+          <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10">
+            <Link href="/project/Future City">
+              <motion.h1
+                ref={nextProjectTitleRef}
+                className=" transform text-xl md:text-xl  "
+                initial={{opacity: 0, y: 50}}
+                animate={{
+                  opacity: nextProjectTitleInView ? 1 : 0,
+                  y: nextProjectTitleInView ? 0 : 50,
+                }}
+                transition={{duration: 0.6}}
+              >
+                {suggestedProject.type}
+              </motion.h1>
 
-          <Link href="">
-            <p>NEXT PROJECT</p>
-          </Link>
-        </section>
-      </div>
+              <motion.h1
+                ref={nextProjectTitleRef}
+                className="transform text-2xl tracking-wider md:text-4xl md:tracking-wider"
+                initial={{opacity: 0, y: 50}}
+                animate={{
+                  opacity: nextProjectTitleInView ? 1 : 0,
+                  y: nextProjectTitleInView ? 0 : 50,
+                }}
+                transition={{duration: 0.6}}
+              >
+                {suggestedProject.title}
+              </motion.h1>
+            </Link>
+            <Link href="/project/Future City">
+              <motion.p
+                ref={nextProjectParRef}
+                className="hidden transform md:text-4xl md:tracking-wider md:block "
+                initial={{opacity: 0, y: 50}}
+                animate={{
+                  opacity: nextProjectParInView ? 1 : 0,
+                  y: nextProjectParInView ? 0 : 50,
+                }}
+                transition={{duration: 0.6}}
+              >
+                NEXT PROJECT
+              </motion.p>
+            </Link>
+          </section>
+        </div>
+      )}
     </>
   );
 }

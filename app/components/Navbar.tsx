@@ -17,12 +17,14 @@ function Navbar() {
 
   return (
     <nav
-      className={` z-50 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
+      className={` z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
-        <img className="rounded-sm" src={Logo50.src} alt="Logo" />
+        <img className="border rounded-sm" src={Logo50.src} alt="Logo" />
       </Link>
-      <p>KRAS</p>
+      <Link href="/">
+        <p className="[text-shadow:1px_1px_2px_black] tracking-widest">KRAS</p>
+      </Link>
       <ol className="hidden md:flex mx-2">
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href="/projects">Projects</Link>
@@ -40,7 +42,7 @@ function Navbar() {
       <div className=" md:hidden">
         <Drawer>
           <DrawerTrigger>
-            <Menu />
+            <Menu strokeWidth={3} />
           </DrawerTrigger>
           <DrawerContent className="bg-white text-black ">
             <DrawerHeader>

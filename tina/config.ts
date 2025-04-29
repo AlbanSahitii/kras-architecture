@@ -106,7 +106,7 @@ export default defineConfig({
             fields: [
               {
                 type: "string",
-                name: "path",
+                name: "src",
                 ui: {
                   component: "image",
                 },
