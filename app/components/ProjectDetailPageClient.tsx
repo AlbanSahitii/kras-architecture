@@ -124,7 +124,7 @@ function ProjectDetailPageClient({project, suggestedProject}) {
       {suggestedProject && (
         <div className="p-5 mb-10 flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row">
           <section className="mb-5 md:w-2/5">
-            <Link href="/project/Future City">
+            <Link href={`/project/${suggestedProject.title}`}>
               <h1 className="mb-5">Other Project</h1>
               <motion.img
                 ref={nextProjectRef}
@@ -137,7 +137,7 @@ function ProjectDetailPageClient({project, suggestedProject}) {
             </Link>
           </section>
           <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10">
-            <Link href="/project/Future City">
+            <Link href={`/project/${suggestedProject.title}`}>
               <motion.h1
                 ref={nextProjectTitleRef}
                 className=" transform text-xl md:text-xl  "
@@ -164,7 +164,7 @@ function ProjectDetailPageClient({project, suggestedProject}) {
                 {suggestedProject.title}
               </motion.h1>
             </Link>
-            <Link href="/project/Future City">
+            <Link href={`/project/${suggestedProject.title}`}>
               <motion.p
                 ref={nextProjectParRef}
                 className="hidden transform md:text-4xl md:tracking-wider md:block "

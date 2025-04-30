@@ -1,14 +1,10 @@
 "use client";
-import React, {useEffect, useRef, useState, useMemo} from "react";
-import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {loadFull} from "tsparticles";
-import {type Container, type ISourceOptions} from "@tsparticles/engine";
+import React, {useEffect, useRef} from "react";
 import {animate, inView} from "motion";
 import {useInView, motion} from "motion/react";
 import Link from "next/link";
 
 const MainpageClient = ({projectsData}) => {
-  const [init, setInit] = useState(false);
   const divRef = useRef(projectsData.map(() => React.createRef()));
   const parahraphRef = useRef(null);
   const linkRef = useRef(null);
@@ -85,16 +81,6 @@ const MainpageClient = ({projectsData}) => {
       });
     };
   }, [projectsData]);
-
-  useEffect(() => {
-    initParticlesEngine(async engine => {
-      await loadFull(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesLoaded = async (container?: Container): Promise<void> => {};
 
   return (
     <>

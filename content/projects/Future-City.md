@@ -10,15 +10,13 @@ floors: '69'
 investor: Albani
 thumbnail: /project2.jpg
 images:
+  - src: /project-details1.jpg
+  - src: /project-details2.jpg
   - src: /number-3.png
   - src: /number-2.jpg
-  - src: /number-1.jpg
   - src: /number-3.png
   - src: /number-2.jpg
-  - src: /number-1.jpg
-  - src: /number-3.png
-  - src: /number-2.jpg
-  - src: /number-1.jpg
-  - src: /number-1.jpg
+  - src: /project-details2.jpg
+  - src: /project-details1.jpg
 
 ---
