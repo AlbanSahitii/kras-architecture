@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
-import {notFound} from "next/navigation";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import {useInView, motion} from "motion/react";
 import ImagesAlbum from "./ImagesAlbum";
 
@@ -167,7 +166,7 @@ function ProjectDetailPageClient({project, suggestedProject}) {
             <Link href={`/project/${suggestedProject.title}`}>
               <motion.p
                 ref={nextProjectParRef}
-                className="hidden transform md:text-4xl md:tracking-wider md:block "
+                className="hidden w-fit transform md:text-4xl md:tracking-wider md:block border-b border-transparent hover:border-white transition duration-500 ease-in-out"
                 initial={{opacity: 0, y: 50}}
                 animate={{
                   opacity: nextProjectParInView ? 1 : 0,

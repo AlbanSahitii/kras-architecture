@@ -1,7 +1,12 @@
 import React from "react";
+import ProjectTypes from "./ProjectTypes";
 
 function ProjectsFilterPageClient({type}) {
-  return <div>{type}</div>;
+  return (
+    <>
+      <ProjectTypes />
+    </>
+  );
 }
 
 export default ProjectsFilterPageClient;

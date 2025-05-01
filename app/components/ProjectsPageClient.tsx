@@ -1,10 +1,22 @@
 "use client";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useState} from "react";
 import {useInfiniteQuery} from "@tanstack/react-query";
 import {getAllProjects} from "../lib/tina/queris";
 import {useInView} from "react-intersection-observer";
+import {Button} from "@/components/ui/button";
+import {Spinner} from "@/components/ui/spinner";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import ProjectTypes from "./ProjectTypes";
+
+const ProjectCard = dynamic(() => import("./ProjectCard"), {
+  ssr: true,
+});
+
 function ProjectsPageClient({initialData, limit}) {
-  console.log(initialData);
+  const [loadMore, setLoadMore] = useState(true);
+  const {ref, inView} = useInView();
+
   const {data, fetchNextPage, hasNextPage, isFetchingNextPage} =
     useInfiniteQuery({
       queryKey: ["projects"],
@@ -24,26 +36,37 @@ function ProjectsPageClient({initialData, limit}) {
           : undefined,
     });
 
-  const {ref, inView} = useInView();
   const flattedData = data?.pages.flatMap(page => page.projects);
-  useEffect(() => {
+
+  React.useEffect(() => {
     if (inView) {
       fetchNextPage();
     }
-  }, [fetchNextPage, inView]);
+  }, [fetchNextPage, inView, loadMore]);
 
   return (
     <>
-      <div>
+      <ProjectTypes />
+      <section className="flex justify-evenly flex-wrap">
         {flattedData?.map((project, index) => (
-          <img
-            key={index}
-            src={project?.thumbnail}
-            className="w-screen h-screen"
-          ></img>
+          <ProjectCard key={index} project={project} />
         ))}
-      </div>
-      <div ref={ref}>{isFetchingNextPage ? "Loading" : ""}</div>
+      </section>
+
+      {hasNextPage && (
+        <div className="flex justify-center pt-14" ref={ref}>
+          {isFetchingNextPage ? (
+            <Spinner size="md" className="bg-white" />
+          ) : (
+            <Button
+              variant="outline"
+              onClick={() => setLoadMore(prev => !prev)}
+            >
+              Load More
+            </Button>
+          )}
+        </div>
+      )}
     </>
   );
 }

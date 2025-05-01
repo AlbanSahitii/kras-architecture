@@ -1,7 +1,9 @@
-import type {NextConfig} from "next";
+// next.config.ts
+const nextConfig = {
+  allowedDevOrigins: ["*"],
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Other config...
+  reactStrictMode: true,
+} satisfies import("next").NextConfig;
 
 export default nextConfig;

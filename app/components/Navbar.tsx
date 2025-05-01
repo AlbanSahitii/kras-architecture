@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React from "react";
 import {
   Drawer,
   DrawerContent,
@@ -13,8 +13,6 @@ import Link from "next/link";
 import {Menu} from "lucide-react";
 
 function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
     <nav
       className={` z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}

@@ -12,7 +12,6 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
   const formattedParams = title.split("%20").join(" ");
   const project = await getProjectByTitle(formattedParams);
   const allProjects = await getAllProjects({});
-  console.log(allProjects);
   let suggestedProject;
 
   if (!project) {

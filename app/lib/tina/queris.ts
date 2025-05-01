@@ -26,7 +26,6 @@ export const getAllProjects = async ({
         title: p?.node?.title,
       };
     });
-
     return {
       projects: projectData,
       hasNextPage: result.data.ProjectsConnection.pageInfo.hasNextPage,
@@ -43,6 +42,28 @@ export const getProjectByTitle = async (title: string) => {
     const result = await client.queries.ProjectsConnection({
       filter: {
         title: {eq: title},
+      },
+    });
+
+    const project = result.data?.ProjectsConnection?.edges?.[0]?.node;
+
+    if (!project) {
+      console.error("Project with the given title not found");
+      return null;
+    }
+
+    return project;
+  } catch (error) {
+    console.error("Failed to fetch project by title:", error);
+    return null;
+  }
+};
+
+export const getProjectByType = async (type: string) => {
+  try {
+    const result = await client.queries.ProjectsConnection({
+      filter: {
+        type: {eq: type},
       },
     });
 
