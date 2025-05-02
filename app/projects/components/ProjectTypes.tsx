@@ -9,14 +9,16 @@ function ProjectTypes() {
       </section>
       <div className="w-full pb-10">
         <section className="flex justify-between mx-10 md:flex md:justify-start">
-          <p className="text-sm md:text-xl md:mx-5">All</p>
-          <Link href="/projects/commercial">
+          <Link href="/projects">
+            <p className="text-sm md:text-xl md:mx-5">All</p>
+          </Link>
+          <Link href="/projects/Comercial">
             <p className="text-sm md:text-xl md:mx-5">Comercial</p>
           </Link>
-          <Link href="/projects/residental">
+          <Link href="/projects/Residental">
             <p className="text-sm md:text-xl md:mx-5">Residental</p>
           </Link>
-          <Link href="/projects/competition">
+          <Link href="/projects/Competition">
             <p className="text-sm md:text-xl md:mx-5">Competition</p>
           </Link>
         </section>

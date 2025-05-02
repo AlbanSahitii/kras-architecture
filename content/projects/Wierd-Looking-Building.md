@@ -1,6 +1,6 @@
 ---
 title: Wierd Looking Building
-type: Building
+type: Competition
 city: 'Ckuffsise Park, NJ'
 address: Lakewood Drive 4728
 date: 10/10/2019

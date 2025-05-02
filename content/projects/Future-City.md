@@ -1,6 +1,6 @@
 ---
 title: Future City
-type: City
+type: Residental
 city: 'Albany, NY'
 address: Oak Drive
 date: 11/11/2011

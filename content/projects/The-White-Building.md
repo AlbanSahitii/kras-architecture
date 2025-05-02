@@ -1,6 +1,6 @@
 ---
 title: The White Building
-type: Building
+type: Comercial
 city: 'New Jersey, Camden'
 address: Prospect Street 1264
 date: 04/05/2020

@@ -1,6 +1,6 @@
 ---
 title: The Upside Down
-type: House
+type: Comercial
 city: Oslo
 address: 3589 Eagle Lane
 date: 12/05/2022

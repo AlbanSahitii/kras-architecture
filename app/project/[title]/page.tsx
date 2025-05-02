@@ -1,6 +1,6 @@
-import ProjectDetailPageClient from "@/app/components/ProjectDetailPageClient";
 import {notFound} from "next/navigation";
 import {getProjectByTitle, getAllProjects} from "@/app/lib/tina/queris";
+import ProjectDetailPageClient from "../components/ProjectDetailPageClient";
 interface ProjectPageParams {
   params: {
     title: string;

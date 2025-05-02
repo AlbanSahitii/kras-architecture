@@ -1,6 +1,6 @@
 ---
 title: Amsterdam House
-type: House
+type: Residental
 city: Amsterdam
 address: Red light
 date: 14/12/2002

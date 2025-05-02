@@ -1,6 +1,6 @@
 ---
 title: The Guitar Building
-type: Building
+type: Competition
 city: Minnesota
 address: Eagle Lane 3029
 date: 25/11/2024

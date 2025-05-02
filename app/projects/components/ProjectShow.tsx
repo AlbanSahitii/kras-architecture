@@ -1,35 +1,34 @@
 "use client";
 import React, {useState} from "react";
+import {getAllProjects, getProjectByType} from "../../lib/tina/queris";
 import {useInfiniteQuery} from "@tanstack/react-query";
-import {getAllProjects} from "../lib/tina/queris";
 import {useInView} from "react-intersection-observer";
 import {Button} from "@/components/ui/button";
 import {Spinner} from "@/components/ui/spinner";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import ProjectTypes from "./ProjectTypes";
-
 const ProjectCard = dynamic(() => import("./ProjectCard"), {
   ssr: true,
 });
 
-function ProjectsPageClient({initialData, limit}) {
+function ProjectShow({initialData, limit, type = null}) {
   const [loadMore, setLoadMore] = useState(true);
   const {ref, inView} = useInView();
 
   const {data, fetchNextPage, hasNextPage, isFetchingNextPage} =
     useInfiniteQuery({
       queryKey: ["projects"],
-      queryFn: ({pageParam = {first: limit, after: ""}}) =>
-        getAllProjects(pageParam),
-
+      queryFn: ({pageParam = {first: limit, after: ""}}) => {
+        if (type) {
+          return getProjectByType({type, ...pageParam});
+        } else {
+          return getAllProjects(pageParam);
+        }
+      },
       initialPageParam: {first: limit, after: ""},
-
       initialData: {
         pageParams: [{first: limit, after: ""}],
         pages: [initialData],
       },
-
       getNextPageParam: lastPage =>
         lastPage.hasNextPage
           ? {first: limit, after: lastPage.endCursor}
@@ -46,7 +45,6 @@ function ProjectsPageClient({initialData, limit}) {
 
   return (
     <>
-      <ProjectTypes />
       <section className="flex justify-evenly flex-wrap">
         {flattedData?.map((project, index) => (
           <ProjectCard key={index} project={project} />
@@ -71,4 +69,4 @@ function ProjectsPageClient({initialData, limit}) {
   );
 }
 
-export default ProjectsPageClient;
+export default ProjectShow;

@@ -7,6 +7,7 @@ export interface ProjectsResponse {
 }
 
 export interface FetchProjectsArgs {
+  type?: string;
   first?: number | null;
   after?: string | null | undefined;
 }
