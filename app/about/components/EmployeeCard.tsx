@@ -62,6 +62,15 @@ const EmployeeCard = ({employee}) => {
           {overlayVisible && employee.description}
         </motion.div>
       </div>
+      <motion.div
+        animate={controls}
+        initial={false}
+        style={{
+          backgroundColor: bgColor,
+          clipPath: "inset(0% 0% 0% 0%)",
+        }}
+        className="rounded-lg absolute top-0 left-0 w-full h-[78%] md:h-[87%] z-10"
+      />
 
       <div className="mt-2">
         <h3 className="font-bold md:text-xl">{employee.fullName}</h3>

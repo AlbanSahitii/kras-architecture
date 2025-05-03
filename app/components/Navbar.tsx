@@ -13,9 +13,14 @@ import Link from "next/link";
 import {Menu} from "lucide-react";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeDrawer = () => {
+    setIsOpen(false);
+  };
   return (
     <nav
-      className={` z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
+      className={`z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
         <img className="border rounded-sm" src={Logo50.src} alt="Logo" />
@@ -38,23 +43,34 @@ function Navbar() {
         </li>
       </ol>
       <div className=" md:hidden">
-        <Drawer>
-          <DrawerTrigger>
+        <Drawer open={isOpen} onOpenChange={setIsOpen}>
+          <DrawerTrigger onClick={e => e.currentTarget.blur()}>
             <Menu strokeWidth={3} />
           </DrawerTrigger>
-          <DrawerContent className="bg-white text-black ">
+          <DrawerContent
+            aria-describedby={undefined}
+            className="bg-white text-black "
+          >
             <DrawerHeader>
               <DrawerTitle className="font-normal m-3">
-                <Link href="/news">News</Link>
+                <Link href="/news" onClick={closeDrawer}>
+                  News
+                </Link>
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
-                <Link href="/projects">Projects</Link>
+                <Link href="/projects" onClick={closeDrawer}>
+                  Projects
+                </Link>
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
-                <Link href="/about">About Us</Link>
+                <Link href="/about" onClick={closeDrawer}>
+                  About Us
+                </Link>
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
-                <Link href="/news">Stories</Link>
+                <Link href="/news" onClick={closeDrawer}>
+                  Stories
+                </Link>
               </DrawerTitle>
             </DrawerHeader>
           </DrawerContent>
