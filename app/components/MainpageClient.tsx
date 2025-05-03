@@ -99,9 +99,11 @@ const MainpageClient = ({projectsData}) => {
               </h1>
             </Link>
             <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
-                {item.type}
-              </p>
+              <Link href={`projects/${item.type}`}>
+                <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+                  {item.type}
+                </p>
+              </Link>
               <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.city}
               </p>
@@ -135,7 +137,7 @@ const MainpageClient = ({projectsData}) => {
         </motion.p>
       </section>
 
-      <h1 className="text-center text-3xl md:text-5xl ">News</h1>
+      <h1 className="text-center text-3xl md:text-5xl md:pb-16 ">News</h1>
 
       <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly">
         {projectsData.map((project, index) => (
