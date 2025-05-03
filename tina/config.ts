@@ -129,8 +129,21 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "role",
             label: "Role",
+            name: "role",
+            options: [
+              {label: "CEO", value: "Ceo"},
+              {label: "Partner", value: "Partner"},
+              {label: "Team Leader", value: "Team Leader"},
+              {label: "Supervisor", value: "Supervisor"},
+              {label: "Architect", value: "Architect"},
+              {label: "Finance", value: "Finance"},
+            ],
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description ",
             required: true,
           },
           {

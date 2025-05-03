@@ -1,4 +1,4 @@
-import {FetchProjectsArgs, ProjectsResponse} from "@/app/types";
+import {Employee, FetchProjectsArgs, ProjectsResponse} from "@/app/types";
 import {client} from "@/tina/__generated__/client";
 
 export const getAllProjects = async ({
@@ -98,6 +98,59 @@ export const getProjectByType = async ({
       hasNextPage: result.data.ProjectsConnection.pageInfo.hasNextPage,
       endCursor: result.data.ProjectsConnection.pageInfo.endCursor,
     };
+  } catch (error) {
+    console.error("Failed to fetch project by title:", error);
+    return null;
+  }
+};
+
+export const getEmployees = async () => {
+  try {
+    const result = await client.queries.EmployeesConnection();
+
+    if (!result) {
+      console.error("Employees not found");
+      return null;
+    }
+
+    const ceo: Employee[] = [];
+    const partners: Employee[] = [];
+    const teamLeader: Employee[] = [];
+    const superVisors: Employee[] = [];
+    const architects: Employee[] = [];
+    const finance: Employee[] = [];
+
+    result.data.EmployeesConnection.edges?.forEach(emp => {
+      const employee: Employee = {
+        fullName: emp?.node?.full_Name,
+        role: emp?.node?.role,
+        description: emp?.node?.description,
+        thumbnail: emp?.node?.thumbnail,
+      };
+
+      switch (emp?.node?.role) {
+        case "Ceo":
+          ceo.push(employee);
+          break;
+        case "Partner":
+          partners.push(employee);
+          break;
+        case "Team Leader":
+          teamLeader.push(employee);
+          break;
+        case "Supervisor":
+          superVisors.push(employee);
+          break;
+        case "Architect":
+          architects.push(employee);
+          break;
+        case "Finance":
+          finance.push(employee);
+          break;
+      }
+    });
+
+    return {ceo, partners, teamLeader, superVisors, architects, finance};
   } catch (error) {
     console.error("Failed to fetch project by title:", error);
     return null;
