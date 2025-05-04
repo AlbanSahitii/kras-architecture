@@ -11,6 +11,11 @@ const ProjectCard = dynamic(() => import("./ProjectCard"), {
 });
 
 function ProjectShow({initialData, limit, type = null}) {
+  console.log("-------");
+  console.log("projectshow");
+  console.log(initialData);
+  console.log("-------");
+
   const [loadMore, setLoadMore] = useState(true);
   const {ref, inView} = useInView();
 

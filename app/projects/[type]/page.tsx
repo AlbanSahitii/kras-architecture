@@ -11,6 +11,9 @@ async function ProjectsFilterServerSide({params}: ProjectPageParams) {
   const first = 9;
   const {type} = await params;
   const initialData = await getProjectByType({type, first});
+  console.log("--------");
+  console.log(initialData);
+  console.log("--------");
 
   if (initialData?.projects?.length === 0) notFound();
   return (
