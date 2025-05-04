@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import {useEffect, useRef} from "react";
-import {useInView, motion} from "motion/react";
+import {useInView, motion} from "framer-motion";
 import ImagesAlbum from "./ImagesAlbum";
 function ProjectDetailPageClient({project, suggestedProject}) {
   const projectTitleRef = useRef(null);

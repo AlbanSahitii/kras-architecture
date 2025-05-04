@@ -1,7 +1,11 @@
 {
+  "packageManager": "pnpm@8.15.4",
   "name": "kras-architecture-1",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
     "build": "tinacms build && next build",
@@ -21,8 +25,8 @@
     "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.9.4",
     "lucide-react": "^0.503.0",
-    "motion": "^12.8.0",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
