@@ -3,7 +3,6 @@ import Link from "next/link";
 import {useEffect, useRef} from "react";
 import {useInView, motion} from "motion/react";
 import ImagesAlbum from "./ImagesAlbum";
-
 function ProjectDetailPageClient({project, suggestedProject}) {
   const projectTitleRef = useRef(null);
   const projectDescriptionRef = useRef(null);
@@ -63,10 +62,11 @@ function ProjectDetailPageClient({project, suggestedProject}) {
             </div>
           </div>
           <div className=" md:ml-10 md:w-3/5">
-            <img
+            <motion.img
+              alt="thumbnail"
               className="w-auto mt-10 rounded-lg md:h-5/6 "
               src={project.thumbnail}
-            ></img>
+            />
           </div>
         </section>
       </div>

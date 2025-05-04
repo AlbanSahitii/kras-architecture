@@ -1,4 +1,4 @@
-import {Employee, FetchProjectsArgs, ProjectsResponse} from "@/app/types";
+import {Employee, FetchProjectsArgs} from "@/app/types";
 import {client} from "@/tina/__generated__/client";
 
 export const getAllProjects = async ({

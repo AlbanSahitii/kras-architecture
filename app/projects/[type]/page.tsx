@@ -3,9 +3,9 @@ import {getProjectByType} from "@/app/lib/tina/queris";
 import React from "react";
 import {notFound} from "next/navigation";
 interface ProjectPageParams {
-  params: {
+  params: Promise<{
     type: string;
-  };
+  }>;
 }
 async function ProjectsFilterServerSide({params}: ProjectPageParams) {
   const first = 9;

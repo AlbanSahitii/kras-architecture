@@ -2,14 +2,15 @@ import {notFound} from "next/navigation";
 import {getProjectByTitle, getAllProjects} from "@/app/lib/tina/queris";
 import ProjectDetailPageClient from "../components/ProjectDetailPageClient";
 interface ProjectPageParams {
-  params: {
+  params: Promise<{
     title: string;
-  };
+  }>;
 }
 
 async function ProjectDetailPageServer({params}: ProjectPageParams) {
   const {title} = await params;
   const formattedParams = title.split("%20").join(" ");
+
   const project = await getProjectByTitle(formattedParams);
   const allProjects = await getAllProjects({});
   let suggestedProject;

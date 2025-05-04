@@ -11,6 +11,7 @@ import {
 import Logo50 from "../../public/logo50.png";
 import Link from "next/link";
 import {Menu} from "lucide-react";
+import Image from "next/image";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,13 @@ function Navbar() {
       className={`z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
-        <img className="border rounded-sm" src={Logo50.src} alt="Logo" />
+        <Image
+          className="border rounded-sm"
+          src={Logo50.src}
+          alt="Logo"
+          width={50}
+          height={50}
+        />
       </Link>
       <Link href="/">
         <p className="[text-shadow:1px_1px_2px_black] tracking-widest">KRAS</p>

@@ -5,7 +5,6 @@ import {useInView} from "react-intersection-observer";
 import {ArrowDownRight} from "lucide-react";
 import Link from "next/link";
 import {seededRandomColor} from "@/app/lib/seededRandomColor";
-
 function ProjectCard({project}) {
   const bgColor = seededRandomColor(project.title);
   const controls = useAnimation();
@@ -32,7 +31,7 @@ function ProjectCard({project}) {
     >
       <Link href={`/project/${project.title}`}>
         <div className="w-full h-full relative z-0">
-          <img
+          <motion.img
             src={project.thumbnail}
             className="w-full h-full object-cover opacity-60"
             alt={project.title}

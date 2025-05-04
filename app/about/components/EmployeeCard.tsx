@@ -39,7 +39,7 @@ const EmployeeCard = ({employee}) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="relative z-0">
-        <img
+        <motion.img
           className=" w-full h-auto rounded-lg mb-3 object-cover"
           src={employee.thumbnail}
           alt={employee.fullName}

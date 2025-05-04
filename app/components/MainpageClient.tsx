@@ -3,6 +3,7 @@ import React, {useEffect, useRef} from "react";
 import {animate, inView} from "motion";
 import {useInView, motion} from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 
 const MainpageClient = ({projectsData}) => {
   const divRef = useRef(projectsData.map(() => React.createRef()));
@@ -19,6 +20,7 @@ const MainpageClient = ({projectsData}) => {
             const imgElement = entry.target.querySelector("img");
             const h1Element = entry.target.querySelector(".project-title");
             const pElement = entry.target.querySelectorAll(".custom-p-class");
+
             if (imgElement) {
               inView(imgElement, () => {
                 animate(
@@ -28,6 +30,7 @@ const MainpageClient = ({projectsData}) => {
                 );
               });
             }
+
             if (h1Element) {
               animate(
                 h1Element as HTMLElement,
@@ -64,17 +67,15 @@ const MainpageClient = ({projectsData}) => {
       },
       {threshold: 0.5}
     );
-    divRef.current.forEach(ref => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
+
+    const elementsToObserve = divRef.current
+      .map(ref => ref.current)
+      .filter(Boolean);
+
+    elementsToObserve.forEach(el => observer.observe(el!));
+
     return () => {
-      divRef.current.forEach(ref => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
+      elementsToObserve.forEach(el => observer.unobserve(el!));
     };
   }, [projectsData]);
 
@@ -88,11 +89,12 @@ const MainpageClient = ({projectsData}) => {
             ref={divRef.current[index]}
             className={`relative w-full min-h-lvh bg-black flex flex-col-reverse overflow-hidden`}
           >
-            <img
-              className="absolute w-full min-h-lvh object-cover  opacity-50 transition-transform duration-1000 ease-in-out scale-125"
+            <Image
+              className="absolute w-full min-h-[100vh] object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 hover:scale-100"
               src={item.thumbnail}
               alt={item.title}
-            ></img>
+              layout="fill"
+            />
             <Link href={`/project/${item.title}`}>
               <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
                 {item.title}
@@ -147,7 +149,14 @@ const MainpageClient = ({projectsData}) => {
           >
             <Link href={`/project/${project.title}`}>
               <p className="mb-4">{project.title}</p>
-              <img className="h-96 max-w-9/10" src={project.thumbnail}></img>
+              <div className=" relative h-96 max-w-9/10">
+                <Image
+                  className="w-full h-full absolute"
+                  src={project.thumbnail}
+                  alt="thumbnail"
+                  layout="fill"
+                />
+              </div>
               <p className="mt-4 truncate">{project.description}</p>
             </Link>
           </div>
