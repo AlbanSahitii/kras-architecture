@@ -14,7 +14,7 @@ function ProjectShow({initialData, limit, type = null}) {
   const [loadMore, setLoadMore] = useState(true);
   const {ref, inView} = useInView();
 
-  const {data, fetchNextPage, hasNextPage, isFetchingNextPage} =
+  const {data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading} =
     useInfiniteQuery({
       queryKey: ["projects"],
       queryFn: ({pageParam = {first: limit, after: ""}}) => {
@@ -43,6 +43,9 @@ function ProjectShow({initialData, limit, type = null}) {
     }
   }, [fetchNextPage, inView, loadMore]);
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
   return (
     <>
       <section className="flex justify-evenly flex-wrap">
