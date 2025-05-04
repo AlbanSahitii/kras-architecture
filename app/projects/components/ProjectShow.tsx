@@ -16,7 +16,7 @@ function ProjectShow({initialData, limit, type = null}) {
 
   const {data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading} =
     useInfiniteQuery({
-      queryKey: ["projects"],
+      queryKey: ["projects", type],
       queryFn: ({pageParam = {first: limit, after: ""}}) => {
         if (type) {
           return getProjectByType({type, ...pageParam});
