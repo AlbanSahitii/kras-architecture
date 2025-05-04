@@ -1,5 +1,5 @@
 ---
-title: Amsterdam House
+title: Amsterdam Houseeeeeeee
 type: Residental
 city: Amsterdam
 address: Red light
@@ -18,6 +18,5 @@ images:
   - src: /number-2.jpg
   - src: /project-details2.jpg
   - src: /project-details1.jpg
-
-
 ---
+
