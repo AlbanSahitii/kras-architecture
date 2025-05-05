@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import Image from "next/image";
-import Logo from "../../public/logo-white.png"; // adjust this path to your actual logo path
+import Logo from "../../public/logo-white.png";
 import {gsap} from "gsap";
 import {motion} from "framer-motion";
 
@@ -9,7 +8,7 @@ export default function LogoAnimation() {
   const triangleRight = useRef<SVGPolygonElement>(null);
   const triangleBottom = useRef<SVGPolygonElement>(null);
   const logoWrapper = useRef<HTMLDivElement>(null);
-  const svgRef = useRef<SVGSVGElement>(null); // Ref for the SVG element
+  const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     if (!logoWrapper.current) return;
@@ -17,15 +16,13 @@ export default function LogoAnimation() {
     const img = logoWrapper.current.querySelector("img");
     if (!img) return;
 
-    // Initial setup of GSAP properties for the polygons and image
     gsap.set(triangleRight.current, {x: 300, opacity: 0});
     gsap.set(triangleBottom.current, {y: 300, opacity: 0});
     gsap.set(img, {scale: 0.5, opacity: 0});
-    gsap.set(svgRef.current, {opacity: 1}); // Set initial opacity of the SVG to 1
+    gsap.set(svgRef.current, {opacity: 1});
 
     const tl = gsap.timeline({delay: 0.5});
 
-    // Animation sequence for the polygons and logo
     tl.to(triangleRight.current, {
       x: 0,
       opacity: 1,
