@@ -50,9 +50,11 @@ const EmployeeCard = ({employee}) => {
             backgroundColor: bgColor,
             clipPath: "inset(0% 0% 0% 0%)",
           }}
-          className="rounded-lg absolute top-0 left-0 w-full h-full z-10"
+          className="opacity-80 rounded-lg absolute top-0 left-0 w-full h-full z-10"
         >
-          {overlay && <p>{employee.description}</p>}
+          {overlay && (
+            <p className="p-1 text-xs md:text-base">{employee.description}</p>
+          )}
         </motion.div>
       </div>
       <div className="mt-2">

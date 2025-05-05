@@ -3,6 +3,7 @@ import React, {useEffect, useRef} from "react";
 import {useInView, motion, animate, inView} from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import LogoAnimation from "./LogoAnimation";
 
 const MainpageClient = ({projectsData}) => {
   const divRef = useRef(projectsData.map(() => React.createRef()));
@@ -80,7 +81,9 @@ const MainpageClient = ({projectsData}) => {
 
   return (
     <>
-      <section className=" z-10 relative w-full h-screen bg-black"></section>
+      <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black">
+        <LogoAnimation />
+      </section>
       <section className="relative">
         {projectsData.map((item, index) => (
           <div
