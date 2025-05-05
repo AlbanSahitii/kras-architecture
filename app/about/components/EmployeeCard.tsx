@@ -8,6 +8,7 @@ const EmployeeCard = ({employee}) => {
   const controls = useAnimation();
   const {ref, inView} = useInView({triggerOnce: true});
   const [overlayVisible, setOverlayVisible] = useState(false);
+  console.log(inView);
 
   useEffect(() => {
     if (inView) {
@@ -21,7 +22,7 @@ const EmployeeCard = ({employee}) => {
     } else {
       controls.set({clipPath: "inset(0% 0% 0% 0%)"});
     }
-  }, [inView, controls]);
+  }, [inView]);
 
   const toggleOverlay = () => {
     setOverlayVisible(prev => !prev);
@@ -31,14 +32,14 @@ const EmployeeCard = ({employee}) => {
   const handleMouseLeave = () => setOverlayVisible(false);
 
   return (
-    <motion.div
-      ref={ref}
-      className="my-5 mx-2 w-5/12 md:w-1/5 relative overflow-hidden cursor-pointer"
-      onClick={toggleOverlay}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="relative z-0">
+    <motion.div className="my-5 mx-2 w-5/12 md:w-1/5 relative overflow-hidden cursor-pointer">
+      <motion.div
+        ref={ref}
+        onClick={toggleOverlay}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="relative z-10"
+      >
         <motion.img
           className=" w-full h-auto rounded-lg mb-3 object-cover"
           src={employee.thumbnail}
@@ -67,9 +68,9 @@ const EmployeeCard = ({employee}) => {
             backgroundColor: bgColor,
             clipPath: "inset(0% 0% 0% 0%)",
           }}
-          className="rounded-lg absolute top-0 left-0 w-full h-auto md:h-auto z-10"
-        ></motion.div>
-      </div>
+          className="rounded-lg absolute top-0 left-0 w-full h-auto md:h-auto z-20"
+        />
+      </motion.div>
 
       <div className="mt-2">
         <h3 className="font-bold md:text-xl">{employee.fullName}</h3>
