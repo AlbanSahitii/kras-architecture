@@ -9,7 +9,6 @@ function ProjectCard({project}) {
   const bgColor = seededRandomColor(project.title);
   const controls = useAnimation();
   const {ref, inView} = useInView({triggerOnce: true});
-
   useEffect(() => {
     if (inView) {
       controls.start({
@@ -27,7 +26,7 @@ function ProjectCard({project}) {
   return (
     <motion.div
       ref={ref}
-      className="relative w-2/5 h-52 m-2 md:my-5 md:mx-1 md:w-[30%] md:h-96 overflow-hidden"
+      className="relative  w-2/5 h-52 m-2 md:my-5 md:mx-1 md:w-[30%] md:h-96 overflow-hidden"
     >
       <Link href={`/project/${project.title}`}>
         <div className="w-full h-full relative z-0">
