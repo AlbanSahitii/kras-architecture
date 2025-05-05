@@ -47,7 +47,6 @@ const EmployeeCard = ({employee}) => {
 
         <motion.div
           animate={{
-            opacity: overlayVisible ? 0.8 : 0,
             clipPath: overlayVisible
               ? "inset(0% 0% 0% 0%)"
               : "inset(100% 0% 0% 0%)",
@@ -61,16 +60,16 @@ const EmployeeCard = ({employee}) => {
         >
           {overlayVisible && employee.description}
         </motion.div>
+        <motion.div
+          animate={controls}
+          initial={false}
+          style={{
+            backgroundColor: bgColor,
+            clipPath: "inset(0% 0% 0% 0%)",
+          }}
+          className="rounded-lg absolute top-0 left-0 w-full h-auto md:h-auto z-10"
+        ></motion.div>
       </div>
-      <motion.div
-        animate={controls}
-        initial={false}
-        style={{
-          backgroundColor: bgColor,
-          clipPath: "inset(0% 0% 0% 0%)",
-        }}
-        className="rounded-lg absolute top-0 left-0 w-full h-[78%] md:h-[87%] z-10"
-      />
 
       <div className="mt-2">
         <h3 className="font-bold md:text-xl">{employee.fullName}</h3>
