@@ -25,7 +25,6 @@ export default function LogoAnimation() {
       x: 0,
       opacity: 1,
       duration: 0.8,
-      // ease: "power3.out",
     })
       .to(
         triangleBottom.current,
@@ -33,25 +32,14 @@ export default function LogoAnimation() {
           y: 0,
           opacity: 1,
           duration: 0.8,
-          // ease: "power3.out",
-        }
-        // "<"
+        },
+        "<"
       )
       .to(titleWrapper.current, {
         x: 0,
         opacity: 1,
         duration: 1,
       });
-    // .to(svgRef.current, {
-    //   opacity: 0,
-    //   duration: 0,
-    // })
-    // .to(img, {
-    //   opacity: 1,
-    //   scale: 1,
-    //   duration: 0.6,
-    //   ease: "power2.out",
-    // });
   }, []);
 
   return (
