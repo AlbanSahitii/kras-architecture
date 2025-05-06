@@ -16,7 +16,6 @@ export default function LogoAnimation() {
     gsap.set(triangleRight.current, {x: 300, opacity: 0});
     gsap.set(triangleBottom.current, {y: 300, opacity: 0});
     gsap.set(titleWrapper.current, {opacity: 0});
-    // gsap.set(img, {scale: 0.5, opacity: 0});
     gsap.set(svgRef.current, {opacity: 1});
 
     const tl = gsap.timeline({delay: 0.5});
