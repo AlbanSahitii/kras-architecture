@@ -77,7 +77,7 @@ export default function LogoAnimation() {
             />
             <polygon
               ref={triangleBottom}
-              points="203,300 250,254 297,300"
+              points="203,300 250,253 297,300"
               fill="white"
               className="opacity-0 translate-y-[300px]"
             />
