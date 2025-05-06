@@ -21,7 +21,7 @@ function Navbar() {
   };
   return (
     <nav
-      className={`z-40 fixed w-lvw pt-10 p-12 flex justify-between items-center bg-transparent`}
+      className={`z-40 fixed w-lvw pt-10 p-10  md:p-12 flex justify-between items-center bg-transparent`}
     >
       <Link href="/">
         <Image
@@ -33,7 +33,9 @@ function Navbar() {
         />
       </Link>
       <Link href="/">
-        <p className="[text-shadow:1px_1px_2px_black] tracking-widest">KRAS</p>
+        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 [text-shadow:1px_1px_2px_black] tracking-widest">
+          KRAS
+        </p>
       </Link>
       <ol className="hidden md:flex mx-2">
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
