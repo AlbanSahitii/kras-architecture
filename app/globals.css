@@ -6,6 +6,9 @@
   --foreground: #000000;
 }
 
+html {
+  color: white;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
