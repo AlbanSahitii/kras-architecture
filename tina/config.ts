@@ -116,6 +116,41 @@ export default defineConfig({
         ],
       },
       {
+        name: "News",
+        label: "News",
+        path: "content/news",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            required: true,
+            isTitle: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description ",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "thumbnail",
+            label: "Thumbnail image",
+            required: true,
+            ui: {
+              component: "image",
+            },
+          },
+          {
+            type: "string",
+            name: "date",
+            label: "date",
+            required: true,
+          },
+        ],
+      },
+      {
         name: "Employees",
         label: "Employees",
         path: "content/employees",
