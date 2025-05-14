@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
-html {
-  color: white;
-}
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 0%;
 
-    --foreground: 0 0% 3.9%;
+    --foreground: 0 0% 100%;
 
     --card: 0 0% 100%;
 
@@ -62,9 +59,9 @@ html {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0%;
 
-    --foreground: 0 0% 98%;
+    --foreground: 0 0% 100%;
 
     --card: 0 0% 3.9%;
 
@@ -128,12 +125,6 @@ html {
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #ffffff;
-  }
-}
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -179,6 +170,6 @@ html {
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
