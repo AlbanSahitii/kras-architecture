@@ -37,15 +37,37 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Title",
-            isTitle: true,
             required: true,
           },
           {
             type: "string",
-            name: "type",
-            label: "Type",
+            name: "germanTitle",
+            label: "German Title",
             required: true,
           },
+          {
+            type: "string",
+            label: "Type",
+            name: "type",
+            required: true,
+            options: [
+              {label: "Residental", value: "Residental"},
+              {label: "Comercial", value: "Comercial"},
+              {label: "Competition", value: "Competition"},
+            ],
+          },
+          {
+            type: "string",
+            label: "German Type",
+            name: "germanType",
+            required: true,
+            options: [
+              {label: "Wohnsitz", value: "Wohnsitz"},
+              {label: "Kommerziell", value: "Kommerziell"},
+              {label: "Wettbewerb", value: "Wettbewerb"},
+            ],
+          },
+
           {
             type: "string",
             name: "city",
@@ -70,6 +92,13 @@ export default defineConfig({
             label: "Description",
             required: true,
           },
+          {
+            type: "string",
+            name: "germanDescription",
+            label: "German Description",
+            required: true,
+          },
+
           {
             type: "string",
             name: "surface",
@@ -125,14 +154,27 @@ export default defineConfig({
             name: "title",
             label: "Title",
             required: true,
-            isTitle: true,
           },
+          {
+            type: "string",
+            name: "germanTitle",
+            label: "German Title",
+            required: true,
+          },
+
           {
             type: "string",
             name: "description",
             label: "Description ",
             required: true,
           },
+          {
+            type: "string",
+            name: "germanDescription",
+            label: "German Description",
+            required: true,
+          },
+
           {
             type: "string",
             name: "thumbnail",
@@ -166,6 +208,7 @@ export default defineConfig({
             type: "string",
             label: "Role",
             name: "role",
+            required: true,
             options: [
               {label: "CEO", value: "Ceo"},
               {label: "Partner", value: "Partner"},
@@ -177,10 +220,31 @@ export default defineConfig({
           },
           {
             type: "string",
+            label: "German Role",
+            name: "germanRole",
+            required: true,
+            options: [
+              {label: "CEO", value: "Ceo"},
+              {label: "Partner", value: "Partner"},
+              {label: "Teamleiter", value: "Teamleiter"},
+              {label: "Aufsichtsperson", value: "Aufsichtsperson"},
+              {label: "Architekt", value: "Architekt"},
+              {label: "Finanzen", value: "Finanzen"},
+            ],
+          },
+          {
+            type: "string",
             name: "description",
             label: "Description ",
             required: true,
           },
+          {
+            type: "string",
+            name: "germanDescription",
+            label: "German Description",
+            required: true,
+          },
+
           {
             type: "string",
             name: "thumbnail",
