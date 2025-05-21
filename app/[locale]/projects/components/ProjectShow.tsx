@@ -6,13 +6,11 @@ import {useInView} from "react-intersection-observer";
 import {Button} from "@/components/ui/button";
 import {Spinner} from "@/components/ui/spinner";
 import dynamic from "next/dynamic";
-import {useParams} from "next/navigation";
 const ProjectCard = dynamic(() => import("./ProjectCard"), {
   ssr: true,
 });
 
 function ProjectShow({initialData, limit, type = null}) {
-  const params = useParams();
   const [loadMore, setLoadMore] = useState(true);
   const {ref, inView} = useInView();
 
