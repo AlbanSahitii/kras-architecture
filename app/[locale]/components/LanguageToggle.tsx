@@ -28,13 +28,17 @@ export default function LanguageToggle() {
   return (
     <div className="w-full flex justify-center">
       <Select onValueChange={handleChange} defaultValue={currentLocale}>
-        <SelectTrigger className="w-36 md:w-[90px] border-none px-4 py-2  text-black md:text-white rounded-md">
+        <SelectTrigger className="w-36 md:w-[120px] border-none px-4 py-2  text-black md:text-white rounded-md">
           <SelectValue placeholder="Select language" />
         </SelectTrigger>
         <SelectContent className="bg-white text-black md:bg-inherit md:text-white border-none">
           <SelectGroup>
-            <SelectItem value="de">🇩🇪 </SelectItem>
-            <SelectItem value="en">🇬🇧 </SelectItem>
+            <SelectItem value="de" className="text-black md:text-white">
+              🇩🇪 German
+            </SelectItem>
+            <SelectItem value="en" className="text-black md:text-white">
+              🇬🇧 English
+            </SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

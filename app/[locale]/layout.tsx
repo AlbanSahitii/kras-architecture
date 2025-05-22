@@ -8,6 +8,7 @@ import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
+import {Analytics} from "@vercel/analytics/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default async function RootLayout({children, params}: Props) {
               news={navbarMessages("news")}
             />
             {children}
+            <Analytics />
             <Footer
               address={footerMessages("address")}
               contactUs={footerMessages("contactUs")}
