@@ -13,6 +13,7 @@ import Link from "next/link";
 import {Menu} from "lucide-react";
 import Image from "next/image";
 import {useParams} from "next/navigation";
+import LanguageToggle from "./LanguageToggle";
 
 function Navbar({projects, aboutUs, news}) {
   const params = useParams();
@@ -39,7 +40,8 @@ function Navbar({projects, aboutUs, news}) {
           KRAS
         </p>
       </Link>
-      <ol className="hidden md:flex mx-2">
+
+      <ol className="hidden md:flex mx-2 items-center">
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href={`/${params!.locale}/projects`}>{projects}</Link>
         </li>
@@ -49,17 +51,11 @@ function Navbar({projects, aboutUs, news}) {
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href={`/${params!.locale}/news`}>{news}</Link>
         </li>
-        {params!.locale === "en" ? (
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <Link href={`/de`}>German</Link>
-          </li>
-        ) : (
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <Link href={`/en`}>Englisch</Link>
-          </li>
-        )}
+        <li className="ml-4">
+          <LanguageToggle />
+        </li>
       </ol>
-      <div className=" md:hidden">
+      <div className="md:hidden">
         <Drawer open={isOpen} onOpenChange={setIsOpen}>
           <DrawerTrigger onClick={e => e.currentTarget.blur()}>
             <Menu strokeWidth={3} />
@@ -87,19 +83,9 @@ function Navbar({projects, aboutUs, news}) {
                   {aboutUs}
                 </Link>
               </DrawerTitle>
-              {params!.locale === "en" ? (
-                <DrawerTitle className="font-normal m-3">
-                  <Link href={`/de`} onClick={closeDrawer}>
-                    German
-                  </Link>
-                </DrawerTitle>
-              ) : (
-                <DrawerTitle className="font-normal m-3">
-                  <Link href={`/en`} onClick={closeDrawer}>
-                    Englisch
-                  </Link>
-                </DrawerTitle>
-              )}
+              <DrawerTitle className="font-normal m-3 ">
+                <LanguageToggle />
+              </DrawerTitle>
             </DrawerHeader>
           </DrawerContent>
         </Drawer>
