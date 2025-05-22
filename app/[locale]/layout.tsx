@@ -9,6 +9,7 @@ import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {Analytics} from "@vercel/analytics/next";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +40,9 @@ export default async function RootLayout({children, params}: Props) {
 
   return (
     <html lang={locale}>
+      <Head>
+        <meta name="google" content="notranslate" />
+      </Head>
       <body className={`${poppins.className} `}>
         <ReactQueryProvider>
           <NextIntlClientProvider>
