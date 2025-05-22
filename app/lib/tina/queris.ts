@@ -1,5 +1,19 @@
-import {Employee, FetchProjectsArgs} from "@/app/types";
 import {client} from "@/tina/__generated__/client";
+
+export interface FetchProjectsArgs {
+  type?: string;
+  first?: number | null;
+  after?: string | null | undefined;
+}
+
+export interface Employee {
+  fullName: string | undefined;
+  role: string | null | undefined;
+  germanRole: string | null | undefined;
+  thumbnail: string | undefined;
+  description: string | undefined;
+  germanDescription: string | undefined;
+}
 
 export const getAllProjects = async ({
   first = null,
@@ -16,6 +30,7 @@ export const getAllProjects = async ({
         address: p?.node?.address,
         city: p?.node?.city,
         type: p?.node?.type,
+        germanType: p?.node?.germanType,
         date: p?.node?.date,
         description: p?.node?.description,
         surface: p?.node?.surface,
@@ -24,6 +39,8 @@ export const getAllProjects = async ({
         thumbnail: p?.node?.thumbnail,
         projectImages: p?.node?.images,
         title: p?.node?.title,
+        germanTitle: p?.node?.germanTitle,
+        germanDescription: p?.node?.germanDescription,
       };
     });
     return {
@@ -82,6 +99,7 @@ export const getProjectByType = async ({
         address: p?.node?.address,
         city: p?.node?.city,
         type: p?.node?.type,
+        germanType: p?.node?.germanType,
         date: p?.node?.date,
         description: p?.node?.description,
         surface: p?.node?.surface,
@@ -90,6 +108,8 @@ export const getProjectByType = async ({
         thumbnail: p?.node?.thumbnail,
         projectImages: p?.node?.images,
         title: p?.node?.title,
+        germanTitle: p?.node?.germanTitle,
+        germanDescription: p?.node?.germanDescription,
       };
     });
 
@@ -124,7 +144,9 @@ export const getEmployees = async () => {
       const employee: Employee = {
         fullName: emp?.node?.full_Name,
         role: emp?.node?.role,
+        germanRole: emp?.node?.germanRole,
         description: emp?.node?.description,
+        germanDescription: emp?.node?.germanDescription,
         thumbnail: emp?.node?.thumbnail,
       };
 

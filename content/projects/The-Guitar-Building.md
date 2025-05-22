@@ -1,10 +1,13 @@
 ---
 title: The Guitar Building
+germanTitle: Das Gitarrengebäude
 type: Competition
+germanType: Wettbewerb
 city: Minnesota
 address: Eagle Lane 3029
 date: 25/11/2024
 description: The unique design of the guitar building makes the tourists go crazy !!!
+germanDescription: Das einzigartige Design des Gitarrengebäudes lässt die Touristen verrückt werden !!!
 surface: 700m
 floors: '1'
 investor: Albani

@@ -1,9 +1,12 @@
 ---
+germanTitle: Stadt der Zukunft
 title: Future City
 type: Residental
+germanType: Wohnsitz
 city: 'Albany, NY'
 address: Oak Drive
 date: 11/11/2011
+germanDescription: Das einzigartige Design des auf dem Kopf stehenden Hauses lässt die Touristen verrückt werden !!!
 description: The unique design of the upside down house makes the tourists go crazy !!!
 surface: 2000km
 floors: '69'

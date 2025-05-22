@@ -1,0 +1,56 @@
+{
+  "Navbar": {
+    "projects": "Projects",
+    "aboutUs": "About Us",
+    "news": "News"
+  },
+  "Footer": {
+    "address": "Address",
+    "contactUs": "Contact Us",
+    "socials": "Socials"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Our focus is on developing aesthetically striking and individual architectural projects that inspire and improve the way people live.",
+      "newsTitle": "News",
+      "learnMoreAboutUs": "Learn More About Us"
+    }
+  },
+  "Projects": {
+    "projectTitle": "Projects",
+    "all": "All"
+  },
+  "AboutUs": {
+    "title": "Kras is an innovative and progressive practice.",
+    "description": {
+      "first": "In 2025, we founded Kras to offer a unique architectural studio that provides comfort, fosters a friendly atmosphere, and encourages creativity.",
+      "second": "At Kras, we prioritize our work environment and the atmosphere we cultivate within it. We believe that a nurturing and stimulating workspace enhances creativity and productivity, allowing our team to thrive.",
+      "third": "Our aim was to create a space where innovative ideas blend seamlessly with the latest technologies and materials, ensuring our designs remain fresh and vibrant while staying true to our identity.",
+      "fourth": "Our commitment to environmental responsibility is woven into our design philosophy, as we strive to create spaces that are not only aesthetically pleasing but also sustainable.",
+      "creatingSince": "Creating Since 2025"
+    },
+    "roles": {
+      "ceo": "CEO",
+      "partner": "Partner",
+      "teamLeader": "Team Leader",
+      "supervisor": "Supervisor",
+      "architect": "Architect",
+      "finance": "Finance"
+    },
+
+    "team": "Team",
+    "ceoDescription": "The Chief Executive Officer (CEO) holds the top executive position within a company. They oversee the organization's overall operations and resource management, make key strategic decisions, and serve as the primary link between the board of directors and the company's day-to-day activities",
+    "partnerDescription": "Our Partners are individuals or organizations that have established a formal collaboration with our company. They contribute essential expertise, resources, and networks that support our strategic objectives and help us broaden our impact in the market.",
+    "teamLeaderDescription": "Our Team Leaders are seasoned professionals responsible for directing and supporting teams within specific projects or departments. They set clear goals, delegate tasks, offer ongoing guidance, and ensure that projects are completed efficiently and successfully.",
+    "supervisorDescription": "Our Supervisors manage the full project lifecycle—from planning and execution to completion. They collaborate with stakeholders to define objectives, develop detailed project plans, allocate resources effectively, track progress, and ensure timely, on-budget delivery that meets all quality standards.",
+    "architectDescription": "Our Architects are expert professionals who design the core structure and architecture of our software systems. They evaluate technical requirements, craft robust solutions, and ensure our systems are built to be scalable, secure, and high-performing.",
+    "financeDescription": "Our Finance team oversees the financial well-being of the company. They manage budgeting, forecasting, financial planning, accounting, and reporting to ensure we meet our obligations, maintain profitability, and deliver accurate financial insights."
+  },
+  "SingleProject": {
+    "date": "Date",
+    "location": "Location",
+    "projectImages": "Project Images",
+    "nextProject": "Next Project",
+    "otherProject": "Other Project"
+  }
+}

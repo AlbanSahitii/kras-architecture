@@ -1,0 +1,55 @@
+{
+  "Navbar": {
+    "projects": "Projekte",
+    "aboutUs": "Über uns",
+    "news": "Nachrichten"
+  },
+  "Footer": {
+    "address": "Adresse",
+    "contactUs": "Kontakt",
+    "socials": "Soziale Netzwerke"
+  },
+  "HomePage": {
+    "hero": {
+      "title": "Unser Schwerpunkt liegt auf der Entwicklung ästhetisch auffälliger und individueller Architekturprojekte, die die Menschen inspirieren und ihre Lebensqualität verbessern.",
+      "learnMoreAboutUs": "Erfahren Sie mehr über uns",
+      "newsTitle": "Nachrichten"
+    }
+  },
+  "Projects": {
+    "projectTitle": "Projekte",
+    "all": "Alle"
+  },
+  "AboutUs": {
+    "title": "Kras ist eine innovative und fortschrittliche Praxis.",
+    "description": {
+      "first": "Im Jahr 2025 gründeten wir Kras, um ein einzigartiges Architekturbüro zu schaffen, das Komfort bietet, eine freundliche Atmosphäre schafft und die Kreativität fördert.",
+      "second": "Bei Kras legen wir großen Wert auf unser Arbeitsumfeld und die Atmosphäre, die wir darin kultivieren. Wir sind davon überzeugt, dass ein anregender und stimulierender Arbeitsplatz die Kreativität und Produktivität steigert und es unserem Team ermöglicht, sich zu entfalten.",
+      "third": "Unser Ziel war es, einen Raum zu schaffen, in dem innovative Ideen nahtlos mit den neuesten Technologien und Materialien verschmelzen, um sicherzustellen, dass unsere Designs frisch und lebendig bleiben und gleichzeitig unserer Identität treu bleiben.",
+      "fourth": "Unser Engagement für die Umwelt ist in unsere Designphilosophie eingeflochten, da wir uns bemühen, Räume zu schaffen, die nicht nur ästhetisch ansprechend, sondern auch nachhaltig sind.",
+      "creatingSince": "Schaffen seit 2025"
+    },
+    "roles": {
+      "ceo": "CEO",
+      "partner": "Partner",
+      "teamLeader": "Teamleiter",
+      "supervisor": "Aufsichtsperson",
+      "architect": "Architekt",
+      "finance": "Finanzen"
+    },
+    "team": "Team",
+    "ceoDescription": "Der Chief Executive Officer (CEO) hat die oberste Führungsposition in einem Unternehmen inne. Er beaufsichtigt den Gesamtbetrieb und das Ressourcenmanagement der Organisation, trifft wichtige strategische Entscheidungen und ist das wichtigste Bindeglied zwischen dem Vorstand und dem Tagesgeschäft des Unternehmens.",
+    "partnerDescription": "Unsere Partner sind Einzelpersonen oder Organisationen, die eine formelle Zusammenarbeit mit unserem Unternehmen eingegangen sind. Sie bringen wesentliches Fachwissen, Ressourcen und Netzwerke ein, die unsere strategischen Ziele unterstützen und uns helfen, unseren Einfluss auf dem Markt zu vergrößern.",
+    "teamLeaderDescription": "Unsere Teamleiter sind erfahrene Fachleute, die für die Leitung und Unterstützung von Teams innerhalb bestimmter Projekte oder Abteilungen zuständig sind. Sie setzen klare Ziele, delegieren Aufgaben, bieten kontinuierliche Beratung und stellen sicher, dass Projekte effizient und erfolgreich abgeschlossen werden.",
+    "supervisorDescription": "Unsere Supervisoren verwalten den gesamten Lebenszyklus eines Projekts - von der Planung über die Ausführung bis zum Abschluss. Sie arbeiten mit den Beteiligten zusammen, um die Ziele zu definieren, detaillierte Projektpläne zu entwickeln, Ressourcen effektiv zuzuweisen, den Fortschritt zu verfolgen und eine pünktliche, budgetgerechte Lieferung zu gewährleisten, die alle Qualitätsstandards erfüllt.",
+    "architectDescription": "Unsere Architekten sind erfahrene Fachleute, die die Kernstruktur und Architektur unserer Softwaresysteme entwerfen. Sie bewerten technische Anforderungen, entwickeln robuste Lösungen und sorgen dafür, dass unsere Systeme skalierbar, sicher und leistungsstark sind.",
+    "financeDescription": "Unser Finanzteam kümmert sich um das finanzielle Wohlergehen des Unternehmens. Es kümmert sich um Budgetierung, Prognosen, Finanzplanung, Buchhaltung und Berichterstattung, um sicherzustellen, dass wir unseren Verpflichtungen nachkommen, die Rentabilität aufrechterhalten und genaue finanzielle Einblicke liefern."
+  },
+  "SingleProject": {
+    "date": "Datum",
+    "location": "Standort",
+    "projectImages": "Projekt-Bilder",
+    "nextProject": "Nächstes Projekt",
+    "otherProject": "Anderes Projekt"
+  }
+}

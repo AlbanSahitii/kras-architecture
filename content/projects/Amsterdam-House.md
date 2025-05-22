@@ -1,10 +1,14 @@
 ---
 title: Amsterdam Houseeeeeeee
+germanTitle: Amsterdam HouseeeeeeeeGERMAN
 type: Residental
+germanType: Wohnsitz
+
 city: Amsterdam
 address: Red light
 date: 14/12/2002
 description: Red light Discrict houseeeeeeee
+germanDescription: Red light Discrict houseeeeeeeeGERMAN
 surface: 300m2
 floors: '6'
 investor: Albani
@@ -19,4 +23,3 @@ images:
   - src: /project-details2.jpg
   - src: /project-details1.jpg
 ---
-
