@@ -3,7 +3,8 @@ title: Amsterdam Houseeeeeeee
 germanTitle: Amsterdam HouseeeeeeeeGERMAN
 type: Residental
 germanType: Wohnsitz
-
+titleDescription: Title Description is here
+germanTitleDescription: Title Description is here
 city: Amsterdam
 address: Red light
 date: 14/12/2002

@@ -99,6 +99,18 @@ export default defineConfig({
             label: "German Description",
             required: true,
           },
+          {
+            type: "string",
+            name: "germanTitleDescription",
+            label: "German Title Description",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "titleDescription",
+            label: "Title Description",
+            required: true,
+          },
 
           {
             type: "string",

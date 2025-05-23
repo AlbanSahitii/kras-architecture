@@ -40,7 +40,8 @@ export const getAllProjects = async ({
         projectImages: p?.node?.images,
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,
-        germanDescription: p?.node?.germanDescription,
+        germanTitleDescription: p?.node?.germanTitleDescription,
+        titleDescription: p?.node?.titleDescription,
       };
     });
     return {
@@ -110,6 +111,8 @@ export const getProjectByType = async ({
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,
         germanDescription: p?.node?.germanDescription,
+        germanTitleDescription: p?.node?.germanTitleDescription,
+        titleDescription: p?.node?.titleDescription,
       };
     });
 

@@ -51,6 +51,9 @@
     "location": "Location",
     "projectImages": "Project Images",
     "nextProject": "Next Project",
-    "otherProject": "Other Project"
+    "otherProject": "Other Project",
+    "surface": "Surface",
+    "floors": "Floors",
+    "investor": "Investor"
   }
 }

@@ -50,6 +50,9 @@
     "location": "Standort",
     "projectImages": "Projekt-Bilder",
     "nextProject": "Nächstes Projekt",
-    "otherProject": "Anderes Projekt"
+    "otherProject": "Anderes Projekt",
+    "surface": "Oberfläche",
+    "floors": "Die Etage",
+    "investor": "Investor"
   }
 }

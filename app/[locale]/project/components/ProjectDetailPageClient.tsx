@@ -12,6 +12,9 @@ function ProjectDetailPageClient({
   projectImagesText,
   nextProjectText,
   otherProjectText,
+  surfaceText,
+  floorsText,
+  investorText,
 }) {
   const params = useParams();
   const projectTitleRef = useRef(null);
@@ -55,21 +58,46 @@ function ProjectDetailPageClient({
     <>
       <div className=" px-3 pt-40 md:px-20">
         <section className="">
-          <h1 className="tracking-wide">{}</h1>
+          <h1 className="tracking-wide text-sm md:text-2xl">
+            {params!.locale === "en" ? project.type : project.germanType}
+          </h1>
           <h1 className="text-2xl md:text-8xl tracking-wider">
             {params!.locale === "en" ? project.title : project.germanTitle}
           </h1>
         </section>
-        <section className="mt-5 flex justify-center flex-col md:flex-row md:justify-between md:px-20">
-          <div className="flex justify-between  md:flex-none md:pt-32 md:w-1/5">
-            <div className="mr-10 ">
-              <p>{dateText}</p>
-              <p>{project.date}</p>
-            </div>
-            <div>
-              <p>{locationText}</p>
-              <p>{project.city}</p>
-            </div>
+        <section className="mt-5 flex justify-center flex-col md:flex-row md:justify-between md:px-2">
+          <div className="flex justify-start flex-wrap md:h-2/3  md:pt-32 md:w-1/5">
+            {project.date && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">{dateText}</p>
+                <p className="text-xl">{project.date}</p>
+              </div>
+            )}
+            {project.city && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">{locationText}</p>
+                <p className="text-xl">{project.city}</p>
+              </div>
+            )}
+
+            {project.surface && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">{surfaceText}</p>
+                <p className="text-xl">{project.surface}</p>
+              </div>
+            )}
+            {project.investor && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">{investorText}</p>
+                <p className="text-xl">{project.investor}</p>
+              </div>
+            )}
+            {project.floors && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">{floorsText}</p>
+                <p className="text-xl">{project.floors}</p>
+              </div>
+            )}
           </div>
           <div className=" md:ml-10 md:w-3/5">
             <motion.img
@@ -92,7 +120,9 @@ function ProjectDetailPageClient({
           }}
           transition={{duration: 0.6}}
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          {params!.locale === "en"
+            ? project.titleDescription
+            : project.germanTitleDescription}
         </motion.h1>
         <motion.p
           ref={projectDescriptionRef}
