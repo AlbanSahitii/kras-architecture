@@ -42,6 +42,9 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
       projectImagesText={pageMessages("projectImages")}
       nextProjectText={pageMessages("nextProject")}
       otherProjectText={pageMessages("otherProject")}
+      surfaceText={pageMessages("surface")}
+      floorsText={pageMessages("floors")}
+      investorText={pageMessages("investor")}
     />
   );
 }

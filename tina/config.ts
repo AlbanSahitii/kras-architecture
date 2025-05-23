@@ -37,6 +37,7 @@ export default defineConfig({
             type: "string",
             name: "title",
             label: "Title",
+            isTitle: true,
             required: true,
           },
           {
@@ -98,6 +99,18 @@ export default defineConfig({
             label: "German Description",
             required: true,
           },
+          {
+            type: "string",
+            name: "germanTitleDescription",
+            label: "German Title Description",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "titleDescription",
+            label: "Title Description",
+            required: true,
+          },
 
           {
             type: "string",
@@ -130,7 +143,9 @@ export default defineConfig({
           {
             type: "object",
             name: "images",
-            label: "Images",
+            label:
+              "Images - Finish all information above before uploading list of images",
+            required: true,
             list: true,
             fields: [
               {
