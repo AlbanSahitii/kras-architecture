@@ -68,6 +68,28 @@ export default defineConfig({
               {label: "Wettbewerb", value: "Wettbewerb"},
             ],
           },
+          {
+            type: "string",
+            label: "German Phase",
+            name: "germanPhase",
+            required: true,
+            options: [
+              {label: "Vollendet", value: "Vollendet"},
+              {label: "Konzeptionell", value: "Konzeptionell"},
+              {label: "Fortlaufend", value: "Fortlaufend"},
+            ],
+          },
+          {
+            type: "string",
+            label: "Phase",
+            name: "phase",
+            required: true,
+            options: [
+              {label: "On-going", value: "On-going"},
+              {label: "Completed", value: "Completed"},
+              {label: "Conceptual", value: "Conceptual"},
+            ],
+          },
 
           {
             type: "string",

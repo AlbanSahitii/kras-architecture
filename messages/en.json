@@ -53,6 +53,10 @@
     "nextProject": "Next Project",
     "otherProject": "Other Project",
     "surface": "Surface",
+    "completedProject": "Completed",
+    "onGoingProject": "On-going",
+    "conceptualProject": "Conceptual",
+
     "floors": "Floors",
     "investor": "Investor"
   }

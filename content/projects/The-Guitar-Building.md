@@ -7,6 +7,8 @@ city: Minnesota
 address: Eagle Lane 3029
 titleDescription: Title Description is here
 germanTitleDescription: Title Description is here
+germanPhase: Vollendet
+phase: Conceptual
 
 date: 25/11/2024
 description: The unique design of the guitar building makes the tourists go crazy !!!

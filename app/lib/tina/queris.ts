@@ -38,6 +38,8 @@ export const getAllProjects = async ({
         investor: p?.node?.investor,
         thumbnail: p?.node?.thumbnail,
         projectImages: p?.node?.images,
+        phase: p?.node?.phase,
+        germanPhase: p?.node?.germanPhase,
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,
         germanTitleDescription: p?.node?.germanTitleDescription,
@@ -107,6 +109,9 @@ export const getProjectByType = async ({
         floors: p?.node?.floors,
         investor: p?.node?.investor,
         thumbnail: p?.node?.thumbnail,
+        phase: p?.node?.phase,
+        germanPhase: p?.node?.germanPhase,
+
         projectImages: p?.node?.images,
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,

@@ -15,8 +15,22 @@ function ProjectDetailPageClient({
   surfaceText,
   floorsText,
   investorText,
+  onGoingProject,
+  completedProject,
+  conceptualProject,
 }) {
   const params = useParams();
+  let projectType = "";
+  if (project.phase) {
+    if (project.phase === "Completed") {
+      projectType = completedProject;
+    } else if (project.phase === "On-Going") {
+      projectType = onGoingProject;
+    } else if (project.phase === "Conceptual") {
+      projectType = conceptualProject;
+    }
+  }
+
   const projectTitleRef = useRef(null);
   const projectDescriptionRef = useRef(null);
   const isProjectTitleInView = useInView(projectTitleRef, {once: true});
@@ -99,6 +113,12 @@ function ProjectDetailPageClient({
               <div className="mr-6 mt-4">
                 <p className="text-sm">{floorsText}</p>
                 <p className="text-xl">{project.floors}</p>
+              </div>
+            )}
+            {projectType.length > 1 && (
+              <div className="mr-6 mt-4">
+                <p className="text-sm">Phase</p>
+                <p className="text-xl">{projectType}</p>
               </div>
             )}
           </div>

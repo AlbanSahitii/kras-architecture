@@ -6,6 +6,8 @@ germanType: Wohnsitz
 city: 'Albany, NY'
 titleDescription: Title Description is here
 germanTitleDescription: Title Description is here
+germanPhase: Vollendet
+phase: Completed
 
 address: Oak Drive
 date: 11/11/2011
