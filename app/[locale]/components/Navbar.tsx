@@ -108,7 +108,7 @@ function Navbar({projects, aboutUs, news}) {
           !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
         }
         exit="exit"
-        className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] "
+        className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] md:left-[48%] "
       >
         KRAS
       </motion.p>
