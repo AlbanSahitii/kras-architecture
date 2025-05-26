@@ -6,16 +6,16 @@ export default function LogoAnimation() {
   const triangleRight = useRef<SVGPolygonElement>(null);
   const triangleBottom = useRef<SVGPolygonElement>(null);
   const titleWrapper = useRef<HTMLDivElement>(null);
+  const secondTitleWrapper = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    if (!titleWrapper.current) return;
-
-    if (!titleWrapper.current) return;
+    if (!titleWrapper.current || !secondTitleWrapper.current) return;
 
     gsap.set(triangleRight.current, {x: 300, opacity: 0});
     gsap.set(triangleBottom.current, {y: 300, opacity: 0});
     gsap.set(titleWrapper.current, {opacity: 0});
+    gsap.set(secondTitleWrapper.current, {opacity: 0});
     gsap.set(svgRef.current, {opacity: 1});
 
     const tl = gsap.timeline({delay: 0.5});
@@ -34,7 +34,7 @@ export default function LogoAnimation() {
         },
         "<"
       )
-      .to(titleWrapper.current, {
+      .to([titleWrapper.current, secondTitleWrapper.current], {
         x: 0,
         opacity: 1,
         duration: 1,
@@ -42,9 +42,11 @@ export default function LogoAnimation() {
   }, []);
 
   return (
-    <div className=" w-full h-screen flex justify-center items-center">
-      <div className="relative  max-w-[500px] top-0 left-0 z-10">
-        <div className="">
+    <div className=" w-full h-screen flex justify-center items-center snap-start">
+      <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5 z-10  hidden md:block"></div>
+
+      <div className="relative  max-w-[500px] top-0 left-[30px] z-20">
+        <div className="" id="page1">
           <svg
             ref={svgRef}
             viewBox="0 0 500 500"
@@ -72,9 +74,15 @@ export default function LogoAnimation() {
         </div>
         <h1
           ref={titleWrapper}
-          className="absolute top-52 left-20 opacity-0 text-5xl tracking-widest "
+          className="absolute top-48 left-[85px] opacity-0 text-5xl tracking-widest "
         >
           KRAS
+        </h1>
+        <h1
+          ref={secondTitleWrapper}
+          className="absolute top-60 left-[87px] opacity-0 text-xs "
+        >
+          Architecture & Design
         </h1>
       </div>
     </div>

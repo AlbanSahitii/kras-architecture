@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import EmployeesCard from "./EmployeesCard";
+import {AnimatedLines} from "./AnimatedLines";
 
 function AboutClientSide({
   employees,
@@ -20,22 +21,35 @@ function AboutClientSide({
 }) {
   return (
     <>
-      <div className="pt-40 px-5 w-full md:flex md:justify-between ">
+      <div className="pt-40 px-5 w-full md:flex md:justify-between">
         <div className="md:flex md:flex-col md:w-4/5">
-          <h1 className="text-6xl w-full ">{aboutUsTitle}</h1>
-          <div className="w-full mt-10 md:flex md:flex-wrap ">
-            <p className="m-3 md:w-2/5">{firstDescription}</p>
-            <p className="m-3 md:w-2/5">{secondDescription}</p>
-            <p className="m-3 md:w-2/5">{thirdDescription}</p>
-            <p className="m-3 md:w-2/5">{fourthDescription}</p>
+          <h1 className="text-6xl w-full ">
+            <AnimatedLines text={aboutUsTitle} />
+          </h1>
+          <div className="w-full mt-10 md:flex md:flex-wrap">
+            <div id="page0" className="m-3 md:w-2/5">
+              <AnimatedLines text={firstDescription} />
+            </div>
+            <div className="m-3 md:w-2/5">
+              <AnimatedLines text={secondDescription} />
+            </div>
+            <div className="m-3 md:w-2/5">
+              <AnimatedLines text={thirdDescription} />
+            </div>
+            <div className="m-3 md:w-2/5">
+              <AnimatedLines text={fourthDescription} />
+            </div>
           </div>
         </div>
-        <p className="my-6 font-bold md:flex md:flex-col md:justify-end">
-          <i>{creatingSince}</i>
-        </p>
+        <div className="my-6 font-bold md:flex md:flex-col md:justify-end">
+          <i>
+            <AnimatedLines text={creatingSince} />
+          </i>
+        </div>
       </div>
+
       <div>
-        <h1 className=" pt-10 text-5xl flex justify-center  md:pt-40">
+        <h1 className=" pt-10 text-5xl flex justify-center  md:pt-20">
           {team}
         </h1>
 

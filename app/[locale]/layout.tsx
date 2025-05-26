@@ -18,6 +18,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Kras Architecture",
   description: "Kras Architecture",
+  viewport: {
+    width: "device-width",
+    initialScale: 1.0,
+    interactiveWidget: "resizes-content", // Add this line
+  },
 };
 
 export const viewport: Viewport = {

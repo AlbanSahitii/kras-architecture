@@ -66,7 +66,10 @@ function ProjectDetailPageClient({
           </h1>
         </section>
         <section className="mt-5 flex justify-center flex-col md:flex-row md:justify-between md:px-2">
-          <div className="flex justify-start flex-wrap md:h-2/3  md:pt-32 md:w-1/5">
+          <div
+            id="page0"
+            className="flex justify-start flex-wrap md:h-2/3  md:pt-32 md:w-1/5"
+          >
             {project.date && (
               <div className="mr-6 mt-4">
                 <p className="text-sm">{dateText}</p>

@@ -167,9 +167,14 @@
     scrollbar-color: #444 #1a1a1a;
   }
 }
+html {
+  scroll-snap-type: y proximity;
+}
 
 body {
   background: var(--background);
   color: white;
+  min-height: 100vh;
+
   font-family: Arial, Helvetica, sans-serif;
 }

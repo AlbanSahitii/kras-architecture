@@ -90,12 +90,12 @@ const MainpageClient = ({
       <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black">
         <LogoAnimation />
       </section>
-      <section className="relative">
+      <section className="relative " id="page1">
         {projectsData.map((item, index) => (
           <div
             key={index}
             ref={divRef.current[index]}
-            className={`relative w-full min-h-lvh bg-black flex flex-col-reverse overflow-hidden`}
+            className={`relative w-full h-screen bg-black flex flex-col-reverse overflow-hidden snap-start`}
           >
             <Image
               className="absolute w-full min-h-[100vh] object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 hover:scale-100"
@@ -110,14 +110,14 @@ const MainpageClient = ({
             </Link>
             <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
               <Link href={`/${params!.locale}/projects/${item.type}`}>
-                <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+                <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                   {params!.locale === "en" ? item.type : item.germanType}
                 </p>
               </Link>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.city}
               </p>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
                 {item.date}
               </p>
             </div>
@@ -125,10 +125,10 @@ const MainpageClient = ({
         ))}
       </section>
 
-      <section className="h-[70lvh] w-full flex flex-col justify-center items-center px-10 md:px-20 ">
+      <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20 snap-start overflow-hidden">
         <motion.p
           ref={parahraphRef}
-          className="text-center text-2xl md:text-4xl transform"
+          className="text-center text-2xl md:text-4xl transform pt-36"
           initial={{opacity: 0, y: 50}}
           animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
           transition={{duration: 0.6}}
@@ -136,7 +136,7 @@ const MainpageClient = ({
           {heroTitle}
         </motion.p>
         <motion.p
-          className="w-fit mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out"
+          className="w-fit mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out my-20"
           ref={linkRef}
           initial={{opacity: 0, y: 30}}
           animate={{opacity: isLinkInView ? 1 : 0, y: isLinkInView ? 0 : 50}}
@@ -146,9 +146,11 @@ const MainpageClient = ({
         </motion.p>
       </section>
 
-      <h1 className="text-center text-3xl md:text-5xl md:pb-16 ">{newTitle}</h1>
+      <h1 className="text-center text-3xl md:text-5xl md:pb-6 md:pt-20 snap-start">
+        {newTitle}
+      </h1>
 
-      <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly">
+      <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly snap-start">
         {projectsData.map((project, index) => (
           <div
             key={index}

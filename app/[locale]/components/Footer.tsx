@@ -10,7 +10,7 @@ import Link from "next/link";
 
 function Footer({address, contactUs, socials}) {
   return (
-    <footer className="relative w-full h-1/3 flex justify-center items-center">
+    <footer className="relative w-full h-1/3 flex justify-center items-center snap-start">
       <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5"></div>
 
       <div className=" w-full absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>

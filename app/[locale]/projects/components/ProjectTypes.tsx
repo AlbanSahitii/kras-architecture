@@ -7,7 +7,7 @@ function ProjectTypes({allProjects, projectTitle}) {
   const params = useParams();
   return (
     <>
-      <section>
+      <section id="page0">
         <h1 className="text-4xl pt-40 mx-10 mb-9">{projectTitle}</h1>
       </section>
       <div className="w-full pb-10">
