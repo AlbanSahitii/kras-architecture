@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import {useInView, motion} from "framer-motion";
 import ImagesAlbum from "./ImagesAlbum";
 import {useParams} from "next/navigation";
