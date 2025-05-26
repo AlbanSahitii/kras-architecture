@@ -1,5 +1,6 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {motion} from "framer-motion";
 import {
   Drawer,
   DrawerContent,
@@ -18,29 +19,99 @@ import LanguageToggle from "./LanguageToggle";
 function Navbar({projects, aboutUs, news}) {
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
+  const [isPage1InView, setIsPage1InView] = useState(false);
+  const [isPage0InView, setIsPage0InView] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // New state to track screen size
 
   const closeDrawer = () => {
     setIsOpen(false);
   };
+
+  // Check if page1 or page0 is in view on scroll
+  useEffect(() => {
+    const checkPageVisibility = () => {
+      const page1 = document.getElementById("page1");
+      const page0 = document.getElementById("page0");
+
+      if (
+        page1 &&
+        page1.getBoundingClientRect().top < window.innerHeight &&
+        page1.getBoundingClientRect().bottom > 0
+      ) {
+        setIsPage1InView(true);
+      } else {
+        setIsPage1InView(false);
+      }
+
+      if (
+        page0 &&
+        page0.getBoundingClientRect().top < window.innerHeight &&
+        page0.getBoundingClientRect().bottom > 0
+      ) {
+        setIsPage0InView(true);
+      } else {
+        setIsPage0InView(false);
+      }
+    };
+
+    window.addEventListener("scroll", checkPageVisibility);
+    checkPageVisibility(); // Check on mount
+
+    return () => {
+      window.removeEventListener("scroll", checkPageVisibility);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Check on mount
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const logoAndTitleAnimation = {
+    hidden: {y: -50, opacity: 0},
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {type: "spring", stiffness: 200},
+    },
+    exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
+  };
+
   return (
     <nav
-      className={`z-40 fixed w-lvw pt-10 p-10  md:p-12 flex justify-between items-center bg-transparent`}
+      className={`z-40 fixed w-lvw px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  rounded-b-2xl bg-[rgba(255,255,255,0.01)] "`}
     >
       <Link href="/">
-        <Image
+        <motion.div
           className="border rounded-sm"
-          src={Logo50.src}
-          alt="Logo"
-          width={50}
-          height={50}
-        />
-      </Link>
-      <Link href={`/${params!.locale}/`}>
-        <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 [text-shadow:1px_1px_2px_black] tracking-widest">
-          KRAS
-        </p>
+          variants={logoAndTitleAnimation}
+          animate={
+            !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
+          }
+          exit="exit"
+        >
+          <Image src={Logo50.src} alt="Logo" width={50} height={50} />
+        </motion.div>
       </Link>
 
+      <motion.p
+        variants={logoAndTitleAnimation}
+        animate={
+          !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
+        }
+        exit="exit"
+        className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-1/2 "
+      >
+        KRAS
+      </motion.p>
       <ol className="hidden md:flex mx-2 items-center">
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href={`/${params!.locale}/projects`}>{projects}</Link>
@@ -62,7 +133,7 @@ function Navbar({projects, aboutUs, news}) {
           </DrawerTrigger>
           <DrawerContent
             aria-describedby={undefined}
-            className="bg-white text-black "
+            className="bg-white text-black"
           >
             <DrawerHeader>
               <DrawerTitle className="font-normal m-3">
@@ -83,7 +154,7 @@ function Navbar({projects, aboutUs, news}) {
                   {aboutUs}
                 </Link>
               </DrawerTitle>
-              <DrawerTitle className="font-normal m-3 ">
+              <DrawerTitle className="font-normal m-3">
                 <LanguageToggle />
               </DrawerTitle>
             </DrawerHeader>
