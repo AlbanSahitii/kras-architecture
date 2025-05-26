@@ -51,6 +51,10 @@
     "projectImages": "Projekt-Bilder",
     "nextProject": "Nächstes Projekt",
     "otherProject": "Anderes Projekt",
+    "completedProject": "Vollendet",
+    "onGoingProject": "Fortlaufend",
+    "conceptualProject": "Konzeptionell",
+
     "surface": "Oberfläche",
     "floors": "Die Etage",
     "investor": "Investor"

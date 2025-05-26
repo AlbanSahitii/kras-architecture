@@ -6,7 +6,8 @@ germanType: Kommerziell
 city: 'New Jersey, Camden'
 titleDescription: Title Description is here
 germanTitleDescription: Title Description is here
-
+germanPhase: Fortlaufend
+phase: On-going
 address: Prospect Street 1264
 date: 04/05/2020
 description: The unique design of the white building the tourists go crazy !!!
