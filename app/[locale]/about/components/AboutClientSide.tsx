@@ -51,7 +51,10 @@ function AboutClientSide({
 
   return (
     <>
+      <div className="w-full fixed inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-[0.01] z-10 "></div>
+
       <div id="page0" className="h-5"></div>
+
       <div className="pt-28 px-5 w-full flex justify-center items-center">
         <div className="md:flex md:flex-col md:w-4/5">
           <h1 className="text-4xl w-full leading-snug">
