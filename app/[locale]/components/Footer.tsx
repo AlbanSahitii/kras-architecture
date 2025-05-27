@@ -30,7 +30,7 @@ function Footer({address, contactUs, socials}) {
         >
           <AccordionItem value="item-1">
             <AccordionTrigger>{`${address}?`}</AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="ml-2">
               <MapPin className="inline mr-2" />
               Soon
             </AccordionContent>
@@ -38,26 +38,30 @@ function Footer({address, contactUs, socials}) {
           <AccordionItem value="item-2">
             <AccordionTrigger>{`${contactUs}?`}</AccordionTrigger>
 
-            <AccordionContent>
-              <MailIcon className="inline mr-2" />
-              contact@krasarchitects.com
+            <AccordionContent className="ml-2">
+              <a href={`mailto:contact@krasarchitects.com`}>
+                <MailIcon className="inline mr-2" />
+                contact@krasarchitects.com
+              </a>
             </AccordionContent>
-            <AccordionContent>
-              <PhoneIncoming className="inline mr-2" />
-              +49 17684775093
+            <AccordionContent className="ml-2">
+              <a href={`tel:+4917684775093`}>
+                <PhoneIncoming className="inline mr-2" />
+                +49 17684775093
+              </a>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>{`${socials}?`}</AccordionTrigger>
-            <AccordionContent className="">
+            <AccordionContent className="ml-2">
               <Facebook className="inline mr-2" />
               <Link href="facebook.com">Facebook</Link>
             </AccordionContent>
-            <AccordionContent>
+            <AccordionContent className="ml-2">
               <Instagram className="inline mr-2" />
               <Link href="instagram.com">instagram</Link>
             </AccordionContent>
-            <AccordionContent>
+            <AccordionContent className="ml-2">
               <X className="inline mr-2" />
               <Link href="twitter.com">twitter</Link>
             </AccordionContent>

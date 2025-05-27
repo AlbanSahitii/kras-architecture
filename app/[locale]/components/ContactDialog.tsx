@@ -14,7 +14,7 @@ function ContactDialog({contact}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <p className="font-normal m-0">{contact}</p>
+        <p className="font-normal m-0 cursor-pointer">{contact}</p>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md bg-white ">
         <DialogHeader className="text-black ">
@@ -22,11 +22,13 @@ function ContactDialog({contact}) {
         </DialogHeader>
         <DialogDescription className="text-black ">
           <MailIcon className="inline mr-3" />
-          contact@krasarchitects.com
+          <a href={`mailto:contact@krasarchitects.com`}>
+            contact@krasarchitects.com
+          </a>
         </DialogDescription>
         <DialogDescription className="text-black">
           <PhoneIncoming className="inline mr-2" />
-          +49 17684775093
+          <a href={`tel:+4917684775093`}>+49 17684775093</a>
         </DialogDescription>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild className="mt-2">
