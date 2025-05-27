@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, {useRef} from "react";
 import EmployeesCard from "./EmployeesCard";
 import {AnimatedLines} from "./AnimatedLines";
+import {motion, useInView} from "framer-motion";
 
 function AboutClientSide({
   employees,
@@ -19,11 +20,13 @@ function AboutClientSide({
   architectDescription,
   financeDescription,
 }) {
+  const teamDiv = useRef(null);
+  const teamDivInView = useInView(teamDiv, {once: true});
   return (
     <>
       <div className="pt-40 px-5 w-full md:flex md:justify-between">
         <div className="md:flex md:flex-col md:w-4/5">
-          <h1 className="text-6xl w-full ">
+          <h1 className="text-6xl w-full leading-snug">
             <AnimatedLines text={aboutUsTitle} />
           </h1>
           <div className="w-full mt-10 md:flex md:flex-wrap">
@@ -48,7 +51,12 @@ function AboutClientSide({
         </div>
       </div>
 
-      <div>
+      <motion.div
+        ref={teamDiv}
+        // initial={{opacity: 0, y: 100}}
+        // transition={{duration: 0.7}}
+        // animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
+      >
         <h1 className=" pt-10 text-5xl flex justify-center  md:pt-20">
           {team}
         </h1>
@@ -121,7 +129,7 @@ function AboutClientSide({
         ) : (
           ""
         )}
-      </div>
+      </motion.div>
     </>
   );
 }

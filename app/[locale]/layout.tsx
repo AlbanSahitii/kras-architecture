@@ -44,13 +44,14 @@ export default async function RootLayout({children, params}: Props) {
 
   return (
     <html lang={locale} translate="no" className="notranslate">
-      <body translate="no" className={`${poppins.className} `}>
+      <body translate="no" className={`${poppins.className} scroll-smooth `}>
         <ReactQueryProvider>
           <NextIntlClientProvider>
             <Navbar
               projects={navbarMessages("projects")}
               aboutUs={navbarMessages("aboutUs")}
-              news={navbarMessages("news")}
+              home={navbarMessages("home")}
+              contact={navbarMessages("contact")}
             />
             {children}
             <Analytics />

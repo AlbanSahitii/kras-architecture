@@ -5,12 +5,19 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {Facebook, Instagram, MailIcon, MapPin, X} from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  MailIcon,
+  MapPin,
+  X,
+  PhoneIncoming,
+} from "lucide-react";
 import Link from "next/link";
 
 function Footer({address, contactUs, socials}) {
   return (
-    <footer className="relative w-full h-1/3 flex justify-center items-center snap-start">
+    <footer className="relative w-full h-1/3 flex justify-center items-center ">
       <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5"></div>
 
       <div className=" w-full absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
@@ -25,7 +32,7 @@ function Footer({address, contactUs, socials}) {
             <AccordionTrigger>{`${address}?`}</AccordionTrigger>
             <AccordionContent>
               <MapPin className="inline mr-2" />
-              VR
+              Soon
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -33,7 +40,11 @@ function Footer({address, contactUs, socials}) {
 
             <AccordionContent>
               <MailIcon className="inline mr-2" />
-              kras@kras.com
+              contact@krasarchitects.com
+            </AccordionContent>
+            <AccordionContent>
+              <PhoneIncoming className="inline mr-2" />
+              +49 17684775093
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">

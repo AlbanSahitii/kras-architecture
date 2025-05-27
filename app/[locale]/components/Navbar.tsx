@@ -15,19 +15,19 @@ import {Menu} from "lucide-react";
 import Image from "next/image";
 import {useParams} from "next/navigation";
 import LanguageToggle from "./LanguageToggle";
+import ContactDialog from "./ContactDialog";
 
-function Navbar({projects, aboutUs, news}) {
+function Navbar({projects, aboutUs, home, contact}) {
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [isPage1InView, setIsPage1InView] = useState(false);
   const [isPage0InView, setIsPage0InView] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // New state to track screen size
+  const [isMobile, setIsMobile] = useState(false);
 
   const closeDrawer = () => {
     setIsOpen(false);
   };
 
-  // Check if page1 or page0 is in view on scroll
   useEffect(() => {
     const checkPageVisibility = () => {
       const page1 = document.getElementById("page1");
@@ -55,7 +55,7 @@ function Navbar({projects, aboutUs, news}) {
     };
 
     window.addEventListener("scroll", checkPageVisibility);
-    checkPageVisibility(); // Check on mount
+    checkPageVisibility();
 
     return () => {
       window.removeEventListener("scroll", checkPageVisibility);
@@ -68,7 +68,7 @@ function Navbar({projects, aboutUs, news}) {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Check on mount
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -87,7 +87,7 @@ function Navbar({projects, aboutUs, news}) {
 
   return (
     <nav
-      className={`z-40 fixed w-lvw px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  rounded-b-2xl bg-[rgba(255,255,255,0.01)] "`}
+      className={`z-40 fixed w-lvw px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center rounded-b-2xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0)]`}
     >
       <Link href="/">
         <motion.div
@@ -114,13 +114,16 @@ function Navbar({projects, aboutUs, news}) {
       </motion.p>
       <ol className="hidden md:flex mx-2 items-center">
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+          <Link href={`/${params!.locale}/`}>{home}</Link>
+        </li>
+        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href={`/${params!.locale}/projects`}>{projects}</Link>
         </li>
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
           <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
         </li>
         <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-          <Link href={`/${params!.locale}/news`}>{news}</Link>
+          <ContactDialog contact={contact} />
         </li>
         <li className="ml-4">
           <LanguageToggle />
@@ -137,8 +140,8 @@ function Navbar({projects, aboutUs, news}) {
           >
             <DrawerHeader>
               <DrawerTitle className="font-normal m-3">
-                <Link href={`/${params!.locale}/news`} onClick={closeDrawer}>
-                  {news}
+                <Link href={`/${params!.locale}`} onClick={closeDrawer}>
+                  {home}
                 </Link>
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
@@ -153,6 +156,9 @@ function Navbar({projects, aboutUs, news}) {
                 <Link href={`/${params!.locale}/about`} onClick={closeDrawer}>
                   {aboutUs}
                 </Link>
+              </DrawerTitle>
+              <DrawerTitle className="m-3">
+                <ContactDialog contact={contact} />
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
                 <LanguageToggle />

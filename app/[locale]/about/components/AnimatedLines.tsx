@@ -24,8 +24,8 @@ const lineVariants = {
     opacity: 1,
     transition: {
       type: "spring",
-      damping: 12,
-      stiffness: 200,
+      damping: 8,
+      stiffness: 100,
     },
   },
 };

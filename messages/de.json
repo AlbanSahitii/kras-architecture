@@ -2,7 +2,9 @@
   "Navbar": {
     "projects": "Projekte",
     "aboutUs": "Über uns",
-    "news": "Nachrichten"
+    "news": "Nachrichten",
+    "home": "Heim",
+    "contact": "Kontakt"
   },
   "Footer": {
     "address": "Adresse",
@@ -21,13 +23,21 @@
     "all": "Alle"
   },
   "AboutUs": {
-    "title": "Kras ist eine innovative und fortschrittliche Praxis.",
+    "title": "Wo Vision auf Präzision trifft – Architektur mit Wirkung",
     "description": {
-      "first": "Im Jahr 2025 gründeten wir Kras, um ein einzigartiges Architekturbüro zu schaffen, das Komfort bietet, eine freundliche Atmosphäre schafft und die Kreativität fördert.",
-      "second": "Bei Kras legen wir großen Wert auf unser Arbeitsumfeld und die Atmosphäre, die wir darin kultivieren. Wir sind davon überzeugt, dass ein anregender und stimulierender Arbeitsplatz die Kreativität und Produktivität steigert und es unserem Team ermöglicht, sich zu entfalten.",
-      "third": "Unser Ziel war es, einen Raum zu schaffen, in dem innovative Ideen nahtlos mit den neuesten Technologien und Materialien verschmelzen, um sicherzustellen, dass unsere Designs frisch und lebendig bleiben und gleichzeitig unserer Identität treu bleiben.",
-      "fourth": "Unser Engagement für die Umwelt ist in unsere Designphilosophie eingeflochten, da wir uns bemühen, Räume zu schaffen, die nicht nur ästhetisch ansprechend, sondern auch nachhaltig sind.",
-      "creatingSince": "Schaffen seit 2025"
+      "first": "KRAS Architecture & Design ist ein dynamisches Architekturbüro mit Standorten in Berlin und Pristina. Wir sind spezialisiert auf Architektur, Innenarchitektur, 3D-Visualisierung, Landschaftsplanung und technische Beratung und bieten ganzheitliche, innovative Designlösungen, die individuell auf die Bedürfnisse unserer Kunden zugeschnitten sind.",
+      "second": "Was uns besonders macht, ist unsere hybride Teamstruktur: ein hochqualifiziertes Produktionsteam in Pristina und eine strategische Leitung in Berlin. So vereinen wir deutsche Präzision mit balkanischer Effizienz und gewährleisten außergewöhnliche Qualität zu wettbewerbsfähigen Preisen. Unser Team aus erfahrenen Architekten, Planern und Designern verfügt über tiefgehende Kenntnisse sowohl lokaler als auch internationaler Baustandards.",
+      "third": "Wir arbeiten mit einer Vielzahl von Auftraggebern darunter Immobilienfirmen, Bauunternehmen, Architektur und Innenarchitekturbüros (als Kooperationspartner) sowie Privatkunden und unterstützen sie dabei, Projekte effizient zu skalieren, innovativ zu gestalten und schneller umzusetzen.",
+      "fourth": "Ob Sie ein neues Projekt starten oder qualifizierte Unterstützung in der Planung benötigen KRAS Architecture & Design ist Ihr zuverlässiger Partner für wirkungsvolle architektonische Lösungen.",
+      "creatingSince": "Kreieren seit 2025",
+      "ourValues": {
+        "title": "Bei KRAS glauben wir daran, dass Architektur mehr als nur Gestaltung ist sie schafft echten Mehrwert durch:",
+        "first": "Intelligente, moderne Lösungen auf Basis fortschrittlicher Tools und Workflows",
+        "second": "Schnelligkeit und Zuverlässigkeit ohne Qualitätsverlust",
+        "third": "Effiziente, grenzüberschreitende Zusammenarbeit zu fairen Konditionen",
+        "fourth": "Nachhaltige, zukunftsorientierte Planung in jedem Projekt",
+        "fifth": "Kundenorientierten Service, geprägt von Präzision, Professionalität und Vertrauen"
+      }
     },
     "roles": {
       "ceo": "CEO",
