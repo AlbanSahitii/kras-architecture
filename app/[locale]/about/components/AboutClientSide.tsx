@@ -3,6 +3,7 @@ import React, {useRef} from "react";
 import EmployeesCard from "./EmployeesCard";
 import {AnimatedLines} from "./AnimatedLines";
 import {motion} from "framer-motion";
+import {CircleCheck} from "lucide-react";
 
 function AboutClientSide({
   employees,
@@ -11,8 +12,13 @@ function AboutClientSide({
   secondDescription,
   thirdDescription,
   fourthDescription,
-  creatingSince,
   team,
+  titleValue,
+  firstValue,
+  secondValue,
+  thirdValue,
+  fourthValue,
+  fifthValue,
   ceoDescription,
   partnerDescription,
   teamLeaderDescription,
@@ -22,15 +28,37 @@ function AboutClientSide({
 }) {
   const teamDiv = useRef(null);
   // const teamDivInView = useInView(teamDiv, {once: true});
+  const containerVariants = {
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const lineVariants = {
+    hidden: {y: "100%", opacity: 0},
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
     <>
-      <div className="pt-40 px-5 w-full md:flex md:justify-between">
+      <div id="page0" className="h-5"></div>
+      <div className="pt-28 px-5 w-full flex justify-center items-center">
         <div className="md:flex md:flex-col md:w-4/5">
-          <h1 className="text-6xl w-full leading-snug">
+          <h1 className="text-4xl w-full leading-snug">
             <AnimatedLines text={aboutUsTitle} />
           </h1>
-          <div className="w-full mt-10 md:flex md:flex-wrap">
-            <div id="page0" className="m-3 md:w-2/5">
+          <div className="w-full   0 md:flex md:flex-wrap  md:justify-between md:items-center">
+            <div className="m-3 md:w-2/5">
               <AnimatedLines text={firstDescription} />
             </div>
             <div className="m-3 md:w-2/5">
@@ -43,11 +71,40 @@ function AboutClientSide({
               <AnimatedLines text={fourthDescription} />
             </div>
           </div>
-        </div>
-        <div className="my-6 font-bold md:flex md:flex-col md:justify-end">
-          <i>
-            <AnimatedLines text={creatingSince} />
-          </i>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className={`flex justify-center items-center text-start`}
+          >
+            <motion.div variants={lineVariants} className="pt-10 md:pt-20">
+              <p className="font-bold pt-8 text-2xl">{titleValue}</p>
+              <div className="flex flex-col items-center">
+                <ol>
+                  <li className="pt-3 md:pt-4 ml-3 text-lg flex items-start gap-2">
+                    <CircleCheck className="w-5 h-5 shrink-0  mt-1" />
+                    {firstValue}
+                  </li>
+                  <li className="pt-3 md:pt-4 ml-3 text-lg flex items-start gap-2">
+                    <CircleCheck className="w-5 h-5 shrink-0  mt-1" />
+                    {secondValue}
+                  </li>
+                  <li className="pt-3 md:pt-4 ml-3 text-lg flex items-start gap-2">
+                    <CircleCheck className="w-5 h-5 shrink-0  mt-1" />
+                    {thirdValue}
+                  </li>
+                  <li className="pt-3 md:pt-4 ml-3 text-lg flex items-start gap-2">
+                    <CircleCheck className="w-5 h-5 shrink-0  mt-1" />
+                    {fourthValue}
+                  </li>
+                  <li className="pt-3 md:pt-4 ml-3 text-lg flex items-start gap-2">
+                    <CircleCheck className="w-5 h-5 shrink-0  mt-1" />
+                    {fifthValue}
+                  </li>
+                </ol>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -57,7 +114,7 @@ function AboutClientSide({
         // transition={{duration: 0.7}}
         // animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
       >
-        <h1 className=" pt-10 text-5xl flex justify-center  md:pt-20">
+        <h1 className=" pt-20 text-5xl flex justify-center  md:pt-20">
           {team}
         </h1>
 
