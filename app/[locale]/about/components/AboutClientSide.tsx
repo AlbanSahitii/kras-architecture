@@ -2,7 +2,7 @@
 import React, {useRef} from "react";
 import EmployeesCard from "./EmployeesCard";
 import {AnimatedLines} from "./AnimatedLines";
-import {motion, useInView} from "framer-motion";
+import {motion} from "framer-motion";
 
 function AboutClientSide({
   employees,
