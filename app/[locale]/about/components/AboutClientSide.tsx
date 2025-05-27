@@ -21,7 +21,7 @@ function AboutClientSide({
   financeDescription,
 }) {
   const teamDiv = useRef(null);
-  const teamDivInView = useInView(teamDiv, {once: true});
+  // const teamDivInView = useInView(teamDiv, {once: true});
   return (
     <>
       <div className="pt-40 px-5 w-full md:flex md:justify-between">
