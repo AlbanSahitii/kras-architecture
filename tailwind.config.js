@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "my-end-range": "990px", // End of your desired range
+        "my-end-range": "1092px", // End of your desired range
       },
       borderRadius: {
         lg: "var(--radius)",
