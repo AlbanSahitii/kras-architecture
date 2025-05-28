@@ -99,7 +99,6 @@ export default async function RootLayout({children, params}: Props) {
             {children}
             <Analytics />
             <Footer
-              address={footerMessages("address")}
               contactUs={footerMessages("contactUs")}
               socials={footerMessages("socials")}
             />

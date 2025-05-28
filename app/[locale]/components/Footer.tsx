@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-function Footer({address, contactUs, socials}) {
+function Footer({contactUs, socials}) {
   return (
     <footer className="relative w-full h-1/3 flex justify-center items-center ">
       <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5"></div>
