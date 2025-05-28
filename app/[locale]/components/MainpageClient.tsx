@@ -85,6 +85,18 @@ const MainpageClient = ({
     };
   }, [projectsData]);
 
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight * 0.01}px`
+      );
+    };
+    setVh();
+    window.addEventListener("resize", setVh);
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
   return (
     <>
       <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black ">
@@ -95,13 +107,15 @@ const MainpageClient = ({
           <div
             key={index}
             ref={divRef.current[index]}
-            className={`relative w-full h-screen bg-black flex flex-col-reverse overflow-hidden snap-center`}
+            className={`relative  bg-black flex flex-col-reverse overflow-hidden snap-center `}
+            style={{height: "calc(var(--vh, 1vh) * 100)"}}
           >
             <Image
-              className="absolute w-full min-h-[100vh] object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 hover:scale-100"
+              className="absolute top-0 left-0 w-[110vw] h-[110vh] md:w-full md:h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none"
               src={item.thumbnail}
               alt={params!.locale === "en" ? item.title : item.germanTitle}
-              layout="fill"
+              fill
+              priority
             />
             <Link href={`/${params!.locale}/project/${item.title}`}>
               <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
@@ -128,7 +142,7 @@ const MainpageClient = ({
       <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20  overflow-hidden snap-start">
         <motion.p
           ref={parahraphRef}
-          className="text-center text-2xl md:text-4xl transform pt-36"
+          className="text-center text-2xl md:text-4xl transform pt-36 "
           initial={{opacity: 0, y: 50}}
           animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
           transition={{duration: 0.6}}

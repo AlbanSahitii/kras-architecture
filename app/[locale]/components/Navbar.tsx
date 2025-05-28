@@ -144,7 +144,7 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
           </li>
         </ol>
       </motion.nav>
-      <div className="fixed right-8 top-7 z-50 md:hidden ">
+      <div className="fixed right-8 top-6 z-50 md:hidden ">
         <Drawer open={isOpen} onOpenChange={setIsOpen}>
           <DrawerTrigger onClick={e => e.currentTarget.blur()}>
             <Menu strokeWidth={3} />

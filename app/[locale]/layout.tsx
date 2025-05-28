@@ -86,7 +86,10 @@ export default async function RootLayout({children, params}: Props) {
 
   return (
     <html lang={locale} translate="no" className="notranslate">
-      <body translate="no" className={`${poppins.className}`}>
+      <body
+        translate="no"
+        className={`${poppins.className} overflow-x-hidden  h-full`}
+      >
         <ReactQueryProvider>
           <NextIntlClientProvider>
             <Navbar
