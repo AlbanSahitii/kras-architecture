@@ -112,7 +112,7 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
             }
             exit="exit"
           >
-            <Image src={logoWhiteNoText} alt="Logo" width={40} height={40} />
+            <Image src={logoWhiteNoText} alt="Logo" width={30} height={30} />
           </motion.div>
         </Link>
 
