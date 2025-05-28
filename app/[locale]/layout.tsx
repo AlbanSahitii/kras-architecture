@@ -15,15 +15,54 @@ const poppins = Poppins({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Kras Architecture",
-  description: "Kras Architecture",
-  viewport: {
-    width: "device-width",
-    initialScale: 1.0,
-    interactiveWidget: "resizes-content", // Add this line
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: {locale: string};
+}): Promise<Metadata> {
+  const locale = params.locale;
+
+  const t = await getTranslations("metaData");
+
+  return {
+    title: {
+      default: "Kras Architecture",
+      template: `%s | Kras Architecture`,
+    },
+    description: t("description"),
+    keywords: t("keywords"),
+    openGraph: {
+      type: "website",
+      locale: locale === "de" ? "de_DE" : "en_EN",
+      url: "https://krasarchitects.com",
+      title: "Kras Architecture",
+      siteName: "Kras Architecture",
+      images: [
+        {
+          url: "/logo-white.png",
+          width: 1200,
+          height: 630,
+          alt: "Kras Architecture",
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Kras Architecture",
+      description: t("description"),
+      images: ["/logo-white.png"],
+    },
+    icons: {
+      icon: "/favicon.ico",
+    },
+    viewport: {
+      width: "device-width",
+      initialScale: 1.0,
+      interactiveWidget: "resizes-content",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -44,7 +83,7 @@ export default async function RootLayout({children, params}: Props) {
 
   return (
     <html lang={locale} translate="no" className="notranslate">
-      <body translate="no" className={`${poppins.className} scroll-smooth `}>
+      <body translate="no" className={`${poppins.className}`}>
         <ReactQueryProvider>
           <NextIntlClientProvider>
             <Navbar
@@ -52,6 +91,7 @@ export default async function RootLayout({children, params}: Props) {
               aboutUs={navbarMessages("aboutUs")}
               home={navbarMessages("home")}
               contact={navbarMessages("contact")}
+              closeText={navbarMessages("close")}
             />
             {children}
             <Analytics />

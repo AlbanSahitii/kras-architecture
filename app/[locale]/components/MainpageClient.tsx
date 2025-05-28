@@ -16,8 +16,8 @@ const MainpageClient = ({
   const divRef = useRef(projectsData.map(() => React.createRef()));
   const parahraphRef = useRef(null);
   const linkRef = useRef(null);
-  const isInView = useInView(parahraphRef, {once: true});
-  const isLinkInView = useInView(linkRef, {once: true});
+  const isInView = useInView(parahraphRef, {once: true, amount: 1});
+  const isLinkInView = useInView(linkRef, {once: true, amount: 1});
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -61,7 +61,7 @@ const MainpageClient = ({
                     transform: ["translateY(80px)", "translateY(0px)"],
                   },
                   {
-                    duration: 1,
+                    duration: 0.9,
                     ease: "easeOut",
                   }
                 );
@@ -71,7 +71,7 @@ const MainpageClient = ({
           }
         });
       },
-      {threshold: 0.5}
+      {threshold: 0.8}
     );
 
     const elementsToObserve = divRef.current
@@ -87,15 +87,15 @@ const MainpageClient = ({
 
   return (
     <>
-      <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black">
+      <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black ">
         <LogoAnimation />
       </section>
-      <section className="relative " id="page1">
+      <section className="relative scroll-smooth! " id="page1">
         {projectsData.map((item, index) => (
           <div
             key={index}
             ref={divRef.current[index]}
-            className={`relative w-full h-screen bg-black flex flex-col-reverse overflow-hidden snap-start`}
+            className={`relative w-full h-screen bg-black flex flex-col-reverse overflow-hidden snap-center`}
           >
             <Image
               className="absolute w-full min-h-[100vh] object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 hover:scale-100"
@@ -125,7 +125,7 @@ const MainpageClient = ({
         ))}
       </section>
 
-      <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20 snap-start overflow-hidden">
+      <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20  overflow-hidden snap-start">
         <motion.p
           ref={parahraphRef}
           className="text-center text-2xl md:text-4xl transform pt-36"
@@ -140,7 +140,7 @@ const MainpageClient = ({
           ref={linkRef}
           initial={{opacity: 0, y: 30}}
           animate={{opacity: isLinkInView ? 1 : 0, y: isLinkInView ? 0 : 50}}
-          transition={{duration: 0.2}}
+          transition={{duration: 0.4}}
         >
           <Link href={`/${params!.locale}/about`}>{heroLearnMoreAboutUs}</Link>
         </motion.p>

@@ -8,7 +8,7 @@ function ProjectTypes({allProjects, projectTitle}) {
   return (
     <>
       <section id="page0" className="">
-        <h1 className="text-4xl pt-40 mx-10 mb-9">{projectTitle}</h1>
+        <h1 className="text-4xl pt-32 mx-10 mb-9">{projectTitle}</h1>
       </section>
       <div className="w-full pb-10">
         <section className="flex justify-between mx-10 md:flex md:justify-start">

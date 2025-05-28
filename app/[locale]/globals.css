@@ -168,13 +168,14 @@
   }
 }
 html {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 body {
   background: var(--background);
   color: white;
   min-height: 100vh;
+  scroll-behavior: smooth !important;
 
   font-family: Arial, Helvetica, sans-serif;
 }
