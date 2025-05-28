@@ -58,7 +58,7 @@ export const AnimatedLines = ({text, className = ""}: AnimatedLinesProps) => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`relative ${className}`}
+      className={`relative ${className} snap-start`}
     >
       {/* Static layout-preserving fallback */}
       <div

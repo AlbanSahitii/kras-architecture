@@ -99,98 +99,104 @@ const MainpageClient = ({
 
   return (
     <>
-      <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black ">
-        <LogoAnimation />
-      </section>
-      <section className="relative scroll-smooth! " id="page1">
-        {projectsData.map((item, index) => (
-          <div
-            key={index}
-            ref={divRef.current[index]}
-            className={`relative  bg-black flex flex-col-reverse overflow-hidden snap-center `}
-            style={{height: "calc(var(--vh, 1vh) * 100)"}}
-          >
-            <Image
-              className="absolute top-0 left-0 w-[110vw] h-[110vh] md:w-full md:h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none"
-              src={item.thumbnail}
-              alt={params!.locale === "en" ? item.title : item.germanTitle}
-              fill
-              priority
-            />
-            <Link href={`/${params!.locale}/project/${item.title}`}>
-              <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
-                {params!.locale === "en" ? item.title : item.germanTitle}
-              </h1>
-            </Link>
-            <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
-              <Link href={`/${params!.locale}/projects/${item.type}`}>
+      <main className="main-page">
+        <section className="flex items-center justify-center z-10 relative w-full h-screen bg-black ">
+          <LogoAnimation />
+        </section>
+        <section className="relative scroll-smooth! " id="page1">
+          {projectsData.map((item, index) => (
+            <div
+              key={index}
+              ref={divRef.current[index]}
+              className={`relative  bg-black flex flex-col-reverse overflow-hidden snap-center `}
+              style={{height: "calc(var(--vh, 1vh) * 100)"}}
+            >
+              <Image
+                className="absolute top-0 left-0 w-[110vw] h-[110vh] md:w-full md:h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none"
+                src={item.thumbnail}
+                alt={params!.locale === "en" ? item.title : item.germanTitle}
+                fill
+                priority
+              />
+              <Link href={`/${params!.locale}/project/${item.title}`}>
+                <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 ">
+                  {params!.locale === "en" ? item.title : item.germanTitle}
+                </h1>
+              </Link>
+              <div className=" z-20 bottom-0 left-10 flex items-center justify-between md:justify-end">
+                <Link href={`/${params!.locale}/projects/${item.type}`}>
+                  <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+                    {params!.locale === "en" ? item.type : item.germanType}
+                  </p>
+                </Link>
                 <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
-                  {params!.locale === "en" ? item.type : item.germanType}
+                  {item.city}
+                </p>
+                <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
+                  {item.date}
+                </p>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20  overflow-hidden snap-start">
+          <motion.p
+            ref={parahraphRef}
+            className="text-center text-2xl md:text-4xl transform pt-36 "
+            initial={{opacity: 0, y: 50}}
+            animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
+            transition={{duration: 0.6}}
+          >
+            {heroTitle}
+          </motion.p>
+          <motion.p
+            className="w-fit mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out my-20"
+            ref={linkRef}
+            initial={{opacity: 0, y: 30}}
+            animate={{opacity: isLinkInView ? 1 : 0, y: isLinkInView ? 0 : 50}}
+            transition={{duration: 0.4}}
+          >
+            <Link href={`/${params!.locale}/about`}>
+              {heroLearnMoreAboutUs}
+            </Link>
+          </motion.p>
+        </section>
+
+        <h1 className="text-center text-3xl md:text-5xl md:pb-6 md:pt-20 snap-start">
+          {newTitle}
+        </h1>
+
+        <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly snap-start">
+          {projectsData.map((project, index) => (
+            <div
+              key={index}
+              className="text-center min-w-fit m-1 md:min-w-96 md:max-w-96 "
+            >
+              <Link href={`/${params!.locale}/project/${project.title}`}>
+                <p className="mb-4">
+                  {params!.locale === "en"
+                    ? project.title
+                    : project.germanTitle}
+                </p>
+                <div className=" relative h-96 max-w-9/10">
+                  <Image
+                    className="w-full h-full absolute"
+                    src={project.thumbnail}
+                    alt="thumbnail"
+                    layout="fill"
+                  />
+                </div>
+                <p className="mt-4 truncate">
+                  {params!.locale === "en"
+                    ? project.description
+                    : project.germanDescription}
                 </p>
               </Link>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
-                {item.city}
-              </p>
-              <p className="custom-p-class m-3 text-1xl md:text-2xl border-b border-transparent hover:border-white transition duration-500 ease-in-out  ">
-                {item.date}
-              </p>
             </div>
-          </div>
-        ))}
-      </section>
-
-      <section className=" w-full flex flex-col justify-center items-center px-10 md:px-20  overflow-hidden snap-start">
-        <motion.p
-          ref={parahraphRef}
-          className="text-center text-2xl md:text-4xl transform pt-36 "
-          initial={{opacity: 0, y: 50}}
-          animate={{opacity: isInView ? 1 : 0, y: isInView ? 0 : 50}}
-          transition={{duration: 0.6}}
-        >
-          {heroTitle}
-        </motion.p>
-        <motion.p
-          className="w-fit mt-10 border-b border-transparent hover:border-white transition duration-300 ease-in-out my-20"
-          ref={linkRef}
-          initial={{opacity: 0, y: 30}}
-          animate={{opacity: isLinkInView ? 1 : 0, y: isLinkInView ? 0 : 50}}
-          transition={{duration: 0.4}}
-        >
-          <Link href={`/${params!.locale}/about`}>{heroLearnMoreAboutUs}</Link>
-        </motion.p>
-      </section>
-
-      <h1 className="text-center text-3xl md:text-5xl md:pb-6 md:pt-20 snap-start">
-        {newTitle}
-      </h1>
-
-      <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly snap-start">
-        {projectsData.map((project, index) => (
-          <div
-            key={index}
-            className="text-center min-w-fit m-1 md:min-w-96 md:max-w-96 "
-          >
-            <Link href={`/${params!.locale}/project/${project.title}`}>
-              <p className="mb-4">
-                {params!.locale === "en" ? project.title : project.germanTitle}
-              </p>
-              <div className=" relative h-96 max-w-9/10">
-                <Image
-                  className="w-full h-full absolute"
-                  src={project.thumbnail}
-                  alt="thumbnail"
-                  layout="fill"
-                />
-              </div>
-              <p className="mt-4 truncate">
-                {params!.locale === "en"
-                  ? project.description
-                  : project.germanDescription}
-              </p>
-            </Link>
-          </div>
-        ))}
-      </section>
+          ))}
+        </section>
+      </main>
     </>
   );
 };

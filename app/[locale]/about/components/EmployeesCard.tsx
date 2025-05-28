@@ -8,7 +8,7 @@ function EmployeesCard({employees, role, description}) {
   return (
     <>
       {employees.length > 0 ? (
-        <div className="mx-5 mt-14 md:mx-20">
+        <div className="mx-5 mt-14 md:mx-20 snap-start">
           <h1 className="text-3xl">{role}</h1>
           <p>{description}</p>
           <div className="flex flex-wrap justify-evenly md:justify-start">
