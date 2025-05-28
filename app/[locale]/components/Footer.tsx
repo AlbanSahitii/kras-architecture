@@ -9,9 +9,8 @@ import {
   Facebook,
   Instagram,
   MailIcon,
-  MapPin,
-  X,
   PhoneIncoming,
+  Linkedin,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,13 +28,6 @@ function Footer({address, contactUs, socials}) {
           collapsible
         >
           <AccordionItem value="item-1">
-            <AccordionTrigger>{`${address}`}</AccordionTrigger>
-            <AccordionContent className="ml-2">
-              <MapPin className="inline mr-2" />
-              Soon
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
             <AccordionTrigger>{`${contactUs}`}</AccordionTrigger>
 
             <AccordionContent className="ml-2">
@@ -51,19 +43,23 @@ function Footer({address, contactUs, socials}) {
               </a>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-3">
+          <AccordionItem value="item-2">
             <AccordionTrigger>{`${socials}`}</AccordionTrigger>
             <AccordionContent className="ml-2">
               <Facebook className="inline mr-2" />
-              <Link href="facebook.com">Facebook</Link>
+              <Link href="https://www.facebook.com/profile.php?id=61576569491054">
+                Facebook
+              </Link>
             </AccordionContent>
             <AccordionContent className="ml-2">
               <Instagram className="inline mr-2" />
-              <Link href="instagram.com">instagram</Link>
+              <Link href="https://www.instagram.com/krasarchitecture/">
+                instagram
+              </Link>
             </AccordionContent>
             <AccordionContent className="ml-2">
-              <X className="inline mr-2" />
-              <Link href="twitter.com">twitter</Link>
+              <Linkedin className="inline mr-2" />
+              <Link href="twitter.com">Linkedin</Link>
             </AccordionContent>
           </AccordionItem>
         </Accordion>

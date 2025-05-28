@@ -39,7 +39,7 @@ export async function generateMetadata({
       siteName: "Kras Architecture",
       images: [
         {
-          url: "/logo-white.png",
+          url: "/logo-whitebg-black-with-text.jpg",
           width: 1200,
           height: 630,
           alt: "Kras Architecture",
@@ -47,11 +47,14 @@ export async function generateMetadata({
         },
       ],
     },
+    facebook: {
+      appId: "https://www.facebook.com/profile.php?id=61576569491054",
+    },
     twitter: {
       card: "summary_large_image",
       title: "Kras Architecture",
       description: t("description"),
-      images: ["/logo-white.png"],
+      images: ["/logo-whitebg-black-with-text.jpg"],
     },
     icons: {
       icon: "/favicon.ico",
