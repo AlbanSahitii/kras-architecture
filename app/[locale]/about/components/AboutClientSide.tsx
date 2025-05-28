@@ -54,7 +54,7 @@ function AboutClientSide({
     <>
       <div id="page0" className="h-5"></div>
 
-      <div className="pt-28 px-5 w-full flex justify-center items-center">
+      <div className="pt-28 px-5 w-full flex justify-center items-center snap-start">
         <div className="md:flex md:flex-col md:w-4/5">
           <h1 className="text-4xl w-full leading-snug">
             <AnimatedLines text={aboutUsTitle} />
@@ -77,9 +77,12 @@ function AboutClientSide({
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className={`flex justify-center items-center text-start`}
+            className={`flex justify-center items-center text-start snap-start`}
           >
-            <motion.div variants={lineVariants} className="pt-10 md:pt-20">
+            <motion.div
+              variants={lineVariants}
+              className="pt-10 md:pt-20 snap-start"
+            >
               <p className="font-bold pt-8 text-2xl">{titleValue}</p>
               <div className="flex flex-col items-center">
                 <ol>
@@ -116,7 +119,7 @@ function AboutClientSide({
         // transition={{duration: 0.7}}
         // animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
       >
-        <h1 className=" pt-20 text-5xl flex justify-center  md:pt-20">
+        <h1 className=" pt-20 text-5xl flex justify-center  md:pt-20 snap-start">
           {team}
         </h1>
 

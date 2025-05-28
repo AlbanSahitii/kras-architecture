@@ -70,7 +70,7 @@ function ProjectDetailPageClient({
 
   return (
     <>
-      <div className=" px-3 pt-40 md:px-20">
+      <div className=" px-3 pt-40 md:px-20 snap-start">
         <section className="">
           <h1 className="tracking-wide text-sm md:text-2xl">
             {params!.locale === "en" ? project.type : project.germanType}
@@ -132,7 +132,7 @@ function ProjectDetailPageClient({
         </section>
       </div>
 
-      <div className="p-5 md:mx-60">
+      <div className="p-5 md:mx-60 snap-start">
         <motion.h1
           ref={projectTitleRef}
           className="text-center text-2xl md:text-4xl transform"
@@ -176,13 +176,13 @@ function ProjectDetailPageClient({
             {projectImagesText}
           </motion.h1>
         </section>
-        <section className="px-4 py-8 max-w-6xl  mx-auto ">
+        <section className="px-4 py-8 max-w-6xl  mx-auto snap-start">
           <ImagesAlbum images={project.images} />
         </section>
       </div>
       <hr className="my-10 w-10/12 place-self-center" />
       {suggestedProject && (
-        <div className="p-5 mb-10 flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row">
+        <div className="p-5 mb-10 flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row snap-start">
           <section className="mb-5 md:w-2/5">
             <Link href={`/${params!.locale}/project/${suggestedProject.title}`}>
               <h1 className="mb-5">{otherProjectText}</h1>
@@ -196,7 +196,7 @@ function ProjectDetailPageClient({
               />
             </Link>
           </section>
-          <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10">
+          <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10 snap-start">
             <Link href={`/${params!.locale}/project/${suggestedProject.title}`}>
               <motion.h1
                 ref={nextProjectTitleRef}
@@ -231,7 +231,7 @@ function ProjectDetailPageClient({
             <Link href={`/${params!.locale}/project/${suggestedProject.title}`}>
               <motion.p
                 ref={nextProjectParRef}
-                className="hidden w-fit transform md:text-4xl md:tracking-wider md:block border-b border-transparent hover:border-white transition duration-500 ease-in-out"
+                className="hidden w-fit transform md:text-4xl md:tracking-wider md:block border-b border-transparent hover:border-white transition duration-500 ease-in-out snap-start"
                 initial={{opacity: 0, y: 50}}
                 animate={{
                   opacity: nextProjectParInView ? 1 : 0,

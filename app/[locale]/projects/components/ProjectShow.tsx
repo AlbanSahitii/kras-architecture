@@ -48,7 +48,7 @@ function ProjectShow({initialData, limit, type = null}) {
   }
   return (
     <>
-      <section className="flex justify-evenly flex-wrap">
+      <section className="flex justify-evenly flex-wrap snap-start">
         {flattedData?.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
