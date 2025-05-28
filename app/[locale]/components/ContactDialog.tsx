@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import {MailIcon, PhoneIncoming} from "lucide-react";
-function ContactDialog({contact}) {
+function ContactDialog({contact, closeText}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,7 +32,7 @@ function ContactDialog({contact}) {
         </DialogDescription>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild className="mt-2">
-            <Button>Close</Button>
+            <Button>{closeText}</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

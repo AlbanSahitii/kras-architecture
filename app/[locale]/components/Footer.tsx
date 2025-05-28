@@ -29,14 +29,14 @@ function Footer({address, contactUs, socials}) {
           collapsible
         >
           <AccordionItem value="item-1">
-            <AccordionTrigger>{`${address}?`}</AccordionTrigger>
+            <AccordionTrigger>{`${address}`}</AccordionTrigger>
             <AccordionContent className="ml-2">
               <MapPin className="inline mr-2" />
               Soon
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>{`${contactUs}?`}</AccordionTrigger>
+            <AccordionTrigger>{`${contactUs}`}</AccordionTrigger>
 
             <AccordionContent className="ml-2">
               <a href={`mailto:contact@krasarchitects.com`}>
@@ -52,7 +52,7 @@ function Footer({address, contactUs, socials}) {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>{`${socials}?`}</AccordionTrigger>
+            <AccordionTrigger>{`${socials}`}</AccordionTrigger>
             <AccordionContent className="ml-2">
               <Facebook className="inline mr-2" />
               <Link href="facebook.com">Facebook</Link>

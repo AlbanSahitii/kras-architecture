@@ -4,7 +4,8 @@
     "aboutUs": "About Us",
     "news": "News",
     "home": "Home",
-    "contact": "Contact"
+    "contact": "Contact",
+    "close": "schließen"
   },
   "Footer": {
     "address": "Address",
@@ -69,5 +70,9 @@
 
     "floors": "Floors",
     "investor": "Investor"
+  },
+  "metaData": {
+    "description": "KRAS Architecture & Design is a Berlin and Pristina-based architecture firm delivering high-impact architectural, interior design, 3D visualization, and landscape planning solutions. With a hybrid team structure combining German precision and Balkan efficiency, we provide fast, affordable, and sustainable design services tailored to developers, real estate firms, studios, and private clients across Europe.",
+    "keywords": "architecture firm Berlin, architecture firm Pristina, interior design Berlin, interior design Pristina, 3D architectural visualization, landscape planning, architectural consulting, architectural design solutions, hybrid architecture team, German precision design, Balkan efficiency architecture, real estate design services, architecture for developers, collaborative architecture studio, international architecture firm, modern sustainable architecture,  architecture project support, architecture planning services, affordable design services Europe, cross-border architecture collaboration"
   }
 }

@@ -9,15 +9,14 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-import Logo50 from "../../../public/logo50.png";
 import Link from "next/link";
 import {Menu} from "lucide-react";
 import Image from "next/image";
 import {useParams} from "next/navigation";
 import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
-
-function Navbar({projects, aboutUs, home, contact}) {
+import logoWhiteNoText from "../../../public/white-logo-notext.png";
+function Navbar({projects, aboutUs, home, contact, closeText}) {
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [isPage1InView, setIsPage1InView] = useState(false);
@@ -84,52 +83,68 @@ function Navbar({projects, aboutUs, home, contact}) {
     },
     exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
   };
+  const navBarAnimation = {
+    hidden: {y: -50, opacity: 0},
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {type: "easeInOut", stiffness: 1400},
+    },
+    exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
+  };
 
   return (
-    <nav
-      className={`z-40 fixed w-lvw px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center rounded-b-2xl bg-gradient-to-b from-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0)]`}
-    >
-      <Link href="/">
-        <motion.div
-          className="border rounded-sm"
+    <>
+      <motion.nav
+        variants={navBarAnimation}
+        animate={
+          !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
+        }
+        exit="exit"
+        className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/20 via-white/10  to-white/5 backdrop-blur-lg `}
+      >
+        <Link href="/">
+          <motion.div
+            className="border rounded-sm border-none"
+            variants={logoAndTitleAnimation}
+            animate={
+              !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
+            }
+            exit="exit"
+          >
+            <Image src={logoWhiteNoText} alt="Logo" width={40} height={40} />
+          </motion.div>
+        </Link>
+
+        <motion.p
           variants={logoAndTitleAnimation}
           animate={
             !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
           }
           exit="exit"
+          className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] md:left-[48%] "
         >
-          <Image src={Logo50.src} alt="Logo" width={50} height={50} />
-        </motion.div>
-      </Link>
-
-      <motion.p
-        variants={logoAndTitleAnimation}
-        animate={
-          !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
-        }
-        exit="exit"
-        className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] md:left-[48%] "
-      >
-        KRAS
-      </motion.p>
-      <ol className="hidden md:flex mx-2 items-center">
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-          <Link href={`/${params!.locale}/`}>{home}</Link>
-        </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-          <Link href={`/${params!.locale}/projects`}>{projects}</Link>
-        </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-          <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
-        </li>
-        <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-          <ContactDialog contact={contact} />
-        </li>
-        <li className="ml-4">
-          <LanguageToggle />
-        </li>
-      </ol>
-      <div className="md:hidden">
+          KRAS
+        </motion.p>
+        <ol className="hidden md:flex mx-2 items-center">
+          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <Link href={`/${params!.locale}/`}>{home}</Link>
+          </li>
+          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <Link href={`/${params!.locale}/projects`}>{projects}</Link>
+          </li>
+          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
+          </li>
+          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <ContactDialog closeText={closeText} contact={contact} />
+          </li>
+          <li className="ml-4">
+            <LanguageToggle />
+          </li>
+        </ol>
+      </motion.nav>
+      <div className="fixed right-8 top-7 z-50 md:hidden ">
         <Drawer open={isOpen} onOpenChange={setIsOpen}>
           <DrawerTrigger onClick={e => e.currentTarget.blur()}>
             <Menu strokeWidth={3} />
@@ -158,7 +173,7 @@ function Navbar({projects, aboutUs, home, contact}) {
                 </Link>
               </DrawerTitle>
               <DrawerTitle className="m-3">
-                <ContactDialog contact={contact} />
+                <ContactDialog closeText={closeText} contact={contact} />
               </DrawerTitle>
               <DrawerTitle className="font-normal m-3">
                 <LanguageToggle />
@@ -167,7 +182,7 @@ function Navbar({projects, aboutUs, home, contact}) {
           </DrawerContent>
         </Drawer>
       </div>
-    </nav>
+    </>
   );
 }
 
