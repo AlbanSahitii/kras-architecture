@@ -2,10 +2,52 @@ import {notFound} from "next/navigation";
 import {getProjectByTitle, getAllProjects} from "@/app/lib/tina/queris";
 import ProjectDetailPageClient from "../components/ProjectDetailPageClient";
 import {getTranslations} from "next-intl/server";
+import {Metadata} from "next";
 interface ProjectPageParams {
   params: Promise<{
     title: string;
+    locale: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectPageParams): Promise<Metadata> {
+  const {title, locale} = await params;
+  const formattedTitle = title.split("%20").join(" ");
+  const project = await getProjectByTitle(formattedTitle);
+
+  if (!project) notFound();
+
+  const siteUrl = "https://krasarchitects.com";
+  const imageUrl = project.thumbnail
+    ? `${siteUrl}${project.thumbnail}`
+    : undefined;
+  const pageTitle = locale === "en" ? project.title : project.germanTitle;
+  const pageDescription =
+    locale === "en" ? project.germanDescription : project.description;
+  const fullUrl = `${siteUrl}/projects/${title}`;
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+      type: "article",
+      url: fullUrl,
+      title: pageTitle,
+      description: pageDescription,
+      images: imageUrl ? [{url: imageUrl}] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
+      images: imageUrl ? [imageUrl] : [],
+    },
+    alternates: {
+      canonical: fullUrl,
+    },
+  };
 }
 
 async function ProjectDetailPageServer({params}: ProjectPageParams) {
@@ -32,23 +74,26 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
     suggestedProject = filteredProjects[index];
   }
   const pageMessages = await getTranslations("SingleProject");
-
   return (
-    <ProjectDetailPageClient
-      project={project}
-      suggestedProject={suggestedProject}
-      dateText={pageMessages("date")}
-      locationText={pageMessages("location")}
-      projectImagesText={pageMessages("projectImages")}
-      nextProjectText={pageMessages("nextProject")}
-      otherProjectText={pageMessages("otherProject")}
-      surfaceText={pageMessages("surface")}
-      floorsText={pageMessages("floors")}
-      investorText={pageMessages("investor")}
-      onGoingProject={pageMessages("onGoingProject")}
-      completedProject={pageMessages("completedProject")}
-      conceptualProject={pageMessages("conceptualProject")}
-    />
+    <>
+      <main>
+        <ProjectDetailPageClient
+          project={project}
+          suggestedProject={suggestedProject}
+          dateText={pageMessages("date")}
+          locationText={pageMessages("location")}
+          projectImagesText={pageMessages("projectImages")}
+          nextProjectText={pageMessages("nextProject")}
+          otherProjectText={pageMessages("otherProject")}
+          surfaceText={pageMessages("surface")}
+          floorsText={pageMessages("floors")}
+          investorText={pageMessages("investor")}
+          onGoingProject={pageMessages("onGoingProject")}
+          completedProject={pageMessages("completedProject")}
+          conceptualProject={pageMessages("conceptualProject")}
+        />
+      </main>
+    </>
   );
 }
 

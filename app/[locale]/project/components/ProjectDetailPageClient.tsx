@@ -161,7 +161,7 @@ function ProjectDetailPageClient({
         </motion.p>
       </div>
       <br />
-      <div className="p-5 md:mx-20">
+      <div className="p-5 md:mx-20 snap-start">
         <section>
           <motion.h1
             ref={projectImagesTitleRef}

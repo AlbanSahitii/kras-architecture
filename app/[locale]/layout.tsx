@@ -15,18 +15,22 @@ const poppins = Poppins({
   weight: ["400", "700"],
 });
 
+interface localeType {
+  params: Promise<{
+    locale: string;
+  }>;
+}
+
 export async function generateMetadata({
   params,
-}: {
-  params: {locale: string};
-}): Promise<Metadata> {
-  const locale = params.locale;
+}: localeType): Promise<Metadata> {
+  const {locale} = await params;
 
   const t = await getTranslations("metaData");
 
   return {
     title: {
-      default: "Kras Architecture",
+      default: "Home | Kras Architecture",
       template: `%s | Kras Architecture`,
     },
     description: t("description"),
