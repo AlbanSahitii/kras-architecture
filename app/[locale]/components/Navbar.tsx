@@ -101,7 +101,7 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
           !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
         }
         exit="exit"
-        className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/20 via-white/10  to-white/5 backdrop-blur-lg `}
+        className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/30 via-white/10  to-white/[0.005] backdrop-blur-lg `}
       >
         <Link href="/">
           <motion.div

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://krasarchitects.com/de/sitemap.xml

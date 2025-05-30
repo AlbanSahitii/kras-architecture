@@ -56,7 +56,7 @@ function AboutClientSide({
 
       <div className="pt-28 px-5 w-full flex justify-center items-center snap-start">
         <div className="md:flex md:flex-col md:w-4/5">
-          <h1 className="text-4xl w-full leading-snug">
+          <h1 id="page1" className="text-4xl w-full leading-snug">
             <AnimatedLines text={aboutUsTitle} />
           </h1>
           <div className="w-full   0 md:flex md:flex-wrap  md:justify-between md:items-center">
