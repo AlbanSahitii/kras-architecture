@@ -1,4 +1,3 @@
-import type {MetadataRoute} from "next";
 import {getAllProjects} from "../lib/tina/queris";
 
 export default async function sitemap() {
