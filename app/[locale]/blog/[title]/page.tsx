@@ -1,38 +1,156 @@
 import React from "react";
 import {Metadata} from "next";
+import {getBlogByTitle} from "@/app/lib/tina/queris";
+import {notFound} from "next/navigation";
+import Image from "next/image";
+import Head from "next/head";
 
-interface localeType {
+interface props {
   params: Promise<{
     locale: string;
+    title: string;
   }>;
 }
 
-export async function generateMetadata({
-  params,
-}: localeType): Promise<Metadata> {
-  const {locale} = await params;
-  console.log(locale);
+export async function generateMetadata({params}: props): Promise<Metadata> {
+  const {locale, title} = await params;
+  const blog = await getBlogByTitle(decodeURIComponent(title));
+
+  if (!blog) {
+    return {
+      title: "Blog Not Found",
+      description: "The requested blog post could not be found.",
+      openGraph: {
+        title: "Blog Not Found",
+        description: "The requested blog post could not be found.",
+        url: "",
+        images: [],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Blog Not Found",
+        description: "The requested blog post could not be found.",
+      },
+      alternates: {
+        canonical: "",
+      },
+    };
+  }
+
+  const url = "https://www.krasarchitects.com/";
+  const titleMeta = locale === "en" ? blog.title : blog.germanTitle;
+  const descriptionMeta =
+    locale === "en" ? blog.description : blog.germanDescription;
+  const imageMeta = blog.thumbnail;
+
   return {
-    title: "",
-    description: "",
+    title: titleMeta,
+    description: descriptionMeta,
     openGraph: {
-      title: "Projekte",
-      description: "",
-      url: "",
+      title: titleMeta,
+      description: descriptionMeta,
+      url: `${url}/${locale}/blog/${encodeURIComponent(title)}`,
+      images: [
+        {
+          url: imageMeta,
+          width: 1200,
+          height: 630,
+          alt: titleMeta,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "",
-      description: "",
+      title: titleMeta,
+      description: descriptionMeta,
+      images: [imageMeta],
     },
     alternates: {
-      canonical: "url",
+      canonical: `${url}/${locale}/blog/${encodeURIComponent(title)}`,
+      languages: {
+        en: `${url}/en/blog/${title}`,
+        de: `${url}/de/blog/${title}`,
+      },
     },
   };
 }
 
-async function BlogsServerSideTitle() {
-  return <main></main>;
+async function BlogsServerSideTitle({params}: props) {
+  const {locale, title} = await params;
+  const blog = await getBlogByTitle(decodeURIComponent(title));
+  if (!blog) return notFound();
+
+  const titleMeta = locale === "en" ? blog.title : blog.germanTitle;
+  const descriptionMeta =
+    locale === "en" ? blog.description : blog.germanDescription;
+  const imageMeta = blog.thumbnail;
+  const blogUrl = `https://www.krasarchitects.com/${locale}/blog/${encodeURIComponent(
+    title
+  )}`;
+  const publishedDate = blog.date || new Date().toISOString();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: titleMeta,
+    description: descriptionMeta,
+    image: [imageMeta],
+    datePublished: publishedDate,
+    dateModified: publishedDate,
+    url: blogUrl,
+    author: {
+      "@type": "Organization",
+      name: "Kras Architects",
+      url: "https://www.krasarchitects.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Kras Architects",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.krasarchitects.com/favicon.ico",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": blogUrl,
+    },
+  };
+
+  return (
+    <main>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        />
+      </Head>
+
+      <div className=" flex flex-col items-center pt-32 ">
+        <p className=" mb-8 text-gray-300 " id="page0">
+          {blog.date &&
+            new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
+        </p>
+        <h1 className="text-4xl break-words pb-7 px-7 ">
+          {locale === "en" ? blog.title : blog.germanTitle}
+        </h1>
+        <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
+          <Image
+            className="w-full h-auto rounded-xl"
+            width={500}
+            height={300}
+            src={blog.thumbnail}
+            alt={locale === "en" ? blog.title : blog.germanTitle}
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <p className=" my-7 text-gray-300 md:w-[70%] px-7">
+          {locale === "en" ? blog.description : blog.germanDescription}
+        </p>
+      </div>
+    </main>
+  );
 }
 
 export default BlogsServerSideTitle;

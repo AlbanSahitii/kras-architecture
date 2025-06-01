@@ -7,8 +7,10 @@ import {Spinner} from "@/components/ui/spinner";
 import {useInView} from "react-intersection-observer";
 import LastBlogShow from "./LastBlogShow";
 import BlogListShow from "./BlogListShow";
+import {useParams} from "next/navigation";
 
 function BlogShowClient({blogs, limit}) {
+  const params = useParams();
   const [loadMore, setLoadMore] = useState(true);
   const {ref, inView} = useInView();
 
@@ -42,12 +44,14 @@ function BlogShowClient({blogs, limit}) {
   }
   return (
     <div className="w-screen h-auto px-8">
-      <section className="pt-32">
+      <section className="pt-32 snap-start">
         <LastBlogShow blog={flattedData[0]} />
       </section>
 
-      <h2 className="text-xl mt-16 md:mt-32 md:place-self-center ">
-        Recent Publication{" "}
+      <h2 className="text-xl mt-16 md:mt-32 md:place-self-center  snap-start">
+        {params!.locale === "en"
+          ? "Recent Publication"
+          : "Aktuelle Veröffentlichung"}
       </h2>
       <section className="w-full md:px-32 flex flex-col items-center">
         {flattedData?.slice(1).map((d, i) => (

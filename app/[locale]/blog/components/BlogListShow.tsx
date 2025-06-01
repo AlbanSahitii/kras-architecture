@@ -1,11 +1,12 @@
 import {useParams} from "next/navigation";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 function BlogListShow({blog}) {
   const params = useParams();
   return (
     <>
-      <div className="md:w-[80%] text-gray-300  flex  justify-between my-10 md:my-14">
+      <div className="md:w-[80%] text-gray-300  flex  justify-between my-10 md:my-14 snap-start">
         <div className="flex flex-col">
           <span>
             <p className="inline ">
@@ -20,18 +21,22 @@ function BlogListShow({blog}) {
               params!.locale === "en" ? blog.type : blog.germanType
             }`}</p>
           </span>
-          <p className="break-words mt-3 text-xl">
-            {params!.locale === "en" ? blog.title : blog.germanTitle}
-          </p>
+          <Link href={`/${params!.locale}/blog/${blog.title}`}>
+            <p className="break-words mt-3 text-xl">
+              {params!.locale === "en" ? blog.title : blog.germanTitle}
+            </p>
+          </Link>
         </div>
         <div className="hidden md:block  ">
-          <Image
-            className="rounded-xl"
-            alt="blog image"
-            src={blog.thumbnail}
-            width={300}
-            height={200}
-          />
+          <Link href={`/${params!.locale}/blog/${blog.title}`}>
+            <Image
+              className="rounded-xl"
+              alt="blog image"
+              src={blog.thumbnail}
+              width={300}
+              height={200}
+            />
+          </Link>
         </div>
       </div>
     </>

@@ -15,7 +15,6 @@ export async function generateMetadata({
 }: localeType): Promise<Metadata> {
   const {locale} = await params;
 
-  console.log(locale);
   const url = `https://krasarchitects.com/${locale}/projects`;
   const englishDescription =
     "Explore the diverse portfolio of KRAS Architects, featuring innovative, sustainable, and human-centered designs across residential, commercial, and public projects. Discover our approach to modern architecture that merges functionality with aesthetics";
