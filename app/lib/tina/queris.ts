@@ -221,3 +221,25 @@ export const getBlogs = async ({first = null, after = null}: blogType) => {
     throw new Error(error);
   }
 };
+
+export const getBlogByTitle = async (title: string) => {
+  try {
+    const result = await client.queries.BlogsConnection({
+      filter: {
+        title: {eq: title},
+      },
+    });
+
+    const blog = result.data?.BlogsConnection?.edges?.[0]?.node;
+
+    if (!blog) {
+      console.error("blog with the given title not found");
+      return null;
+    }
+
+    return blog;
+  } catch (error) {
+    console.error("Failed to fetch blog by title:", error);
+    return null;
+  }
+};

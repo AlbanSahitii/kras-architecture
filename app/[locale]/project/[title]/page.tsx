@@ -14,7 +14,7 @@ export async function generateMetadata({
   params,
 }: ProjectPageParams): Promise<Metadata> {
   const {title, locale} = await params;
-  const formattedTitle = title.split("%20").join(" ");
+  const formattedTitle = decodeURIComponent(title);
   const project = await getProjectByTitle(formattedTitle);
 
   if (!project) notFound();

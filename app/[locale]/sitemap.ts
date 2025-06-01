@@ -1,10 +1,13 @@
-import {getAllProjects} from "../lib/tina/queris";
+import {getAllProjects, getBlogs} from "../lib/tina/queris";
 
 export default async function sitemap() {
   const url = "https://krasarchitects.com";
   const projects = await getAllProjects({});
+  const blogs = await getBlogs({});
   let projectFormatedGerman;
   let projectFormatedEnglish;
+  let blogsFormatedEnglish;
+  let blogsFormatedGerman;
   if (!projects.projects) {
     projectFormatedGerman = null;
     projectFormatedEnglish = null;
@@ -24,6 +27,29 @@ export default async function sitemap() {
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: 0.7,
+      };
+    });
+  }
+
+  if (!blogs.blogData) {
+    blogsFormatedEnglish = null;
+    blogsFormatedGerman = null;
+  } else {
+    blogsFormatedEnglish = blogs.blogData.map(b => {
+      return {
+        url: `${url}/en/blog/${b.title}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+      };
+    });
+
+    blogsFormatedGerman = blogs.blogData.map(b => {
+      return {
+        url: `${url}/de/blog/${b.title}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
       };
     });
   }
@@ -49,5 +75,7 @@ export default async function sitemap() {
     },
     ...projectFormatedGerman,
     ...projectFormatedEnglish,
+    ...blogsFormatedEnglish,
+    ...blogsFormatedGerman,
   ];
 }
