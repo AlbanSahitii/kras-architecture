@@ -27,14 +27,15 @@ function BlogListShow({blog}) {
             </p>
           </Link>
         </div>
-        <div className="hidden md:block  ">
+        <div className="hidden md:block h-80 ">
           <Link href={`/${params!.locale}/blog/${blog.title}`}>
             <Image
-              className="rounded-xl"
+              className="rounded-xl h-80 "
               alt="blog image"
               src={blog.thumbnail}
               width={300}
               height={200}
+              sizes="(max-height: 200px) 100vw, 50vw"
             />
           </Link>
         </div>

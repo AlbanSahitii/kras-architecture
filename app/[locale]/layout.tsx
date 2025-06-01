@@ -31,8 +31,8 @@ export async function generateMetadata({
 
   return {
     title: {
-      default: "Home | Kras Architecture",
-      template: `%s | Kras Architecture`,
+      default: "Home | Kras Architects",
+      template: `%s | Kras Architects`,
     },
     description: t("description"),
     keywords: t("keywords"),
@@ -40,14 +40,14 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "de" ? "de_DE" : "en_EN",
       url: "https://krasarchitects.com",
-      title: "Kras Architecture",
-      siteName: "Kras Architecture",
+      title: "Kras Architects",
+      siteName: "Kras Architects",
       images: [
         {
           url: "/logo-whitebg-black-with-text.jpg",
           width: 1200,
           height: 630,
-          alt: "Kras Architecture",
+          alt: "Kras Architects",
           type: "image/png",
         },
       ],
@@ -57,7 +57,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Kras Architecture",
+      title: "Kras Architects",
       description: t("description"),
       images: ["/logo-whitebg-black-with-text.jpg"],
     },
@@ -113,6 +113,7 @@ export default async function RootLayout({children, params}: Props) {
               home={navbarMessages("home")}
               contact={navbarMessages("contact")}
               closeText={navbarMessages("close")}
+              chronicle={navbarMessages("chronicle")}
             />
             {children}
             <Analytics />
