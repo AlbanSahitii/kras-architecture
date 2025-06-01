@@ -16,7 +16,7 @@ import {useParams} from "next/navigation";
 import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
-function Navbar({projects, aboutUs, home, contact, closeText}) {
+function Navbar({projects, aboutUs, home, contact, closeText, chronicle}) {
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [isPage1InView, setIsPage1InView] = useState(false);
@@ -140,7 +140,7 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
               <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
             </li>
             <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-              <Link href={`/${params!.locale}/blog`}>BLOG</Link>
+              <Link href={`/${params!.locale}/blog`}>{chronicle}</Link>
             </li>
             <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
               <ContactDialog closeText={closeText} contact={contact} />
@@ -175,7 +175,7 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
                   <Link href={`/${params!.locale}/blog`} onClick={closeDrawer}>
-                    BLOG ---
+                    {chronicle}
                   </Link>
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">

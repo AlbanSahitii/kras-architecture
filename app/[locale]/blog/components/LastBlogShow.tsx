@@ -21,13 +21,13 @@ function LastBlogShow({blog}) {
         <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center">
           <Link href={`/${params!.locale}/blog/${blog.title}`}>
             <motion.img
-              className="w-full h-auto  rounded-xl "
+              className="w-full h-[800px]  rounded-xl "
               src={blog.thumbnail}
               alt={params!.locale === "en" ? blog.title : blog.germanTitle}
             />
           </Link>
         </div>
-        <p className="self-center my-4 text-gray-300">
+        <p className="self-center my-4 text-gray-300 snap-start">
           {new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
         </p>
       </div>
