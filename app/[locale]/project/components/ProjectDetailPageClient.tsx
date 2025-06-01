@@ -72,9 +72,9 @@ function ProjectDetailPageClient({
     <>
       <div className=" px-3 pt-40 md:px-20 snap-start">
         <section className="">
-          <h1 className="tracking-wide text-sm md:text-2xl">
+          <h2 className="tracking-wide text-sm md:text-2xl">
             {params!.locale === "en" ? project.type : project.germanType}
-          </h1>
+          </h2>
           <h1 className="text-2xl md:text-8xl tracking-wider">
             {params!.locale === "en" ? project.title : project.germanTitle}
           </h1>

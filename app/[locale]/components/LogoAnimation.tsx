@@ -72,18 +72,18 @@ export default function LogoAnimation() {
             />
           </svg>
         </div>
-        <h1
+        <p
           ref={titleWrapper}
           className="absolute top-48 left-[85px] opacity-0 text-5xl tracking-widest "
         >
           KRAS
-        </h1>
-        <h1
+        </p>
+        <p
           ref={secondTitleWrapper}
           className="absolute top-60 left-[87px] opacity-0 text-xs "
         >
           Architecture & Design
-        </h1>
+        </p>
       </div>
     </div>
   );

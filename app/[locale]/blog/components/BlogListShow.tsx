@@ -1,0 +1,41 @@
+import {useParams} from "next/navigation";
+import React from "react";
+import Image from "next/image";
+function BlogListShow({blog}) {
+  const params = useParams();
+  return (
+    <>
+      <div className="md:w-[80%] text-gray-300  flex  justify-between my-10 md:my-14">
+        <div className="flex flex-col">
+          <span>
+            <p className="inline ">
+              {new Date(blog.date)
+                .toDateString()
+                .split(" ")
+                .splice(1)
+                .join(" ")}
+            </p>
+            <p className="inline px-3">•</p>
+            <p className="inline">{`#${
+              params!.locale === "en" ? blog.type : blog.germanType
+            }`}</p>
+          </span>
+          <p className="break-words mt-3 text-xl">
+            {params!.locale === "en" ? blog.title : blog.germanTitle}
+          </p>
+        </div>
+        <div className="hidden md:block  ">
+          <Image
+            className="rounded-xl"
+            alt="blog image"
+            src={blog.thumbnail}
+            width={300}
+            height={200}
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default BlogListShow;

@@ -119,9 +119,9 @@ function AboutClientSide({
         // transition={{duration: 0.7}}
         // animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
       >
-        <h1 className=" pt-20 text-5xl flex justify-center  md:pt-20 snap-start">
+        <p className=" pt-20 text-5xl flex justify-center  md:pt-20 snap-start">
           {team}
-        </h1>
+        </p>
 
         {employees.ceo.length > 0 ? (
           <section>
