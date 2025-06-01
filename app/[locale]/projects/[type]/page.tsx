@@ -15,6 +15,7 @@ export async function generateMetadata({
   params,
 }: localeType): Promise<Metadata> {
   const {locale} = await params;
+  const t = await getTranslations("metaData");
 
   const url = `https://krasarchitects.com/${locale}/projects`;
   const englishDescription =
@@ -25,6 +26,7 @@ export async function generateMetadata({
   const titleGerman = "Projekte";
   return {
     title: locale === "en" ? titleEnglish : titleGerman,
+    keywords: t("keywords"),
     description: locale === "en" ? englishDescription : germanDescription,
     openGraph: {
       title: "Projekte",

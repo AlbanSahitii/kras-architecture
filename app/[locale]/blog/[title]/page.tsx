@@ -4,6 +4,7 @@ import {getBlogByTitle} from "@/app/lib/tina/queris";
 import {notFound} from "next/navigation";
 import Image from "next/image";
 import Head from "next/head";
+import {getTranslations} from "next-intl/server";
 
 interface props {
   params: Promise<{
@@ -15,10 +16,12 @@ interface props {
 export async function generateMetadata({params}: props): Promise<Metadata> {
   const {locale, title} = await params;
   const blog = await getBlogByTitle(decodeURIComponent(title));
+  const t = await getTranslations("metaData");
 
   if (!blog) {
     return {
       title: "Blog Not Found",
+      keywords: t("keywords"),
       description: "The requested blog post could not be found.",
       openGraph: {
         title: "Blog Not Found",
