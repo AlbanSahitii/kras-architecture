@@ -9,7 +9,8 @@ import {routing} from "@/i18n/routing";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {Analytics} from "@vercel/analytics/next";
-
+import Script from "next/script";
+import {krasOrganizationSchema} from "@/lib/schema";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -90,6 +91,16 @@ export default async function RootLayout({children, params}: Props) {
 
   return (
     <html lang={locale} translate="no" className="notranslate">
+      <head>
+        <Script
+          id="kras-schema-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(krasOrganizationSchema(locale)),
+          }}
+        />
+      </head>
       <body
         translate="no"
         className={`${poppins.className} overflow-x-hidden  h-full`}
