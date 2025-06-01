@@ -186,3 +186,38 @@ export const getEmployees = async () => {
     return null;
   }
 };
+
+interface blogType {
+  first?: number | null | undefined;
+  after?: string | null | undefined;
+}
+
+export const getBlogs = async ({first = null, after = null}: blogType) => {
+  try {
+    const result = await client.queries.BlogsConnection({
+      first: first,
+      after: after,
+    });
+
+    const blogData = result.data.BlogsConnection.edges?.map(p => {
+      return {
+        title: p?.node?.title,
+        germanTitle: p?.node?.germanTitle,
+        description: p?.node?.description,
+        germanDescription: p?.node?.germanDescription,
+        type: p?.node?.type,
+        germanType: p?.node?.germanType,
+        date: p?.node?.date,
+        thumbnail: p?.node?.thumbnail,
+      };
+    });
+    return {
+      blogData: blogData,
+      hasNextPage: result.data.BlogsConnection.pageInfo.hasNextPage,
+      endCursor: result.data.BlogsConnection.pageInfo.endCursor,
+    };
+  } catch (error) {
+    console.error("Failed to fetch all blogs:", error);
+    throw new Error(error);
+  }
+};

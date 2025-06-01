@@ -95,93 +95,105 @@ function Navbar({projects, aboutUs, home, contact, closeText}) {
 
   return (
     <>
-      <motion.nav
-        variants={navBarAnimation}
-        animate={
-          !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
-        }
-        exit="exit"
-        className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/30 via-white/10  to-white/[0.005] backdrop-blur-lg `}
-      >
-        <Link href="/">
-          <motion.div
-            className="border rounded-sm border-none"
+      <header>
+        <motion.nav
+          variants={navBarAnimation}
+          animate={
+            !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
+          }
+          exit="exit"
+          className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/30 via-white/10  to-white/[0.005] backdrop-blur-lg `}
+        >
+          <Link href="/">
+            <motion.div
+              className="border rounded-sm border-none"
+              variants={logoAndTitleAnimation}
+              animate={
+                !isMobile || isPage1InView || isPage0InView
+                  ? "visible"
+                  : "hidden"
+              }
+              exit="exit"
+            >
+              <Image src={logoWhiteNoText} alt="Logo" width={30} height={30} />
+            </motion.div>
+          </Link>
+
+          <motion.p
             variants={logoAndTitleAnimation}
             animate={
               !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
             }
             exit="exit"
+            className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] md:left-[48%] "
           >
-            <Image src={logoWhiteNoText} alt="Logo" width={30} height={30} />
-          </motion.div>
-        </Link>
-
-        <motion.p
-          variants={logoAndTitleAnimation}
-          animate={
-            !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
-          }
-          exit="exit"
-          className="tracking-widest [text-shadow:1px_1px_2px_black] absolute  md:static  my-end-range:absolute left-[45%] md:left-[48%] "
-        >
-          KRAS
-        </motion.p>
-        <ol className="hidden md:flex mx-2 items-center">
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <Link href={`/${params!.locale}/`}>{home}</Link>
-          </li>
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <Link href={`/${params!.locale}/projects`}>{projects}</Link>
-          </li>
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
-          </li>
-          <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-            <ContactDialog closeText={closeText} contact={contact} />
-          </li>
-          <li className="ml-4">
-            <LanguageToggle />
-          </li>
-        </ol>
-      </motion.nav>
-      <div className="fixed right-8 top-6 z-50 md:hidden ">
-        <Drawer open={isOpen} onOpenChange={setIsOpen}>
-          <DrawerTrigger onClick={e => e.currentTarget.blur()}>
-            <Menu strokeWidth={3} />
-          </DrawerTrigger>
-          <DrawerContent
-            aria-describedby={undefined}
-            className="bg-white text-black"
-          >
-            <DrawerHeader>
-              <DrawerTitle className="font-normal m-3">
-                <Link href={`/${params!.locale}`} onClick={closeDrawer}>
-                  {home}
-                </Link>
-              </DrawerTitle>
-              <DrawerTitle className="font-normal m-3">
-                <Link
-                  href={`/${params!.locale}/projects`}
-                  onClick={closeDrawer}
-                >
-                  {projects}
-                </Link>
-              </DrawerTitle>
-              <DrawerTitle className="font-normal m-3">
-                <Link href={`/${params!.locale}/about`} onClick={closeDrawer}>
-                  {aboutUs}
-                </Link>
-              </DrawerTitle>
-              <DrawerTitle className="m-3">
-                <ContactDialog closeText={closeText} contact={contact} />
-              </DrawerTitle>
-              <DrawerTitle className="font-normal m-3">
-                <LanguageToggle />
-              </DrawerTitle>
-            </DrawerHeader>
-          </DrawerContent>
-        </Drawer>
-      </div>
+            KRAS
+          </motion.p>
+          <ol className="hidden md:flex mx-2 items-center">
+            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+              <Link href={`/${params!.locale}/`}>{home}</Link>
+            </li>
+            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+              <Link href={`/${params!.locale}/projects`}>{projects}</Link>
+            </li>
+            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+              <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
+            </li>
+            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+              <Link href={`/${params!.locale}/blog`}>BLOG</Link>
+            </li>
+            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+              <ContactDialog closeText={closeText} contact={contact} />
+            </li>
+            <li className="ml-4">
+              <LanguageToggle />
+            </li>
+          </ol>
+        </motion.nav>
+        <div className="fixed right-8 top-6 z-50 md:hidden ">
+          <Drawer open={isOpen} onOpenChange={setIsOpen}>
+            <DrawerTrigger onClick={e => e.currentTarget.blur()}>
+              <Menu strokeWidth={3} />
+            </DrawerTrigger>
+            <DrawerContent
+              aria-describedby={undefined}
+              className="bg-white text-black"
+            >
+              <DrawerHeader>
+                <DrawerTitle className="font-normal m-3">
+                  <Link href={`/${params!.locale}`} onClick={closeDrawer}>
+                    {home}
+                  </Link>
+                </DrawerTitle>
+                <DrawerTitle className="font-normal m-3">
+                  <Link
+                    href={`/${params!.locale}/projects`}
+                    onClick={closeDrawer}
+                  >
+                    {projects}
+                  </Link>
+                </DrawerTitle>
+                <DrawerTitle className="font-normal m-3">
+                  <Link href={`/${params!.locale}/blog`} onClick={closeDrawer}>
+                    BLOG ---
+                  </Link>
+                </DrawerTitle>
+                <DrawerTitle className="font-normal m-3">
+                  <Link href={`/${params!.locale}/about`} onClick={closeDrawer}>
+                    {aboutUs}
+                  </Link>
+                </DrawerTitle>
+                <DrawerTitle className="m-3">
+                  <ContactDialog closeText={closeText} contact={contact} />
+                </DrawerTitle>
+                <DrawerTitle className="font-normal m-3">
+                  <LanguageToggle />
+                </DrawerTitle>
+              </DrawerHeader>
+            </DrawerContent>
+          </Drawer>
+        </div>
+      </header>
     </>
   );
 }

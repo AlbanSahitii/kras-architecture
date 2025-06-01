@@ -182,15 +182,16 @@ export default defineConfig({
         ],
       },
       {
-        name: "News",
-        label: "News",
-        path: "content/news",
+        name: "Blogs",
+        label: "Blogs",
+        path: "content/blogs",
         fields: [
           {
             type: "string",
             name: "title",
             label: "Title",
             required: true,
+            isTitle: true,
           },
           {
             type: "string",
@@ -198,11 +199,22 @@ export default defineConfig({
             label: "German Title",
             required: true,
           },
-
+          {
+            type: "string",
+            name: "type",
+            label: "Type",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "germanType",
+            label: "German Type",
+            required: true,
+          },
           {
             type: "string",
             name: "description",
-            label: "Description ",
+            label: "description",
             required: true,
           },
           {
@@ -210,6 +222,15 @@ export default defineConfig({
             name: "germanDescription",
             label: "German Description",
             required: true,
+          },
+          {
+            name: "date",
+            label: "Date",
+            type: "datetime",
+            ui: {
+              dateFormat: "YYYY-MM-DD",
+              timeFormat: "HH:mm",
+            },
           },
 
           {
@@ -220,12 +241,6 @@ export default defineConfig({
             ui: {
               component: "image",
             },
-          },
-          {
-            type: "string",
-            name: "date",
-            label: "date",
-            required: true,
           },
         ],
       },
