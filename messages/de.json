@@ -3,7 +3,6 @@
     "projects": "Projekte",
     "aboutUs": "Über uns",
     "news": "Nachrichten",
-    "home": "Heim",
     "contact": "Kontakt",
     "close": "schließen",
     "chronicle": "Chronik"
@@ -66,7 +65,7 @@
     "completedProject": "Vollendet",
     "onGoingProject": "Fortlaufend",
     "conceptualProject": "Konzeptionell",
-
+    "phase": "Phase",
     "surface": "Oberfläche",
     "floors": "Die Etage",
     "investor": "Investor"

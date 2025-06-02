@@ -3,27 +3,55 @@ title: Amsterdam Houseeeeeeee
 germanTitle: Amsterdam HouseeeeeeeeGERMAN
 type: Residental
 germanType: Wohnsitz
-titleDescription: Title Description is here
-germanTitleDescription: Title Description is here
 germanPhase: Vollendet
 phase: Completed
-
 city: Amsterdam
 address: Red light
 date: 14/12/2002
-description: Red light Discrict houseeeeeeee
-germanDescription: Red light Discrict houseeeeeeeeGERMAN
+description: |
+  Red light Discrict houseeeeeeee
+
+  Red light Discrict houseeeeeeee
+germanDescription: |
+  Red light Discrict houseeeeeeeeGERMAN
+
+  Red light Discrict houseeeeeeee
+germanTitleDescription: Title Description is here
+titleDescription: Title Description is here
 surface: 300m2
 floors: '6'
 investor: Albani
 thumbnail: /building-1.jpg
 images:
-  - src: /project-details1.jpg
-  - src: /project-details2.jpg
-  - src: /number-3.png
-  - src: /number-2.jpg
-  - src: /number-3.png
-  - src: /number-2.jpg
-  - src: /project-details2.jpg
-  - src: /project-details1.jpg
+  - image: /project-details1.jpg
+    description: |
+      english \
+      p1\
+      \
+      p2\
+      \
+      p3
+    germanDescription: |
+      DE\
+      p1\
+      \
+      p2\
+      \
+      p3
+  - image: /project-details2.jpg
+    description: |
+      english \
+      p1\
+      \
+      p2\
+      \
+      p3
+    germanDescription: |
+      DE\
+      p1\
+      \
+      p2\
+      \
+      p3
 ---
+

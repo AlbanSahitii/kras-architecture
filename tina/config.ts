@@ -101,22 +101,20 @@ export default defineConfig({
             type: "string",
             name: "address",
             label: "Address",
-            required: true,
           },
           {
             type: "string",
             name: "date",
             label: "date",
-            required: true,
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "description",
             label: "Description",
             required: true,
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "germanDescription",
             label: "German Description",
             required: true,
@@ -138,19 +136,16 @@ export default defineConfig({
             type: "string",
             name: "surface",
             label: "Surface",
-            required: true,
           },
           {
             type: "string",
             name: "floors",
             label: "Floors",
-            required: true,
           },
           {
             type: "string",
             name: "investor",
             label: "Investor",
-            required: true,
           },
           {
             type: "string",
@@ -165,17 +160,37 @@ export default defineConfig({
           {
             type: "object",
             name: "images",
-            label:
-              "Images - Finish all information above before uploading list of images",
-            required: true,
+            label: "Images",
             list: true,
             fields: [
               {
                 type: "string",
-                name: "src",
+                name: "image",
+                label: "image",
+                required: true,
                 ui: {
                   component: "image",
                 },
+              },
+              {
+                type: "rich-text",
+                name: "description",
+                label: "Description",
+              },
+              {
+                type: "rich-text",
+                name: "germanDescription",
+                label: "German Description",
+              },
+              {
+                type: "string",
+                name: "type",
+                label: "Type",
+              },
+              {
+                type: "string",
+                name: "germanType",
+                label: "German Type",
               },
             ],
           },
@@ -212,13 +227,13 @@ export default defineConfig({
             required: true,
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "description",
             label: "description",
             required: true,
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "germanDescription",
             label: "German Description",
             required: true,
@@ -285,13 +300,13 @@ export default defineConfig({
             ],
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "description",
             label: "Description ",
             required: true,
           },
           {
-            type: "string",
+            type: "rich-text",
             name: "germanDescription",
             label: "German Description",
             required: true,
