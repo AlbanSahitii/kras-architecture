@@ -17,14 +17,4 @@ surface: 700m
 floors: '1'
 investor: Albani
 thumbnail: /project6.jpg
-images:
-  - src: /project-details1.jpg
-  - src: /project-details2.jpg
-  - src: /number-3.png
-  - src: /number-2.jpg
-  - src: /number-3.png
-  - src: /number-2.jpg
-  - src: /project-details2.jpg
-  - src: /project-details1.jpg
-
 ---

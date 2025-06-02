@@ -3,7 +3,6 @@
     "projects": "Projects",
     "aboutUs": "About Us",
     "news": "News",
-    "home": "Home",
     "contact": "Contact",
     "close": "close",
     "chronicle": "Chronicle"
@@ -68,7 +67,7 @@
     "completedProject": "Completed",
     "onGoingProject": "On-going",
     "conceptualProject": "Conceptual",
-
+    "phase": "Phase",
     "floors": "Floors",
     "investor": "Investor"
   },

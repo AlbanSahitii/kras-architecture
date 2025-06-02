@@ -110,7 +110,6 @@ export default async function RootLayout({children, params}: Props) {
             <Navbar
               projects={navbarMessages("projects")}
               aboutUs={navbarMessages("aboutUs")}
-              home={navbarMessages("home")}
               contact={navbarMessages("contact")}
               closeText={navbarMessages("close")}
               chronicle={navbarMessages("chronicle")}

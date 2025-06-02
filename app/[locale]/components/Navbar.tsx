@@ -16,7 +16,7 @@ import {useParams} from "next/navigation";
 import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
-function Navbar({projects, aboutUs, home, contact, closeText, chronicle}) {
+function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
   const params = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [isPage1InView, setIsPage1InView] = useState(false);
@@ -131,9 +131,6 @@ function Navbar({projects, aboutUs, home, contact, closeText, chronicle}) {
           </motion.p>
           <ol className="hidden md:flex mx-2 items-center">
             <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-              <Link href={`/${params!.locale}/`}>{home}</Link>
-            </li>
-            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
               <Link href={`/${params!.locale}/projects`}>{projects}</Link>
             </li>
             <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
@@ -160,11 +157,6 @@ function Navbar({projects, aboutUs, home, contact, closeText, chronicle}) {
               className="bg-white text-black"
             >
               <DrawerHeader>
-                <DrawerTitle className="font-normal m-3">
-                  <Link href={`/${params!.locale}`} onClick={closeDrawer}>
-                    {home}
-                  </Link>
-                </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
                   <Link
                     href={`/${params!.locale}/projects`}

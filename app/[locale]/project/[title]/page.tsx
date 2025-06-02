@@ -82,7 +82,6 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
           suggestedProject={suggestedProject}
           dateText={pageMessages("date")}
           locationText={pageMessages("location")}
-          projectImagesText={pageMessages("projectImages")}
           nextProjectText={pageMessages("nextProject")}
           otherProjectText={pageMessages("otherProject")}
           surfaceText={pageMessages("surface")}

@@ -42,6 +42,7 @@ function BlogShowClient({blogs, limit}) {
   if (!flattedData) {
     return <p>No Blog Found</p>;
   }
+  console.log(flattedData[0]);
   return (
     <div className="w-screen h-auto px-8">
       <section className="pt-32 snap-start">

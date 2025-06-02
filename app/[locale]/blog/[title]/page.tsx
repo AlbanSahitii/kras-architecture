@@ -146,11 +146,19 @@ async function BlogsServerSideTitle({params}: props) {
             alt={locale === "en" ? blog.title : blog.germanTitle}
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
-          />{" "}
+          />
         </div>
-        <p className=" my-7 text-gray-300 md:w-[70%] px-7">
-          {locale === "en" ? blog.description : blog.germanDescription}
-        </p>
+        {locale === "en"
+          ? blog?.description.children.map((description, i) => (
+              <p className=" my-7 text-gray-300 md:w-[70%] px-7" key={i}>
+                {description.children[0].text}
+              </p>
+            ))
+          : blog?.germanDescription.children.map((description, i) => (
+              <p className=" my-7 text-gray-300 md:w-[70%] px-7" key={i}>
+                {description.children[0].text}
+              </p>
+            ))}
       </div>
     </main>
   );
