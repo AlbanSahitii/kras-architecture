@@ -231,9 +231,8 @@ function ProjectDetailPageClient({
             </div>
           ))}
         </div>
-        <hr className="my-10 w-10/12 place-self-center" />
         {suggestedProject && (
-          <div className="p-5 mb-10 flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row snap-start">
+          <div className="p-5  flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row snap-start">
             <section className="mb-5 md:w-2/5">
               <Link
                 href={`/${params!.locale}/project/${suggestedProject.title}`}

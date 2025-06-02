@@ -167,30 +167,31 @@ const MainpageClient = ({
           {newTitle}
         </h1>
 
-        <section className="black-scrollbar overflow-x-auto overflow-y-hidden flex pt-10 pb-10  justify-evenly snap-start">
+        <section className="black-scrollbar   overflow-x-auto overflow-y-hidden flex pt-10 pb-10 snap-start  justify-start">
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="text-center min-w-fit m-1 md:min-w-96 md:max-w-96 "
+              className="w-96 flex-none text-left ml-8 snap-start "
             >
               <Link href={`/${params!.locale}/project/${project.title}`}>
-                <p className="mb-4">
+                <p className="mb-4 ">
                   {params!.locale === "en"
                     ? project.title
                     : project.germanTitle}
                 </p>
-                <div className=" relative h-96 max-w-9/10">
+                <div className="relative h-96 w-96">
                   <Image
-                    className="w-full h-full absolute"
+                    className="h-full w-96 object-cover"
                     src={project.thumbnail}
                     alt="thumbnail"
-                    layout="fill"
+                    width={384}
+                    height={384}
                   />
                 </div>
-                <p className="mt-4 truncate">
+                <p className="mt-4 truncate whitespace-nowrap ">
                   {params!.locale === "en"
-                    ? project.description
-                    : project.germanDescription}
+                    ? project.description.children[0].children[0].text
+                    : project.germanDescription.children[0].children[0].text}
                 </p>
               </Link>
             </div>
