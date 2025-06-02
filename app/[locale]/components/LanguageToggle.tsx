@@ -11,8 +11,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import clsx from "clsx";
 
-export default function LanguageToggle() {
+export default function LanguageToggle({isWhitePage}) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useParams();
@@ -28,20 +29,40 @@ export default function LanguageToggle() {
   return (
     <div className="w-full flex justify-center ">
       <Select onValueChange={handleChange} defaultValue={currentLocale}>
-        <SelectTrigger className="w-36 md:w-[130px] border-none px-4 py-2  text-black md:text-white rounded-md">
+        <SelectTrigger
+          className={clsx(
+            "w-36 md:w-[130px] border-none px-4 py-2  text-black md:text-white rounded-md",
+            isWhitePage ? "md:text-black" : "md:text-white"
+          )}
+        >
           <SelectValue placeholder="Select language" />
         </SelectTrigger>
-        <SelectContent className="bg-white text-black  md:bg-inherit md:text-white border-none">
+        <SelectContent
+          className={clsx(
+            "bg-white text-black  md:bg-inherit  border-none",
+            isWhitePage ? "md:text-black" : "md:text-white"
+          )}
+        >
           <SelectGroup>
             <SelectItem
               value="de"
-              className="text-black md:text-white md:bg-black"
+              className={clsx(
+                "text-black  ",
+                isWhitePage
+                  ? "md:bg-white md:text-black"
+                  : "md:bg-black md:text-white"
+              )}
             >
               🇩🇪 German
             </SelectItem>
             <SelectItem
               value="en"
-              className="text-black md:text-white md:bg-black"
+              className={clsx(
+                "text-black  opacity-80",
+                isWhitePage
+                  ? "md:bg-white md:text-black"
+                  : "md:bg-black md:text-white"
+              )}
             >
               🇬🇧 English
             </SelectItem>

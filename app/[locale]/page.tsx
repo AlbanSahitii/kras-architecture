@@ -6,6 +6,8 @@ export default async function MainPageServer() {
   const fetchedData = await getAllProjects({first: 5});
   const t = await getTranslations("HomePage");
 
+  if (!fetchedData) return <p>Not Found</p>;
+
   return (
     <MainpageClient
       projectsData={fetchedData.projects}

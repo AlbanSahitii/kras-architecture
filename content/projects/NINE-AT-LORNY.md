@@ -1,74 +1,61 @@
 ---
 title: NINE AT LORNY
 germanTitle: NINE AT LORNY
-type: Comercial
-germanType: Kommerziell
-germanPhase: Fortlaufend
+type: Residental
+germanType: Wohnsitz
+germanPhase: Vollendet
 phase: On-going
 city: Karslruhe
-address: Karslruhe
-date: 12/05/2022
 description: >
   Nine at Lorny is a modern three-story residential complex featuring nine
   carefully designed apartments and a secure underground parking garage. The
-  building’s architecture is defined by clean, in tersecting volumes, vertical
-  window arrangements, and cantile vered balconies that create a dynamic and
-  minimalist façade.
-
-
-  Nine at Lorny is a modern three-story residential complex featuring nine
-  carefully designed apartments and a secure underground parking garage. The
-  building’s architecture is defined by clean, in tersecting volumes, vertical
-  window arrangements, and cantile vered balconies that create a dynamic and
+  building’s architecture is defined by clean, in- tersecting volumes, vertical
+  window arrangements, and cantile- vered balconies that create a dynamic and
   minimalist façade.
 germanDescription: >
-  Nine at Lorny is a modern three-story residential complex featuring nine
-  carefully designed apartments and a secure underground parking garage. The
-  building’s architecture is defined by clean, in tersecting volumes, vertical
-  window arrangements, and cantile vered balconies that create a dynamic and
-  minimalist façade.
+  Nine at Lorny ist ein moderner dreistöckiger Wohnkomplex mit neun sorgfältig
+  gestalteten Wohnungen und einer sicheren Tiefgarage. Die Architektur des
+  Gebäudes zeichnet sich durch klare, sich kreuzende Volumen, vertikale
+  Fensteranordnungen und auskragende Balkone aus, die eine dynamische und
+  minimalistische Fassade schaffen.
 germanTitleDescription: Nine at Lorny
 titleDescription: Nine at Lorny
-thumbnail: /test-thumb.png
+thumbnail: >-
+  /Project%20Images/01 nine at lorny_05 FULLY FITTING INTO THE URBAN CONTEXT AND
+  BRINGING LIFE TO A DEAD CORNER.png
 images:
-  - image: /Screenshot_4.png
-    description: ''
-    germanDescription: ''
-  - image: /Screenshot_5.png
-    description: ''
-    germanDescription: ''
-  - image: /Screenshot_3.png
-    description: >
-      Nine at Lorny is a refined urban development that balances modern design
-      with practical living, offering a quiet, stylish retreat within a compact
-      and well-planned structure.
-    germanDescription: >
-      Nine at Lorny is a refined urban development that balances modern design
-      with practical living, offering a quiet, stylish retreat within a compact
-      and well-planned structure.
-  - image: /Screenshot_2.png
+  - image: >-
+      /Project%20Images/01 nine at lorny_05 FULLY FITTING INTO THE URBAN CONTEXT
+      AND BRINGING LIFE TO A DEAD CORNER.png
+  - image: /Project%20Images/01 nine at lorny_04 FLOORPLANS.png
+  - image: /Project%20Images/01 nine at lorny_03 ZONING DIAGRAMS.png
+  - image: /Project%20Images/01 nine at lorny_02 MASTERPLAN.png
     description: >
       The underground parking facility is discreetly integrated into the site,
       preserving the footprint for modest landscaping and pedestri- an access. A
       covered main entrance offers a welcoming transition into the building,
       combining functionality with subtle elegance.
     germanDescription: >
-      The underground parking facility is discreetly integrated into the site,
-      preserving the footprint for modest landscaping and pedestri- an access. A
-      covered main entrance offers a welcoming transition into the building,
-      combining functionality with subtle elegance.
+      Die Tiefgarage ist diskret in das Grundstück integriert und bietet
+      ausreichend Platz für eine dezente Landschaftsgestaltung und
+      Fußgängerzugang. Ein überdachter Haupteingang bietet einen einladenden
+      Übergang ins Gebäude und verbindet Funktionalität mit dezenter Eleganz.
     type: MASTERPLAN
     germanType: MASTERPLAN
-  - image: /Screenshot_1.png
+  - image: >-
+      /Project%20Images/01 nine at lorny_01 FINDING THE FORM THROUGH URBAN
+      LIMITATIONS-04.png
     description: >
       The design emphasizes natural light, privacy, and spatial efficiency. Each
-      apartment includes open-plan living, large windows, and private balconies
-      that extend the interior experience outdoors. A soft, neutral material
-      palette enhances the building’s calm and con-  temporary aesthetic.
+      apartment includes open-plan living, large windows, and pri- vate
+      balconies that extend the interior experience outdoors. A soft, neutral
+      material palette enhances the building’s calm and con- temporary
+      aesthetic.
     germanDescription: >
-      The design emphasizes natural light, privacy, and spatial efficiency. Each
-      apartment includes open-plan living, large windows, and private balconies
-      that extend the interior experience outdoors. A soft, neutral material
-      palette enhances the building’s calm and con-  temporary aesthetic.
+      Das Design legt Wert auf natürliches Licht, Privatsphäre und
+      Raumeffizienz. Jede Wohnung verfügt über einen offenen Wohnbereich, große
+      Fenster und private Balkone, die das Wohnerlebnis nach draußen erweitern.
+      Eine sanfte, neutrale Materialpalette unterstreicht die ruhige und moderne
+      Ästhetik des Gebäudes.
 ---
 

@@ -8,16 +8,19 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-
+import clsx from "clsx";
 import Link from "next/link";
 import {Menu} from "lucide-react";
 import Image from "next/image";
-import {useParams} from "next/navigation";
+import {useParams, usePathname} from "next/navigation";
 import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
+import logoBlackNoText from "../../../public/black-logo-notext.png";
 function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
   const params = useParams();
+  const pathName = usePathname();
+  const isWhitePage = pathName?.split("/").find(e => e === "project");
   const [isOpen, setIsOpen] = useState(false);
   const [isPage1InView, setIsPage1InView] = useState(false);
   const [isPage0InView, setIsPage0InView] = useState(false);
@@ -92,7 +95,6 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
     },
     exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
   };
-
   return (
     <>
       <header>
@@ -102,7 +104,12 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
             !isMobile || isPage1InView || isPage0InView ? "visible" : "hidden"
           }
           exit="exit"
-          className={`z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b from-white/30 via-white/10  to-white/[0.005] backdrop-blur-lg `}
+          className={clsx(
+            "z-20 fixed w-svw  px-10 pb-6 pt-4 md:pb-3 md:px-12 md:pt-3 flex justify-between items-center  bg-gradient-to-b  backdrop-blur-lg ",
+            isWhitePage
+              ? "text-black from-black/30 via-black/10  to-black/[0.005]"
+              : "from-white/30 via-white/10  to-white/[0.005] text-white"
+          )}
         >
           <Link href="/">
             <motion.div
@@ -115,7 +122,21 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
               }
               exit="exit"
             >
-              <Image src={logoWhiteNoText} alt="Logo" width={30} height={30} />
+              {isWhitePage ? (
+                <Image
+                  src={logoBlackNoText}
+                  alt="Logo"
+                  width={30}
+                  height={30}
+                />
+              ) : (
+                <Image
+                  src={logoWhiteNoText}
+                  alt="Logo"
+                  width={30}
+                  height={30}
+                />
+              )}
             </motion.div>
           </Link>
 
@@ -130,27 +151,51 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
             KRAS
           </motion.p>
           <ol className="hidden md:flex mx-2 items-center">
-            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <li
+              className={clsx(
+                "mx-2 border-b border-transparent transition duration-500 ease-in-out",
+                isWhitePage ? "hover:border-black" : "hover:border-white"
+              )}
+            >
               <Link href={`/${params!.locale}/projects`}>{projects}</Link>
             </li>
-            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <li
+              className={clsx(
+                "mx-2 border-b border-transparent transition duration-500 ease-in-out",
+                isWhitePage ? "hover:border-black" : "hover:border-white"
+              )}
+            >
               <Link href={`/${params!.locale}/about`}>{aboutUs}</Link>
             </li>
-            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <li
+              className={clsx(
+                "mx-2 border-b border-transparent transition duration-500 ease-in-out",
+                isWhitePage ? "hover:border-black" : "hover:border-white"
+              )}
+            >
               <Link href={`/${params!.locale}/blog`}>{chronicle}</Link>
             </li>
-            <li className="mx-2 border-b border-transparent hover:border-white transition duration-500 ease-in-out">
+            <li
+              className={clsx(
+                "mx-2 border-b border-transparent transition duration-500 ease-in-out",
+                isWhitePage ? "hover:border-black" : "hover:border-white"
+              )}
+            >
               <ContactDialog closeText={closeText} contact={contact} />
             </li>
             <li className="ml-4">
-              <LanguageToggle />
+              <LanguageToggle isWhitePage={isWhitePage} />
             </li>
           </ol>
         </motion.nav>
         <div className="fixed right-8 top-6 z-50 md:hidden ">
           <Drawer open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger onClick={e => e.currentTarget.blur()}>
-              <Menu strokeWidth={3} />
+              <Menu
+                strokeWidth={3}
+                color={isWhitePage ? "black" : "white"}
+                className="opacity-60"
+              />
             </DrawerTrigger>
             <DrawerContent
               aria-describedby={undefined}
@@ -179,7 +224,7 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
                   <ContactDialog closeText={closeText} contact={contact} />
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
-                  <LanguageToggle />
+                  <LanguageToggle isWhitePage={isWhitePage} />
                 </DrawerTitle>
               </DrawerHeader>
             </DrawerContent>

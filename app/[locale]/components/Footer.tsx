@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Accordion,
@@ -13,38 +14,72 @@ import {
   Linkedin,
 } from "lucide-react";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+import clsx from "clsx";
 
 function Footer({contactUs, socials}) {
-  return (
-    <footer className="relative w-full h-1/3 flex justify-center items-center  ">
-      <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-5"></div>
+  const pathName = usePathname();
+  const isWhitePage = pathName?.split("/").find(e => e === "project");
 
-      <div className=" w-full absolute inset-0 bg-gradient-to-b from-black to-transparent"></div>
+  return (
+    <footer className="relative w-full h-1/3 flex justify-center items-center  snap-start">
+      <div
+        className={clsx(
+          "w-full absolute inset-0  bg-cover ",
+          isWhitePage
+            ? "bg-[url('/background-logo-gold.jpg')] opacity-30"
+            : "bg-[url('/background-logo-black.jpg')] opacity-5"
+        )}
+      ></div>
+      {/*  */}
+      <div
+        className={clsx(
+          " w-full absolute inset-0 ",
+          isWhitePage
+            ? "bg-gradient-to-b from-white to-transparent"
+            : "bg-gradient-to-b from-black to-transparent "
+        )}
+      ></div>
 
       <div className="relative z-10 text-white w-full m-20 border-none">
         <Accordion
-          className="h-full w-full mx-5 z-20 "
+          className={clsx(
+            "h-full w-full mx-5 z-20 ",
+            isWhitePage ? "text-black" : "text-white"
+          )}
           type="single"
           collapsible
         >
-          <AccordionItem value="item-1">
+          <AccordionItem
+            value="item-1"
+            className={clsx(
+              isWhitePage ? "border-b border-black" : "border-b border-white"
+            )}
+          >
             <AccordionTrigger>{`${contactUs}`}</AccordionTrigger>
 
             <AccordionContent className="ml-2">
-              <a href={`mailto:contact@krasarchitects.com`}>
+              <a href="mailto:contact@krasarchitects.com">
                 <MailIcon className="inline mr-2" />
                 contact@krasarchitects.com
               </a>
             </AccordionContent>
             <AccordionContent className="ml-2">
-              <a href={`tel:+4917684775093`}>
+              <a href="tel:+4917684775093">
                 <PhoneIncoming className="inline mr-2" />
                 +49 17684775093
               </a>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-2">
+
+          <AccordionItem
+            value="item-2"
+            className={clsx(
+              isWhitePage ? "border-b border-black" : "border-b border-white"
+            )}
+          >
             <AccordionTrigger>{`${socials}`}</AccordionTrigger>
+
             <AccordionContent className="ml-2">
               <Facebook className="inline mr-2" />
               <Link href="https://www.facebook.com/profile.php?id=61576569491054">
@@ -59,7 +94,7 @@ function Footer({contactUs, socials}) {
             </AccordionContent>
             <AccordionContent className="ml-2">
               <Linkedin className="inline mr-2" />
-              <Link href="twitter.com">LinkedIn</Link>
+              <Link href="https://www.linkedin.com">LinkedIn</Link>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
