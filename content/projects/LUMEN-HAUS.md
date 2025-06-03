@@ -20,11 +20,13 @@ germanDescription: >
   und bewaldete Landschaften einfügt.
 germanTitleDescription: Lumen Haus
 titleDescription: Lumen Haus
-thumbnail: /Project%20Images/05 lumen haus_ILLUSTRATION OF THE HAUS AND THE TREEHAUS.png
+thumbnail: /10 Web_Thumbnails-01-05.png
 images:
   - image: >-
       /Project%20Images/05 lumen haus_ILLUSTRATION OF THE HAUS AND THE
       TREEHAUS.png
+    description: ''
+    germanDescription: ''
   - image: /Project%20Images/05 lumen haus_02 FLOORPLANS.png
     description: >
       Rooted in its mountainous inspiration, Lumen Haus is a refined,

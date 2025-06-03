@@ -27,9 +27,11 @@ germanDescription: >
   und körperliche Grenzen erweitert.
 germanTitleDescription: TREETOPIA
 titleDescription: TREETOPIA
-thumbnail: /Project Images/00 Web_Thumbnails-09.png
+thumbnail: /10 Web_Thumbnails-01-09.png
 images:
   - image: /Project Images/09 treetopia_03 VISUALIZATION.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/09 treetopia_01 BRINGING A BOX TO LIFE.png
     description: >
       Treetopia isn’t just a playground it’s a celebration of bravery,
