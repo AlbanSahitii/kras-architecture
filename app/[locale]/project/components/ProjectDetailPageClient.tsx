@@ -62,10 +62,7 @@ function ProjectDetailPageClient({
     },
   };
 
-  console.log(project);
-
   const imagesReversed = project.images.slice().reverse();
-  console.log(imagesReversed);
   return (
     <>
       <div className="bg-white text-black min-h-screen">

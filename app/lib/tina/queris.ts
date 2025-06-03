@@ -1,4 +1,5 @@
 import {client} from "@/tina/__generated__/client";
+import {notFound} from "next/navigation";
 
 export interface FetchProjectsArgs {
   type?: string;
@@ -96,7 +97,7 @@ export const getProjectByType = async ({
 
     if (!result) {
       console.error("Project with the given title not found");
-      return null;
+      return notFound();
     }
     const projectData = result.data.ProjectsConnection.edges?.map(p => {
       return {
@@ -138,7 +139,7 @@ export const getEmployees = async () => {
 
     if (!result) {
       console.error("Employees not found");
-      return null;
+      return notFound();
     }
 
     const ceo: Employee[] = [];
@@ -183,7 +184,7 @@ export const getEmployees = async () => {
     return {ceo, partners, teamLeader, superVisors, architects, finance};
   } catch (error) {
     console.error("Failed to fetch project by title:", error);
-    return null;
+    return notFound();
   }
 };
 
@@ -234,7 +235,7 @@ export const getBlogByTitle = async (title: string) => {
 
     if (!blog) {
       console.error("blog with the given title not found");
-      return null;
+      return notFound();
     }
 
     return blog;
