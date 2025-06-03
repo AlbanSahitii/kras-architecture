@@ -19,12 +19,17 @@ germanDescription: >
   eine markante lineare Form zu schaffen.
 germanTitleDescription: NARROWWAY HOUSE
 titleDescription: NARROWWAY HOUSE
-thumbnail: /Project Images/narrow-hause-thumbnail.png
+thumbnail: /10 Web_Thumbnails-01-04.png
 images:
   - image: /Project Images/04 NarrowwayHouse_05 SouthWest Elevation.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/04 NarrowwayHouse_04 NorthEast Elevation.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/04 NarrowwayHouse_03 Floorplans.png
     description: ''
+    germanDescription: ''
     type: 1.GROUND LEVEL  2.FIRST LEVEL
     germanType: 1. ERDGESCHOSS 2. ERSTE EBENE
   - image: /Project Images/04 NarrowwayHouse_02 Diagrams.png

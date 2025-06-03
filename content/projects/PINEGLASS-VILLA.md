@@ -20,10 +20,14 @@ germanDescription: >
   harmonische Balance zwischen Minimalismus und Wärme.
 germanTitleDescription: PINEGLASS VILLA
 titleDescription: PINEGLASS VILLA
-thumbnail: /Project%20Images/PINEGLASS-VILLA-THUMBNAIL.png
+thumbnail: /10 Web_Thumbnails-01-03.png
 images:
   - image: /Project Images/03 pineglass_03 VISUALIZATION.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/03 pineglass_04 VISUALIZATION.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/03 pineglass_02 AXONOMETRIC CUTAWAY.png
     description: >
       Pineglass Villa offers a peaceful escape, combining clean architectural

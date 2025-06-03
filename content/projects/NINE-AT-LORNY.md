@@ -20,15 +20,19 @@ germanDescription: >
   minimalistische Fassade schaffen.
 germanTitleDescription: Nine at Lorny
 titleDescription: Nine at Lorny
-thumbnail: >-
-  /Project%20Images/01 nine at lorny_05 FULLY FITTING INTO THE URBAN CONTEXT AND
-  BRINGING LIFE TO A DEAD CORNER.png
+thumbnail: /10 Web_Thumbnails-01-01.png
 images:
   - image: >-
       /Project%20Images/01 nine at lorny_05 FULLY FITTING INTO THE URBAN CONTEXT
       AND BRINGING LIFE TO A DEAD CORNER.png
+    description: ''
+    germanDescription: ''
   - image: /Project%20Images/01 nine at lorny_04 FLOORPLANS.png
+    description: ''
+    germanDescription: ''
   - image: /Project%20Images/01 nine at lorny_03 ZONING DIAGRAMS.png
+    description: ''
+    germanDescription: ''
   - image: /Project%20Images/01 nine at lorny_02 MASTERPLAN.png
     description: >
       The underground parking facility is discreetly integrated into the site,
