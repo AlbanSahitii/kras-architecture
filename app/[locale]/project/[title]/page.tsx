@@ -27,7 +27,6 @@ export async function generateMetadata({
   const pageDescription =
     locale === "en" ? project.germanDescription : project.description;
   const fullUrl = `${siteUrl}/projects/${title}`;
-  console.log(pageDescription);
 
   return {
     title: pageTitle,

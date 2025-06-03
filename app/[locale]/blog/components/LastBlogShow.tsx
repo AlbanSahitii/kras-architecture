@@ -8,7 +8,7 @@ function LastBlogShow({blog}) {
   const params = useParams();
   return (
     <>
-      <div className=" flex flex-col items-center snap-start">
+      <div className=" flex flex-col items-center">
         <Link href={`/${params!.locale}/blog/${blog.title}`}>
           <h1 id="page0" className="text-4xl break-words">
             {params!.locale === "en" ? blog.title : blog.germanTitle}
@@ -28,7 +28,7 @@ function LastBlogShow({blog}) {
             />
           </Link>
         </div>
-        <p className="self-center my-4 text-gray-300 snap-start">
+        <p className="self-center my-4 text-gray-300">
           {new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
         </p>
       </div>

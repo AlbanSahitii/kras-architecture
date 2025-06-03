@@ -129,15 +129,15 @@ async function BlogsServerSideTitle({params}: props) {
         />
       </Head>
 
-      <div className=" flex flex-col items-center pt-32 snap-start">
+      <div className=" flex flex-col items-center pt-32 ">
         <p className=" mb-8 text-gray-300 " id="page0">
           {blog.date &&
             new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
         </p>
-        <h1 className="text-4xl break-words pb-7 px-7 snap-start">
+        <h1 className="text-4xl break-words pb-7 px-7 ">
           {locale === "en" ? blog.title : blog.germanTitle}
         </h1>
-        <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center snap-start">
+        <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
           <Image
             className="w-full h-[800px] rounded-xl object-cover"
             width={500}
@@ -150,18 +150,12 @@ async function BlogsServerSideTitle({params}: props) {
         </div>
         {locale === "en"
           ? blog?.description.children.map((description, i) => (
-              <p
-                className=" my-7 text-gray-300 md:w-[70%] px-7 snap-start"
-                key={i}
-              >
+              <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
                 {description.children[0].text}
               </p>
             ))
           : blog?.germanDescription.children.map((description, i) => (
-              <p
-                className=" my-7 text-gray-300 md:w-[70%] px-7 snap-start"
-                key={i}
-              >
+              <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
                 {description.children[0].text}
               </p>
             ))}

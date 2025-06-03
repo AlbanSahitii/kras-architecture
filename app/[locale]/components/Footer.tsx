@@ -20,9 +20,15 @@ import clsx from "clsx";
 function Footer({contactUs, socials}) {
   const pathName = usePathname();
   const isWhitePage = pathName?.split("/").find(e => e === "project");
-
+  const isMainMenuPage = pathName === "/en" || pathName === "/de";
+  console.log(isMainMenuPage);
   return (
-    <footer className="relative w-full h-1/3 flex justify-center items-center  snap-start">
+    <footer
+      className={clsx(
+        "relative w-full h-1/3 flex justify-center items-center",
+        isMainMenuPage && " snap-start"
+      )}
+    >
       <div
         className={clsx(
           "w-full absolute inset-0  bg-cover ",

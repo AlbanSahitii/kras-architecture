@@ -6,7 +6,7 @@ function BlogListShow({blog}) {
   const params = useParams();
   return (
     <>
-      <div className="md:w-[80%] text-gray-300  flex  justify-between my-10 md:my-14 snap-start">
+      <div className="md:w-[80%] text-gray-300  flex  justify-between my-10 md:my-14">
         <div className="flex flex-col">
           <span>
             <p className="inline ">
