@@ -44,11 +44,11 @@ function BlogShowClient({blogs, limit}) {
   }
   return (
     <div className="w-screen h-auto px-8">
-      <section className="pt-32 snap-start">
+      <section className="pt-32 ">
         <LastBlogShow blog={flattedData[0]} />
       </section>
 
-      <h2 className="text-xl mt-16 md:mt-32 md:place-self-center  snap-start">
+      <h2 className="text-xl mt-16 md:mt-32 md:place-self-center  ">
         {params!.locale === "en"
           ? "Recent Publication"
           : "Aktuelle Veröffentlichung"}

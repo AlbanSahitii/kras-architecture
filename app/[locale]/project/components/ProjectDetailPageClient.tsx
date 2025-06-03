@@ -66,7 +66,7 @@ function ProjectDetailPageClient({
   return (
     <>
       <div className="bg-white text-black min-h-screen">
-        <div className=" px-3 pt-40 md:px-20 snap-start">
+        <div className=" px-3 pt-40 md:px-20 ">
           <section className="">
             <h2 className="tracking-wide text-sm md:text-2xl">
               {params!.locale === "en" ? project.type : project.germanType}
@@ -118,7 +118,7 @@ function ProjectDetailPageClient({
                 </div>
               )}
             </div>
-            <div className="md:ml-10 md:min-w-3/5 flex justify-center snap-start mt-5 md:mt-0">
+            <div className="md:ml-10 md:min-w-3/5 flex justify-center  mt-5 md:mt-0">
               <motion.img
                 alt="thumbnail"
                 className="w-full h-auto md:h-[700px] object-cover rounded-lg"
@@ -126,9 +126,8 @@ function ProjectDetailPageClient({
               />
             </div>
           </section>
-          <div className="snap-start"></div>
         </div>
-        <div className="p-5 md:mx-60 snap-start mt-16">
+        <div className="p-5 md:mx-60  mt-16">
           <motion.h1
             ref={projectTitleRef}
             className="text-center text-2xl md:text-4xl transform"
@@ -177,7 +176,7 @@ function ProjectDetailPageClient({
               ))}
         </div>
         <br />
-        {/* <div className="p-5 md:mx-20 snap-start"> this div is for the comments below how it used to be */}
+        {/* <div className="p-5 md:mx-20 "> this div is for the comments below how it used to be */}
         {/* <section>
           <motion.h1
           ref={projectImagesTitleRef}
@@ -192,11 +191,11 @@ function ProjectDetailPageClient({
             {projectImagesText}
             </motion.h1>
             </section>
-            <section className="px-4 py-8 max-w-4xl  mx-auto snap-start bg-red-500">
+            <section className="px-4 py-8 max-w-4xl  mx-auto  bg-red-500">
             <ImagesAlbum images={project.images} />
             </section> */}
 
-        <div className="p-5 md:mx-20 lg:mx-96 snap-start flex flex-col items-center ">
+        <div className="p-5 md:mx-20 lg:mx-96  flex flex-col items-center ">
           {imagesReversed.map((image, i) => (
             <div key={i} className="w-full py-2 ">
               <Image
@@ -229,7 +228,7 @@ function ProjectDetailPageClient({
           ))}
         </div>
         {suggestedProject && (
-          <div className="p-5  flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row snap-start">
+          <div className="p-5  flex justify-between flex-col md:mx-20 md:flex md:justify-evenly md:flex-row ">
             <section className="mb-5 md:w-2/5">
               <Link
                 href={`/${params!.locale}/project/${suggestedProject.title}`}
@@ -245,7 +244,7 @@ function ProjectDetailPageClient({
                 />
               </Link>
             </section>
-            <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10 snap-start">
+            <section className=" md:w-2/5 md:flex md:flex-col md:justify-between md:my-10 ">
               <Link
                 href={`/${params!.locale}/project/${suggestedProject.title}`}
               >
@@ -284,7 +283,7 @@ function ProjectDetailPageClient({
               >
                 <motion.p
                   ref={nextProjectParRef}
-                  className="hidden w-fit transform md:text-4xl md:tracking-wider md:block border-b border-transparent hover:border-white transition duration-500 ease-in-out snap-start"
+                  className="hidden w-fit transform md:text-4xl md:tracking-wider md:block border-b border-transparent hover:border-white transition duration-500 ease-in-out "
                   initial={{opacity: 0, y: 50}}
                   animate={{
                     opacity: nextProjectParInView ? 1 : 0,
