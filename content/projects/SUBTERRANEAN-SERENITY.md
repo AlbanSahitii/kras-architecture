@@ -21,7 +21,7 @@ germanDescription: >
   wird.
 germanTitleDescription: SUBTERRANEAN SERENITY
 titleDescription: SUBTERRANEAN SERENITY
-thumbnail: /10 Web_Thumbnails-01-06.png
+thumbnail: /20 Web_Thumbnails-1920x1080-06.png
 images:
   - image: /Project Images/06 SubterraneanSerenity_05.png
     description: ''

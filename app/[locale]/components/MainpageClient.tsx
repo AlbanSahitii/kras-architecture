@@ -85,18 +85,6 @@ const MainpageClient = ({
     };
   }, [projectsData]);
 
-  useEffect(() => {
-    const setVh = () => {
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight * 0.01}px`
-      );
-    };
-    setVh();
-    window.addEventListener("resize", setVh);
-    return () => window.removeEventListener("resize", setVh);
-  }, []);
-
   return (
     <>
       <main className="main-page">
@@ -108,8 +96,7 @@ const MainpageClient = ({
             <div
               key={index}
               ref={divRef.current[index]}
-              className={`relative  bg-black flex flex-col-reverse overflow-hidden snap-center `}
-              style={{height: "calc(var(--vh, 1vh) * 100)"}}
+              className={`relative  bg-black flex flex-col-reverse overflow-hidden snap-center h-svh`}
             >
               <Image
                 className="absolute top-0 left-0 w-[110vw] h-[110vh] md:w-full md:h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none"
@@ -171,7 +158,7 @@ const MainpageClient = ({
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="w-96 flex-none text-left ml-8 snap-start "
+              className="w-96 flex-none ml-8 snap-start text-center "
             >
               <Link href={`/${params!.locale}/project/${project.title}`}>
                 <p className="mb-4 ">

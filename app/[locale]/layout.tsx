@@ -101,10 +101,7 @@ export default async function RootLayout({children, params}: Props) {
           }}
         />
       </head>
-      <body
-        translate="no"
-        className={`${poppins.className} overflow-x-hidden  h-full`}
-      >
+      <body translate="no" className={`${poppins.className} overflow-x-hidden`}>
         <ReactQueryProvider>
           <NextIntlClientProvider>
             <Navbar
