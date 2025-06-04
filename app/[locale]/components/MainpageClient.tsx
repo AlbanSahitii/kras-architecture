@@ -158,7 +158,7 @@ const MainpageClient = ({
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="w-96 flex-none text-left ml-8 snap-start "
+              className="w-96 flex-none ml-8 snap-start text-center "
             >
               <Link href={`/${params!.locale}/project/${project.title}`}>
                 <p className="mb-4 ">

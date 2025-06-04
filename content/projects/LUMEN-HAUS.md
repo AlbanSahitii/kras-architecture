@@ -20,7 +20,7 @@ germanDescription: >
   und bewaldete Landschaften einfügt.
 germanTitleDescription: Lumen Haus
 titleDescription: Lumen Haus
-thumbnail: /10 Web_Thumbnails-01-05.png
+thumbnail: /20 Web_Thumbnails-1920x1080-05.png
 images:
   - image: >-
       /Project%20Images/05 lumen haus_ILLUSTRATION OF THE HAUS AND THE

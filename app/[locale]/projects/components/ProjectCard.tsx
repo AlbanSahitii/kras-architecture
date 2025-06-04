@@ -6,6 +6,7 @@ import {ArrowDownRight} from "lucide-react";
 import Link from "next/link";
 import {seededRandomColor} from "@/app/lib/seededRandomColor";
 import {useParams} from "next/navigation";
+import Image from "next/image";
 function ProjectCard({project}) {
   const params = useParams();
   const bgColor = seededRandomColor(project.title);
@@ -32,10 +33,12 @@ function ProjectCard({project}) {
     >
       <Link href={`/${params!.locale}/project/${project.title}`}>
         <div className="w-full h-full relative z-0">
-          <motion.img
+          <Image
             src={project.thumbnail}
             className="w-full h-full object-cover opacity-60"
             alt={project.title}
+            fill
+            quality={75}
           />
           <p className="text-xs absolute top-2 left-2 md:top-4 md:left-3 md:text-xl md:tracking-wider text-white">
             {params!.locale === "en" ? project.type : project.germanType}

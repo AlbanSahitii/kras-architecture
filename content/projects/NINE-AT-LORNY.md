@@ -20,7 +20,7 @@ germanDescription: >
   minimalistische Fassade schaffen.
 germanTitleDescription: Nine at Lorny
 titleDescription: Nine at Lorny
-thumbnail: /10 Web_Thumbnails-01-01.png
+thumbnail: /20 Web_Thumbnails-1920x1080-01.png
 images:
   - image: >-
       /Project%20Images/01 nine at lorny_05 FULLY FITTING INTO THE URBAN CONTEXT
