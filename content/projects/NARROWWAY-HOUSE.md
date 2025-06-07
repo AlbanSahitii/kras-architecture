@@ -20,6 +20,7 @@ germanDescription: >
 germanTitleDescription: NARROWWAY HOUSE
 titleDescription: NARROWWAY HOUSE
 thumbnail: /20 Web_Thumbnails-1920x1080-04.png
+thumbnailMobile: /10 Web_Thumbnails-01-04.png
 images:
   - image: /Project Images/04 NarrowwayHouse_05 SouthWest Elevation.png
     description: ''

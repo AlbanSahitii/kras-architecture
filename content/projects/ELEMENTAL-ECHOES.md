@@ -25,6 +25,7 @@ germanDescription: >
 germanTitleDescription: ELEMENTAL ECHOES
 titleDescription: ELEMENTAL ECHOES
 thumbnail: /20 Web_Thumbnails-1920x1080-09.png
+thumbnailMobile: /10 Web_Thumbnails-01-08.png
 images:
   - image: '/Project Images/08 elemental echoes_02 EARTH AND AIR, FIRE AND WATER.png'
     description: >

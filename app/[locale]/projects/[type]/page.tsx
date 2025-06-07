@@ -4,6 +4,7 @@ import React from "react";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
+import Footer from "../../components/Footer";
 
 interface localeType {
   params: Promise<{
@@ -57,16 +58,19 @@ async function ProjectsFilterServerSide({params}: ProjectPageParams) {
 
   if (initialData?.projects?.length === 0) notFound();
   return (
-    <main>
-      <ProjectsFilterPageClient
-        key={type}
-        initialData={initialData}
-        limit={first}
-        type={type}
-        projectTitle={projectMessages("projectTitle")}
-        allProjects={projectMessages("all")}
-      />
-    </main>
+    <>
+      <main>
+        <ProjectsFilterPageClient
+          key={type}
+          initialData={initialData}
+          limit={first}
+          type={type}
+          projectTitle={projectMessages("projectTitle")}
+          allProjects={projectMessages("all")}
+        />
+      </main>
+      <Footer />
+    </>
   );
 }
 

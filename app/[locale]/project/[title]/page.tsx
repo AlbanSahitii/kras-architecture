@@ -3,6 +3,7 @@ import {getProjectByTitle, getAllProjects} from "@/app/lib/tina/queris";
 import ProjectDetailPageClient from "../components/ProjectDetailPageClient";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
+import Footer from "../../components/Footer";
 interface ProjectPageParams {
   params: Promise<{
     title: string;
@@ -92,6 +93,7 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
           conceptualProject={pageMessages("conceptualProject")}
         />
       </main>
+      <Footer />
     </>
   );
 }

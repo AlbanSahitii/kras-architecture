@@ -86,7 +86,6 @@ export default async function RootLayout({children, params}: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-  const footerMessages = await getTranslations("Footer");
   const navbarMessages = await getTranslations("Navbar");
 
   return (
@@ -109,14 +108,11 @@ export default async function RootLayout({children, params}: Props) {
               aboutUs={navbarMessages("aboutUs")}
               contact={navbarMessages("contact")}
               closeText={navbarMessages("close")}
-              chronicle={navbarMessages("chronicle")}
+              blog={navbarMessages("blog")}
+              bookMeeting={navbarMessages("bookMeeting")}
             />
             {children}
             <Analytics />
-            <Footer
-              contactUs={footerMessages("contactUs")}
-              socials={footerMessages("socials")}
-            />
           </NextIntlClientProvider>
         </ReactQueryProvider>
       </body>

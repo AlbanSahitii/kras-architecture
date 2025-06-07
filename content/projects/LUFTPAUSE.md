@@ -24,6 +24,7 @@ germanDescription: >
 germanTitleDescription: LUFTPAUSE
 titleDescription: LUFTPAUSE
 thumbnail: /20 Web_Thumbnails-1920x1080-07.png
+thumbnailMobile: /10 Web_Thumbnails-01-07.png
 images:
   - image: /Project%20Images/07 luftpause_02 CREATING A SPACE TO TAKE A BREATH.png
     description: >

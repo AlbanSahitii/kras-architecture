@@ -5,6 +5,7 @@ import {notFound} from "next/navigation";
 import Image from "next/image";
 import Head from "next/head";
 import {getTranslations} from "next-intl/server";
+import Footer from "../../components/Footer";
 
 interface props {
   params: Promise<{
@@ -121,46 +122,49 @@ async function BlogsServerSideTitle({params}: props) {
   };
 
   return (
-    <main>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
-        />
-      </Head>
-
-      <div className=" flex flex-col items-center pt-32 ">
-        <p className=" mb-8 text-gray-300 " id="page0">
-          {blog.date &&
-            new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
-        </p>
-        <h1 className="text-4xl break-words pb-7 px-7 ">
-          {locale === "en" ? blog.title : blog.germanTitle}
-        </h1>
-        <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
-          <Image
-            className="w-full h-[800px] rounded-xl object-cover"
-            width={500}
-            height={300}
-            src={blog.thumbnail}
-            alt={locale === "en" ? blog.title : blog.germanTitle}
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+    <>
+      <main>
+        <Head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
           />
+        </Head>
+
+        <div className=" flex flex-col items-center pt-32 ">
+          <p className=" mb-8 text-gray-300 " id="page0">
+            {blog.date &&
+              new Date(blog.date).toDateString().split(" ").splice(1).join(" ")}
+          </p>
+          <h1 className="text-4xl break-words pb-7 px-7 ">
+            {locale === "en" ? blog.title : blog.germanTitle}
+          </h1>
+          <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
+            <Image
+              className="w-full h-[800px] rounded-xl object-cover"
+              width={500}
+              height={300}
+              src={blog.thumbnail}
+              alt={locale === "en" ? blog.title : blog.germanTitle}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          {locale === "en"
+            ? blog?.description.children.map((description, i) => (
+                <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
+                  {description.children[0].text}
+                </p>
+              ))
+            : blog?.germanDescription.children.map((description, i) => (
+                <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
+                  {description.children[0].text}
+                </p>
+              ))}
         </div>
-        {locale === "en"
-          ? blog?.description.children.map((description, i) => (
-              <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
-                {description.children[0].text}
-              </p>
-            ))
-          : blog?.germanDescription.children.map((description, i) => (
-              <p className=" my-7 text-gray-300 md:w-[70%] px-7 " key={i}>
-                {description.children[0].text}
-              </p>
-            ))}
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
 

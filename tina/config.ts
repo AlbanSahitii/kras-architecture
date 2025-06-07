@@ -156,6 +156,15 @@ export default defineConfig({
               component: "image",
             },
           },
+          {
+            type: "string",
+            name: "thumbnailMobile",
+            label: "Mobile Thumbnail Image",
+            required: true,
+            ui: {
+              component: "image",
+            },
+          },
 
           {
             type: "object",

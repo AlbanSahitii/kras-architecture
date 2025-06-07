@@ -21,6 +21,7 @@ germanDescription: >
 germanTitleDescription: PINEGLASS VILLA
 titleDescription: PINEGLASS VILLA
 thumbnail: /20 Web_Thumbnails-1920x1080-03.png
+thumbnailMobile: /10 Web_Thumbnails-01-03.png
 images:
   - image: /Project Images/03 pineglass_03 VISUALIZATION.png
     description: ''
