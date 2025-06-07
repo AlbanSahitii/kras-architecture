@@ -21,6 +21,7 @@ germanDescription: >
 germanTitleDescription: Lumen Haus
 titleDescription: Lumen Haus
 thumbnail: /20 Web_Thumbnails-1920x1080-05.png
+thumbnailMobile: /10 Web_Thumbnails-01-05.png
 images:
   - image: >-
       /Project%20Images/05 lumen haus_ILLUSTRATION OF THE HAUS AND THE

@@ -17,7 +17,7 @@ import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
 import logoBlackNoText from "../../../public/black-logo-notext.png";
-function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
+function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
   const params = useParams();
   const pathName = usePathname();
   const isWhitePage = pathName?.split("/").find(e => e === "project");
@@ -34,7 +34,6 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
     const checkPageVisibility = () => {
       const page1 = document.getElementById("page1");
       const page0 = document.getElementById("page0");
-
       if (
         page1 &&
         page1.getBoundingClientRect().top < window.innerHeight &&
@@ -57,10 +56,16 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
     };
 
     window.addEventListener("scroll", checkPageVisibility);
+    document
+      .querySelector("#main-menu-scroll-container")
+      ?.addEventListener("scroll", checkPageVisibility);
     checkPageVisibility();
 
     return () => {
       window.removeEventListener("scroll", checkPageVisibility);
+      document
+        .querySelector("#main-menu-scroll-container")
+        ?.removeEventListener("scroll", checkPageVisibility);
     };
   }, []);
 
@@ -173,7 +178,7 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
                 isWhitePage ? "hover:border-black" : "hover:border-white"
               )}
             >
-              <Link href={`/${params!.locale}/blog`}>{chronicle}</Link>
+              <Link href={`/${params!.locale}/blog`}>{blog}</Link>
             </li>
             <li
               className={clsx(
@@ -181,7 +186,11 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
                 isWhitePage ? "hover:border-black" : "hover:border-white"
               )}
             >
-              <ContactDialog closeText={closeText} contact={contact} />
+              <ContactDialog
+                closeText={closeText}
+                contact={contact}
+                bookMeeting={bookMeeting}
+              />
             </li>
             <li className="ml-4">
               <LanguageToggle isWhitePage={isWhitePage} />
@@ -212,7 +221,7 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
                   <Link href={`/${params!.locale}/blog`} onClick={closeDrawer}>
-                    {chronicle}
+                    {blog}
                   </Link>
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
@@ -221,7 +230,11 @@ function Navbar({projects, aboutUs, contact, closeText, chronicle}) {
                   </Link>
                 </DrawerTitle>
                 <DrawerTitle className="m-3">
-                  <ContactDialog closeText={closeText} contact={contact} />
+                  <ContactDialog
+                    closeText={closeText}
+                    contact={contact}
+                    bookMeeting={bookMeeting}
+                  />
                 </DrawerTitle>
                 <DrawerTitle className="font-normal m-3">
                   <LanguageToggle isWhitePage={isWhitePage} />

@@ -3,6 +3,7 @@ import ProjectsPageClient from "./components/ProjectsPageClient";
 import {getAllProjects} from "../../lib/tina/queris";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
+import Footer from "../components/Footer";
 
 interface localeType {
   params: Promise<{
@@ -51,14 +52,17 @@ async function ProjectsServerSide() {
   const projectMessages = await getTranslations("Projects");
 
   return (
-    <main>
-      <ProjectsPageClient
-        initialData={fetchedData}
-        limit={limit}
-        projectTitle={projectMessages("projectTitle")}
-        allProjects={projectMessages("all")}
-      />
-    </main>
+    <>
+      <main>
+        <ProjectsPageClient
+          initialData={fetchedData}
+          limit={limit}
+          projectTitle={projectMessages("projectTitle")}
+          allProjects={projectMessages("all")}
+        />
+      </main>
+      <Footer />
+    </>
   );
 }
 

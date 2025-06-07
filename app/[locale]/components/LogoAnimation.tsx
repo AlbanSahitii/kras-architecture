@@ -46,7 +46,7 @@ export default function LogoAnimation() {
       <div className="w-full absolute inset-0 bg-[url('/background-logo-black.jpg')] bg-cover opacity-[0.04] z-10   md:block"></div>
 
       <div className="relative  max-w-[500px] top-0 left-[0px] z-20">
-        <div className="" id="page1">
+        <div className="" id="page0">
           <svg
             ref={svgRef}
             viewBox="0 0 500 500"

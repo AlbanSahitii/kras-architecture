@@ -28,6 +28,7 @@ germanDescription: >
 germanTitleDescription: TREETOPIA
 titleDescription: TREETOPIA
 thumbnail: /20 Web_Thumbnails-1920x1080-08.png
+thumbnailMobile: /10 Web_Thumbnails-01-09.png
 images:
   - image: /Project Images/09 treetopia_03 VISUALIZATION.png
     description: ''
