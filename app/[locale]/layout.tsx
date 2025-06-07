@@ -2,7 +2,6 @@ import type {Metadata, Viewport} from "next";
 import {Poppins} from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import {ReactQueryProvider} from "./reactQueryProvider";
 import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {routing} from "@/i18n/routing";
