@@ -1,7 +1,8 @@
 ---
-title: NINE AT LORNY
-germanTitle: NINE AT LORNY
-type: Residental
+title: NINE BY LORNY
+germanTitle: NINE BY LORNY
+type: architecturalDesign
+architectureSubType: housing
 germanType: Wohnsitz
 germanPhase: Vollendet
 phase: On-going

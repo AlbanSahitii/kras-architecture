@@ -52,9 +52,19 @@ export default defineConfig({
             name: "type",
             required: true,
             options: [
-              {label: "Residental", value: "Residental"},
-              {label: "Comercial", value: "Comercial"},
-              {label: "Competition", value: "Competition"},
+              {label: "Landscape Design", value: "landscapeDesign"},
+              {label: "Architectural Design", value: "architecturalDesign"},
+              {label: "Interior Design", value: "interiorDesign"},
+            ],
+          },
+          {
+            type: "string",
+            name: "architectureSubType",
+            label: "Architecture Sub Type",
+            options: [
+              {value: "housing", label: "Housing"},
+              {value: "commercial", label: "Commercial"},
+              {value: "competition", label: "Competition"},
             ],
           },
           {

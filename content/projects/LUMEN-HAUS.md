@@ -1,7 +1,7 @@
 ---
 title: LUMEN HAUS
 germanTitle: LUMEN HAUS
-type: Competition
+type: architecturalDesign
 germanType: Wettbewerb
 germanPhase: Konzeptionell
 phase: Conceptual

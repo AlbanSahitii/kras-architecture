@@ -50,6 +50,7 @@ async function ProjectsServerSide() {
   const fetchedData = await getAllProjects({first: limit});
 
   const projectMessages = await getTranslations("Projects");
+  console.log(fetchedData);
 
   return (
     <>

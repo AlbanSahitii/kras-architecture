@@ -1,7 +1,7 @@
 ---
 title: PINEGLASS VILLA
 germanTitle: PINEGLASS VILLA
-type: Competition
+type: architecturalDesign
 germanType: Wettbewerb
 germanPhase: Konzeptionell
 phase: Conceptual
