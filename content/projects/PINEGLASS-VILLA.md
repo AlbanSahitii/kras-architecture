@@ -1,9 +1,10 @@
 ---
+germanType: Wettbewerb
+germanPhase: Konzeptionell
 title: PINEGLASS VILLA
 germanTitle: PINEGLASS VILLA
 type: architecturalDesign
-germanType: Wettbewerb
-germanPhase: Konzeptionell
+subType: housing
 phase: Conceptual
 city: 'Bogë, Kosovo'
 description: >

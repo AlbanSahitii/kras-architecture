@@ -59,34 +59,12 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "architectureSubType",
-            label: "Architecture Sub Type",
+            name: "subType",
+            label: "Sub Type",
             options: [
               {value: "housing", label: "Housing"},
               {value: "commercial", label: "Commercial"},
               {value: "competition", label: "Competition"},
-            ],
-          },
-          {
-            type: "string",
-            label: "German Type",
-            name: "germanType",
-            required: true,
-            options: [
-              {label: "Wohnsitz", value: "Wohnsitz"},
-              {label: "Kommerziell", value: "Kommerziell"},
-              {label: "Wettbewerb", value: "Wettbewerb"},
-            ],
-          },
-          {
-            type: "string",
-            label: "German Phase",
-            name: "germanPhase",
-            required: true,
-            options: [
-              {label: "Vollendet", value: "Vollendet"},
-              {label: "Konzeptionell", value: "Konzeptionell"},
-              {label: "Fortlaufend", value: "Fortlaufend"},
             ],
           },
           {
@@ -142,21 +120,6 @@ export default defineConfig({
             required: true,
           },
 
-          {
-            type: "string",
-            name: "surface",
-            label: "Surface",
-          },
-          {
-            type: "string",
-            name: "floors",
-            label: "Floors",
-          },
-          {
-            type: "string",
-            name: "investor",
-            label: "Investor",
-          },
           {
             type: "string",
             name: "thumbnail",

@@ -1,9 +1,9 @@
 ---
-title: SUBTERRANEAN SERENITY
-germanTitle: SUBTERRANEAN SERENITY
-type: Residental
 germanType: Wohnsitz
 germanPhase: Konzeptionell
+title: SUBTERRANEAN SERENITY
+germanTitle: SUBTERRANEAN SERENITY
+type: landscapeDesign
 phase: Conceptual
 city: 'Prishtina, Kosovo'
 description: >

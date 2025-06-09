@@ -2,7 +2,7 @@
 title: Blush And Bone
 germanTitle: Blush And Bone
 type: interiorDesign
-architectureSubType: ''
+subType: ''
 germanType: Wohnsitz
 germanPhase: Konzeptionell
 phase: Conceptual
@@ -95,4 +95,3 @@ images:
       Akzentwand subtile Tiefe und Struktur und verbinden so traditionelles und
       modernes Design.
 ---
-

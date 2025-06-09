@@ -4,6 +4,7 @@ import {getAllProjects} from "../../lib/tina/queris";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
 import Footer from "../components/Footer";
+import {getProjectTypes} from "@/app/lib/ProjectTypes";
 
 interface localeType {
   params: Promise<{
@@ -50,8 +51,7 @@ async function ProjectsServerSide() {
   const fetchedData = await getAllProjects({first: limit});
 
   const projectMessages = await getTranslations("Projects");
-  console.log(fetchedData);
-
+  const projectTypes = await getProjectTypes();
   return (
     <>
       <main>
@@ -60,6 +60,7 @@ async function ProjectsServerSide() {
           limit={limit}
           projectTitle={projectMessages("projectTitle")}
           allProjects={projectMessages("all")}
+          projectTypes={projectTypes}
         />
       </main>
       <Footer />

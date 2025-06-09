@@ -1,11 +1,11 @@
-import ProjectsFilterPageClient from "../components/ProjectsFilterPageClient";
-import {getProjectByType} from "@/app/lib/tina/queris";
+import {getProjectBySubType, getProjectByType} from "@/app/lib/tina/queris";
 import React from "react";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
-import Footer from "../../components/Footer";
 import {getProjectTypes} from "@/app/lib/ProjectTypes";
+import Footer from "@/app/[locale]/components/Footer";
+import ProjectsFilterPageClient from "../../components/ProjectsFilterPageClient";
 
 interface localeType {
   params: Promise<{
@@ -49,13 +49,15 @@ export async function generateMetadata({
 interface ProjectPageParams {
   params: Promise<{
     type: string;
+    subType: string;
   }>;
 }
 
 async function ProjectsFilterServerSide({params}: ProjectPageParams) {
   const first = 9;
-  const {type} = await params;
-  const initialData = await getProjectByType({type, first});
+  const {type, subType} = await params;
+  const initialData = await getProjectBySubType({subType, first});
+  console.log(initialData);
   const projectMessages = await getTranslations("Projects");
 
   if (initialData?.projects?.length === 0) notFound();
@@ -69,7 +71,7 @@ async function ProjectsFilterServerSide({params}: ProjectPageParams) {
           initialData={initialData}
           limit={first}
           type={type}
-          subType={""}
+          subType={subType}
           projectTitle={projectMessages("projectTitle")}
           allProjects={projectMessages("all")}
         />

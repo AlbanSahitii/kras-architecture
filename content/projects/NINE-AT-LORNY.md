@@ -2,7 +2,7 @@
 title: NINE BY LORNY
 germanTitle: NINE BY LORNY
 type: architecturalDesign
-architectureSubType: housing
+subType: housing
 germanType: Wohnsitz
 germanPhase: Vollendet
 phase: On-going
@@ -64,4 +64,3 @@ images:
       Eine sanfte, neutrale Materialpalette unterstreicht die ruhige und moderne
       Ästhetik des Gebäudes.
 ---
-

@@ -7,8 +7,9 @@ import Link from "next/link";
 import {seededRandomColor} from "@/app/lib/seededRandomColor";
 import {useParams} from "next/navigation";
 import Image from "next/image";
-function ProjectCard({project}) {
+function ProjectCard({project, projectTypes}) {
   const params = useParams();
+
   const bgColor = seededRandomColor(project.title);
   const controls = useAnimation();
   const {ref, inView} = useInView({triggerOnce: true});
@@ -41,7 +42,7 @@ function ProjectCard({project}) {
             quality={75}
           />
           <p className="text-xs absolute top-2 left-2 md:top-4 md:left-3 md:text-xl md:tracking-wider text-white">
-            {params!.locale === "en" ? project.type : project.germanType}
+            {projectTypes[project.type].type}
           </p>
           <p className="text-xs absolute top-6 left-2 md:top-14 md:left-3 md:text-2xl md:tracking-widest text-white">
             {params!.locale === "en" ? project.title : project.germanTitle}

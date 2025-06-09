@@ -1,9 +1,9 @@
 ---
-title: OBSIDIAN NEST
-germanTitle: OBSIDIAN NEST
-type: Residental
 germanType: Wohnsitz
 germanPhase: Vollendet
+title: OBSIDIAN NEST
+germanTitle: OBSIDIAN NEST
+type: landscapeDesign
 phase: On-going
 city: Peja
 description: >

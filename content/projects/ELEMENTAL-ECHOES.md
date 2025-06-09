@@ -1,9 +1,9 @@
 ---
-title: ELEMENTAL ECHOES
-germanTitle: ELEMENTAL ECHOES
-type: Comercial
 germanType: Kommerziell
 germanPhase: Konzeptionell
+title: ELEMENTAL ECHOES
+germanTitle: ELEMENTAL ECHOES
+type: landscapeDesign
 phase: Conceptual
 city: 'Szentendre, Hungary'
 description: >
