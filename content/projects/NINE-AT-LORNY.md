@@ -1,7 +1,8 @@
 ---
-title: NINE AT LORNY
-germanTitle: NINE AT LORNY
-type: Residental
+title: NINE BY LORNY
+germanTitle: NINE BY LORNY
+type: architecturalDesign
+subType: housing
 germanType: Wohnsitz
 germanPhase: Vollendet
 phase: On-going
@@ -63,4 +64,3 @@ images:
       Eine sanfte, neutrale Materialpalette unterstreicht die ruhige und moderne
       Ästhetik des Gebäudes.
 ---
-

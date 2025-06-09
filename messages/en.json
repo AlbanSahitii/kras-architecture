@@ -22,6 +22,22 @@
   },
   "Projects": {
     "projectTitle": "Projects",
+    "projectTypes": {
+      "architecturalDesign": {
+        "type": "Architectural Design",
+        "subTypes": {
+          "housing": "Housing",
+          "commercial": "Commercial",
+          "competition": "Competition"
+        }
+      },
+      "landscapeDesign": {
+        "type": "Landscape Design"
+      },
+      "interiorDesign": {
+        "type": "Interior Design"
+      }
+    },
     "all": "All"
   },
   "AboutUs": {

@@ -1,7 +1,7 @@
 ---
 title: LUFTPAUSE
 germanTitle: LUFTPAUSE
-type: Comercial
+type: landscapeDesign
 germanType: Kommerziell
 germanPhase: Konzeptionell
 phase: Conceptual

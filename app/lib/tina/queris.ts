@@ -3,6 +3,7 @@ import {notFound} from "next/navigation";
 
 export interface FetchProjectsArgs {
   type?: string;
+  subType?: string | null;
   first?: number | null;
   after?: string | null | undefined;
 }
@@ -31,18 +32,14 @@ export const getAllProjects = async ({
         address: p?.node?.address,
         city: p?.node?.city,
         type: p?.node?.type,
-        germanType: p?.node?.germanType,
         date: p?.node?.date,
         description: p?.node?.description,
         germanDescription: p?.node?.germanDescription,
-        surface: p?.node?.surface,
-        floors: p?.node?.floors,
-        investor: p?.node?.investor,
         thumbnail: p?.node?.thumbnail,
         thumbnailMobile: p?.node?.thumbnailMobile,
+        architectureSubType: p?.node?.subType,
         projectImages: p?.node?.images,
         phase: p?.node?.phase,
-        germanPhase: p?.node?.germanPhase,
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,
         germanTitleDescription: p?.node?.germanTitleDescription,
@@ -105,18 +102,63 @@ export const getProjectByType = async ({
         address: p?.node?.address,
         city: p?.node?.city,
         type: p?.node?.type,
-        germanType: p?.node?.germanType,
         date: p?.node?.date,
         description: p?.node?.description,
         germanDescription: p?.node?.germanDescription,
-        surface: p?.node?.surface,
-        floors: p?.node?.floors,
-        investor: p?.node?.investor,
+        architectureSubType: p?.node?.subType,
         thumbnail: p?.node?.thumbnail,
         thumbnailMobile: p?.node?.thumbnailMobile,
         projectImages: p?.node?.images,
         phase: p?.node?.phase,
-        germanPhase: p?.node?.germanPhase,
+        title: p?.node?.title,
+        germanTitle: p?.node?.germanTitle,
+        germanTitleDescription: p?.node?.germanTitleDescription,
+        titleDescription: p?.node?.titleDescription,
+      };
+    });
+
+    return {
+      projects: projectData,
+      hasNextPage: result.data.ProjectsConnection.pageInfo.hasNextPage,
+      endCursor: result.data.ProjectsConnection.pageInfo.endCursor,
+    };
+  } catch (error) {
+    console.error("Failed to fetch project by title:", error);
+    return null;
+  }
+};
+export const getProjectBySubType = async ({
+  subType,
+  first = null,
+  after = null,
+}: FetchProjectsArgs) => {
+  subType = subType?.toLowerCase();
+  try {
+    const result = await client.queries.ProjectsConnection({
+      first: first,
+      after: after,
+      filter: {
+        subType: {eq: subType},
+      },
+    });
+
+    if (!result) {
+      console.error("Project with the given title not found");
+      return notFound();
+    }
+    const projectData = result.data.ProjectsConnection.edges?.map(p => {
+      return {
+        address: p?.node?.address,
+        city: p?.node?.city,
+        type: p?.node?.type,
+        date: p?.node?.date,
+        description: p?.node?.description,
+        germanDescription: p?.node?.germanDescription,
+        architectureSubType: p?.node?.subType,
+        thumbnail: p?.node?.thumbnail,
+        thumbnailMobile: p?.node?.thumbnailMobile,
+        projectImages: p?.node?.images,
+        phase: p?.node?.phase,
         title: p?.node?.title,
         germanTitle: p?.node?.germanTitle,
         germanTitleDescription: p?.node?.germanTitleDescription,

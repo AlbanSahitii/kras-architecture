@@ -1,9 +1,9 @@
 ---
-title: TREETOPIA
-germanTitle: TREETOPIA
-type: Comercial
 germanType: Kommerziell
 germanPhase: Konzeptionell
+title: TREETOPIA
+germanTitle: TREETOPIA
+type: landscapeDesign
 phase: Conceptual
 city: 'Peja, Kosovo'
 description: >

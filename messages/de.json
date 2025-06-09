@@ -22,6 +22,22 @@
   },
   "Projects": {
     "projectTitle": "Projekte",
+    "projectTypes": {
+      "landscapeDesign": {
+        "type": "Landschaftsarchitektur"
+      },
+      "interiorDesign": {
+        "type": "Innenarchitektur"
+      },
+      "architecturalDesign": {
+        "type": "Architekturdesign",
+        "subTypes": {
+          "housing": "Wohnbau",
+          "commercial": "Gewerbebau",
+          "competition": "Wettbewerb"
+        }
+      }
+    },
     "all": "Alle"
   },
   "AboutUs": {

@@ -52,31 +52,19 @@ export default defineConfig({
             name: "type",
             required: true,
             options: [
-              {label: "Residental", value: "Residental"},
-              {label: "Comercial", value: "Comercial"},
-              {label: "Competition", value: "Competition"},
+              {label: "Landscape Design", value: "landscapeDesign"},
+              {label: "Architectural Design", value: "architecturalDesign"},
+              {label: "Interior Design", value: "interiorDesign"},
             ],
           },
           {
             type: "string",
-            label: "German Type",
-            name: "germanType",
-            required: true,
+            name: "subType",
+            label: "Sub Type",
             options: [
-              {label: "Wohnsitz", value: "Wohnsitz"},
-              {label: "Kommerziell", value: "Kommerziell"},
-              {label: "Wettbewerb", value: "Wettbewerb"},
-            ],
-          },
-          {
-            type: "string",
-            label: "German Phase",
-            name: "germanPhase",
-            required: true,
-            options: [
-              {label: "Vollendet", value: "Vollendet"},
-              {label: "Konzeptionell", value: "Konzeptionell"},
-              {label: "Fortlaufend", value: "Fortlaufend"},
+              {value: "housing", label: "Housing"},
+              {value: "commercial", label: "Commercial"},
+              {value: "competition", label: "Competition"},
             ],
           },
           {
@@ -132,21 +120,6 @@ export default defineConfig({
             required: true,
           },
 
-          {
-            type: "string",
-            name: "surface",
-            label: "Surface",
-          },
-          {
-            type: "string",
-            name: "floors",
-            label: "Floors",
-          },
-          {
-            type: "string",
-            name: "investor",
-            label: "Investor",
-          },
           {
             type: "string",
             name: "thumbnail",

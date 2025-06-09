@@ -1,9 +1,10 @@
 ---
-title: LUMEN HAUS
-germanTitle: LUMEN HAUS
-type: Competition
 germanType: Wettbewerb
 germanPhase: Konzeptionell
+title: LUMEN HAUS
+germanTitle: LUMEN HAUS
+type: architecturalDesign
+subType: commercial
 phase: Conceptual
 city: 'Theth, Albania'
 description: >
@@ -64,4 +65,3 @@ images:
       bietet mit integriertem Brennholzlager sowohl Funktionalität als auch
       Charme.
 ---
-

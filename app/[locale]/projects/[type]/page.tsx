@@ -5,6 +5,7 @@ import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
 import Footer from "../../components/Footer";
+import {getProjectTypes} from "@/app/lib/ProjectTypes";
 
 interface localeType {
   params: Promise<{
@@ -50,6 +51,7 @@ interface ProjectPageParams {
     type: string;
   }>;
 }
+
 async function ProjectsFilterServerSide({params}: ProjectPageParams) {
   const first = 9;
   const {type} = await params;
@@ -57,14 +59,17 @@ async function ProjectsFilterServerSide({params}: ProjectPageParams) {
   const projectMessages = await getTranslations("Projects");
 
   if (initialData?.projects?.length === 0) notFound();
+  const projectTypes = await getProjectTypes();
   return (
     <>
       <main>
         <ProjectsFilterPageClient
           key={type}
+          projectTypes={projectTypes}
           initialData={initialData}
           limit={first}
           type={type}
+          subType={""}
           projectTitle={projectMessages("projectTitle")}
           allProjects={projectMessages("all")}
         />
