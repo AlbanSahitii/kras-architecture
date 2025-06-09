@@ -120,7 +120,10 @@ function ProjectDetailPageClient({
               )}
             </div>
             <div className="md:ml-10 md:min-w-3/5 flex justify-center  mt-5 md:mt-0">
-              <motion.img
+              <Image
+                quality={75}
+                width={500}
+                height={300}
                 alt="thumbnail"
                 className="w-full h-auto md:h-[700px] object-cover rounded-lg"
                 src={project.thumbnail}
@@ -177,25 +180,6 @@ function ProjectDetailPageClient({
               ))}
         </div>
         <br />
-        {/* <div className="p-5 md:mx-20 "> this div is for the comments below how it used to be */}
-        {/* <section>
-          <motion.h1
-          ref={projectImagesTitleRef}
-          className="text-2xl mb-5 transform "
-          initial={{opacity: 0, y: 50}}
-          animate={{
-            opacity: projectImagesTitleInView ? 1 : 0,
-            y: projectImagesTitleInView ? 0 : 50,
-            }}
-            transition={{duration: 0.6}}
-            >
-            {projectImagesText}
-            </motion.h1>
-            </section>
-            <section className="px-4 py-8 max-w-4xl  mx-auto  bg-red-500">
-            <ImagesAlbum images={project.images} />
-            </section> */}
-
         <div className="p-5 md:mx-20 lg:mx-96  flex flex-col items-center ">
           {imagesReversed.map((image, i) => (
             <div key={i} className="w-full py-2 ">
@@ -206,6 +190,7 @@ function ProjectDetailPageClient({
                 layout="responsive"
                 width={0}
                 height={0}
+                quality={75}
                 sizes="100vw"
               />
               {image.type || image.germanType ? (
