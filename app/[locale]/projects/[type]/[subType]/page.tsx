@@ -1,4 +1,4 @@
-import {getProjectBySubType, getProjectByType} from "@/app/lib/tina/queris";
+import {getProjectBySubType} from "@/app/lib/tina/queris";
 import React from "react";
 import {notFound} from "next/navigation";
 import {getTranslations} from "next-intl/server";
