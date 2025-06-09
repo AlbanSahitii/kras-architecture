@@ -2,6 +2,7 @@
 title: Warm Nest
 germanTitle: Warm Nest
 type: interiorDesign
+city: 'Prizren, Kosovo'
 description: >
   Warm Nest is a modern children’s bedroom designed in a soft palette of green,
   ochre, and blush pink. The room features a clean and minimal layout that
@@ -27,5 +28,7 @@ thumbnail: /100 interiors web-09.png
 thumbnailMobile: /100 interiors web-09.png
 images:
   - image: /100 interiors web-10.png
+    description: ''
+    germanDescription: ''
 ---
 

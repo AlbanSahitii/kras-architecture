@@ -132,7 +132,9 @@ const MainpageClient = ({
 
             <Link href={`/${params!.locale}/project/${item.title}`}>
               <h1 className="project-title opacity-0 absolute z-10 text-2xl top-60 left-20 md:text-5xl md:inset-60 text-white">
-                {params!.locale === "en" ? item.title : item.germanTitle}
+                {params!.locale === "en"
+                  ? item.title.toUpperCase()
+                  : item.germanTitle.toUpperCase()}
               </h1>
             </Link>
 
@@ -186,8 +188,8 @@ const MainpageClient = ({
               <Link href={`/${params!.locale}/project/${project.title}`}>
                 <p className="mb-4">
                   {params!.locale === "en"
-                    ? project.title
-                    : project.germanTitle}
+                    ? project.title.toUpperCase()
+                    : project.germanTitle.toUpperCase()}
                 </p>
                 <div className="relative h-96 w-96">
                   <Image
