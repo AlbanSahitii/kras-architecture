@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import {MailIcon, PhoneIncoming, CalendarPlus} from "lucide-react";
 function ContactDialog({contact, closeText, bookMeeting}) {
-  const email = "alban2002sahiti@gmail.com";
+  const email = "a.krasniqi@krasarchitects.com";
   return (
     <Dialog>
       <DialogTrigger asChild>
