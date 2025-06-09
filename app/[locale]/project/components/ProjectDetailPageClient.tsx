@@ -121,7 +121,6 @@ function ProjectDetailPageClient({
             </div>
             <div className="md:ml-10 md:min-w-3/5 flex justify-center  mt-5 md:mt-0">
               <Image
-                quality={75}
                 width={500}
                 height={300}
                 alt="thumbnail"
