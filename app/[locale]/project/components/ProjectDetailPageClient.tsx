@@ -120,9 +120,7 @@ function ProjectDetailPageClient({
               )}
             </div>
             <div className="md:ml-10 md:min-w-3/5 flex justify-center  mt-5 md:mt-0">
-              <Image
-                width={500}
-                height={300}
+              <motion.img
                 alt="thumbnail"
                 className="w-full h-auto md:h-[700px] object-cover rounded-lg"
                 src={project.thumbnail}
