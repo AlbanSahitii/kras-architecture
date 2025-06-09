@@ -1,11 +1,11 @@
 ---
+germanType: Wohnsitz
+germanPhase: Konzeptionell
 title: Blush And Bone
 germanTitle: Blush And Bone
 type: interiorDesign
 subType: ''
-germanType: Wohnsitz
-germanPhase: Konzeptionell
-phase: Conceptual
+phase: ''
 city: Kosovo
 description: >
   A serene apartment interior designed around a soft, muted palette of blush
@@ -95,3 +95,4 @@ images:
       Akzentwand subtile Tiefe und Struktur und verbinden so traditionelles und
       modernes Design.
 ---
+

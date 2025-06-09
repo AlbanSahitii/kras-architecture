@@ -4,6 +4,7 @@ import ProjectDetailPageClient from "../components/ProjectDetailPageClient";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
 import Footer from "../../components/Footer";
+import {getProjectTypes} from "@/app/lib/ProjectTypes";
 interface ProjectPageParams {
   params: Promise<{
     title: string;
@@ -75,10 +76,12 @@ async function ProjectDetailPageServer({params}: ProjectPageParams) {
     suggestedProject = filteredProjects[index];
   }
   const pageMessages = await getTranslations("SingleProject");
+  const projectTypes = await getProjectTypes();
   return (
     <>
       <main>
         <ProjectDetailPageClient
+          projectTypes={projectTypes}
           project={project}
           suggestedProject={suggestedProject}
           dateText={pageMessages("date")}

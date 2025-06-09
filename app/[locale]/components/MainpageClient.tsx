@@ -9,6 +9,7 @@ import {useParams} from "next/navigation";
 import Footer from "./Footer";
 
 const MainpageClient = ({
+  projectTypes,
   projectsData,
   heroTitle,
   heroLearnMoreAboutUs,
@@ -115,7 +116,7 @@ const MainpageClient = ({
               <Image
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none snap-start"
                 src={item.thumbnailMobile}
-                alt={item.title} // Adjust according to locale
+                alt={item.title}
                 fill
                 priority
               />
@@ -123,7 +124,7 @@ const MainpageClient = ({
               <Image
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none snap-start"
                 src={item.thumbnail}
-                alt={item.title} // Adjust according to locale
+                alt={item.title}
                 fill
                 priority
               />
@@ -138,7 +139,7 @@ const MainpageClient = ({
             <div className="z-20 bottom-0 left-10 flex flex-wrap justify-between md:justify-end text-white text-xl md:text-2xl p-4 gap-4">
               <Link href={`/${params!.locale}/projects/${item.type}`}>
                 <p className="custom-p-class border-b border-transparent hover:border-white transition duration-500 ease-in-out">
-                  {params!.locale === "en" ? item.type : item.germanType}
+                  {projectTypes[item.type].type}
                 </p>
               </Link>
               <p className="custom-p-class border-b border-transparent hover:border-white transition duration-500 ease-in-out">
