@@ -142,11 +142,12 @@ async function BlogsServerSideTitle({params}: props) {
           <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
             <Image
               className="w-full h-[800px] rounded-xl object-cover"
-              width={500}
-              height={300}
               src={blog.thumbnail}
               alt={locale === "en" ? blog.title : blog.germanTitle}
               priority
+              quality={75}
+              width={500}
+              height={300}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
