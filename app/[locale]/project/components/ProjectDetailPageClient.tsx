@@ -5,6 +5,7 @@ import {useInView, motion} from "framer-motion";
 import {useParams} from "next/navigation";
 import Image from "next/image";
 function ProjectDetailPageClient({
+  projectTypes,
   project,
   suggestedProject,
   dateText,
@@ -69,7 +70,7 @@ function ProjectDetailPageClient({
         <div className=" px-3 pt-40 md:px-20 ">
           <section className="">
             <h2 className="tracking-wide text-sm md:text-2xl">
-              {params!.locale === "en" ? project.type : project.germanType}
+              {projectTypes[project.type].type}
             </h2>
             <h1 className="text-2xl md:text-8xl tracking-wider">
               {params!.locale === "en" ? project.title : project.germanTitle}

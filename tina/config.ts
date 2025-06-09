@@ -71,7 +71,6 @@ export default defineConfig({
             type: "string",
             label: "Phase",
             name: "phase",
-            required: true,
             options: [
               {label: "On-going", value: "On-going"},
               {label: "Completed", value: "Completed"},
@@ -83,7 +82,6 @@ export default defineConfig({
             type: "string",
             name: "city",
             label: "City",
-            required: true,
           },
           {
             type: "string",
