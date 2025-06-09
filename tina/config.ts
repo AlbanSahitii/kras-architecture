@@ -16,7 +16,7 @@ export default defineConfig({
   token: process.env.TINA_TOKEN,
 
   build: {
-    outputFolder: "admin",
+    outputFolder: "kras-admin-1zksao2",
     publicFolder: "public",
   },
   media: {
