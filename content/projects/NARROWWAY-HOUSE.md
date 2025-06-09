@@ -3,7 +3,8 @@ germanType: Wohnsitz
 germanPhase: Konzeptionell
 title: NARROWWAY HOUSE
 germanTitle: NARROWWAY HOUSE
-type: landscapeDesign
+type: architecturalDesign
+subType: housing
 phase: Conceptual
 city: 'Prishtina, Kosovo'
 description: >
@@ -22,6 +23,7 @@ titleDescription: NARROWWAY HOUSE
 thumbnail: /20 Web_Thumbnails-1920x1080-04.png
 thumbnailMobile: /10 Web_Thumbnails-01-04.png
 images:
+  - image: /20 Web_Thumbnails-1920x1080-04.png
   - image: /Project Images/04 NarrowwayHouse_05 SouthWest Elevation.png
     description: ''
     germanDescription: ''

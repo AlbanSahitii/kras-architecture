@@ -24,21 +24,6 @@ function ProjectTypes({allProjects, projectTitle, projectTypes}) {
               <p className="text-sm md:text-xl  mx-5">{allProjects}</p>
             </Link>
           </div>
-          <div>
-            <Link href={`/${params!.locale}/projects/landscapeDesign`}>
-              <p className="text-sm md:text-xl md:mx-11">
-                {projectTypes.landscapeDesign.type}
-              </p>
-            </Link>
-          </div>
-
-          <div>
-            <Link href={`/${params!.locale}/projects/interiorDesign`}>
-              <p className="text-sm md:text-xl mx-5">
-                {projectTypes.interiorDesign.type}
-              </p>
-            </Link>
-          </div>
 
           <div className="text-sm md:text-xl mx-5 ">
             <DropdownMenu>
@@ -89,6 +74,22 @@ function ProjectTypes({allProjects, projectTitle, projectTypes}) {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
+          </div>
+
+          <div>
+            <Link href={`/${params!.locale}/projects/landscapeDesign`}>
+              <p className="text-sm md:text-xl md:mx-11">
+                {projectTypes.landscapeDesign.type}
+              </p>
+            </Link>
+          </div>
+
+          <div>
+            <Link href={`/${params!.locale}/projects/interiorDesign`}>
+              <p className="text-sm md:text-xl mx-5">
+                {projectTypes.interiorDesign.type}
+              </p>
+            </Link>
           </div>
         </section>
       </div>

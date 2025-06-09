@@ -2,6 +2,7 @@
 title: VELVET DECO
 germanTitle: VELVET DECO
 type: interiorDesign
+city: 'Berlin, Germany'
 description: >
   Velvet Deco reimagines Art Deco elegance through a modern lens, using a rich
   palette of beige, black, and dull magenta. The bedroom is layered with bold
@@ -25,5 +26,7 @@ thumbnail: /100 interiors web-08.png
 thumbnailMobile: /100 interiors web-08.png
 images:
   - image: /100 interiors web-07.png
+    description: ''
+    germanDescription: ''
 ---
 

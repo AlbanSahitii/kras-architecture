@@ -6,7 +6,7 @@ germanTitle: Blush And Bone
 type: interiorDesign
 subType: ''
 phase: ''
-city: Kosovo
+city: 'Prishtina, Kosovo'
 description: >
   A serene apartment interior designed around a soft, muted palette of blush
   pink, beige, and black. Blush & Bone balances warmth and minimalism, creating

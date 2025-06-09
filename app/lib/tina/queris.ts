@@ -37,7 +37,7 @@ export const getAllProjects = async ({
         germanDescription: p?.node?.germanDescription,
         thumbnail: p?.node?.thumbnail,
         thumbnailMobile: p?.node?.thumbnailMobile,
-        architectureSubType: p?.node?.subType,
+        subType: p?.node?.subType,
         projectImages: p?.node?.images,
         phase: p?.node?.phase,
         title: p?.node?.title,

@@ -42,10 +42,12 @@ function ProjectCard({project, projectTypes}) {
             quality={75}
           />
           <p className="text-xs absolute top-2 left-2 md:top-4 md:left-3 md:text-xl md:tracking-wider text-white">
-            {projectTypes[project.type].type}
+            {projectTypes[project.type].type.toUpperCase()}
           </p>
           <p className="text-xs absolute top-6 left-2 md:top-14 md:left-3 md:text-2xl md:tracking-widest text-white">
-            {params!.locale === "en" ? project.title : project.germanTitle}
+            {params!.locale === "en"
+              ? project.title.toUpperCase()
+              : project.germanTitle.toUpperCase()}
           </p>
           <ArrowDownRight className="absolute bottom-1 right-1 md:right-1 md:bottom-1 md:h-11 md:w-auto text-white" />
         </div>

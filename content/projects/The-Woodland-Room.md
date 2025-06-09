@@ -2,6 +2,7 @@
 title: The Woodland Room
 germanTitle: The Woodland Room
 type: interiorDesign
+city: 'Peja, Kosovo'
 description: >
   he Woodland Room is a children’s bedroom inspired by forest tones and natural
   textures. Featuring deep green color materials, oak wood details, and playful
@@ -26,5 +27,7 @@ thumbnail: /100 interiors web-13.png
 thumbnailMobile: /100 interiors web-13.png
 images:
   - image: /100 interiors web-14.png
+    description: ''
+    germanDescription: ''
 ---
 

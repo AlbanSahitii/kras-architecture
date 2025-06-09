@@ -93,6 +93,24 @@ function ProjectDetailPageClient({
                   <p className="text-xl">{project.city}</p>
                 </div>
               )}
+              {project.subType && (
+                <div className="mr-6 mt-4">
+                  <p className="text-sm">Type</p>
+                  {/* this shouldnt be like this. fix later */}
+                  <p className="text-xl">
+                    {params!.locale === "en"
+                      ? project.subType.charAt(0).toUpperCase() +
+                        project.subType.slice(1)
+                      : project.subType === "housing"
+                      ? "Wohnbau"
+                      : project.subType === "commercial"
+                      ? "Gewerbebau"
+                      : project.subType === "competition"
+                      ? "Wettbewerb"
+                      : ""}
+                  </p>
+                </div>
+              )}
 
               {project.surface && (
                 <div className="mr-6 mt-4">
