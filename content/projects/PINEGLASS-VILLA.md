@@ -6,6 +6,8 @@ germanTitle: PINEGLASS VILLA
 type: architecturalDesign
 subType: housing
 phase: Conceptual
+mainPage: false
+
 city: 'Bogë, Kosovo'
 description: >
   Pineglass Villa is a contemporary A-frame dwelling that blends modern design
@@ -57,4 +59,3 @@ images:
       natürliche Umgebung ein. Ein Zwischengeschoss bietet einen gemütlichen
       Rückzugsort und eine erhöhte Aussicht.
 ---
-

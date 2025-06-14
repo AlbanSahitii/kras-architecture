@@ -4,6 +4,8 @@ germanPhase: Konzeptionell
 title: TREETOPIA
 germanTitle: TREETOPIA
 type: landscapeDesign
+mainPage: false
+
 phase: Conceptual
 city: 'Peja, Kosovo'
 description: >
@@ -57,4 +59,3 @@ images:
       Gänge – durch Bewegung und Entdeckung entwickeln sie Unabhängigkeit,
       Widerstandsfähigkeit und Freude.
 ---
-

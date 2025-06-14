@@ -6,6 +6,7 @@ export interface FetchProjectsArgs {
   subType?: string | null;
   first?: number | null;
   after?: string | null | undefined;
+  mainPage?: boolean;
 }
 
 export interface Employee {
@@ -20,11 +21,19 @@ export interface Employee {
 export const getAllProjects = async ({
   first = null,
   after = null,
+  mainPage,
 }: FetchProjectsArgs) => {
   try {
+    let filters;
+    if (mainPage) {
+      filters = {
+        mainPage: {eq: mainPage},
+      };
+    }
     const result = await client.queries.ProjectsConnection({
       first: first,
       after: after,
+      filter: filters,
     });
 
     const projectData = result.data.ProjectsConnection.edges?.map(p => {

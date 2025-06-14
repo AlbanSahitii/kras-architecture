@@ -6,7 +6,9 @@ subType: housing
 germanType: Wohnsitz
 germanPhase: Vollendet
 phase: On-going
-city: Karslruhe, Germany.
+city: Karslruhe, Germany
+mainPage: false
+
 description: >
   Nine at Lorny is a modern three-story residential complex featuring nine
   carefully designed apartments and a secure underground parking garage. The

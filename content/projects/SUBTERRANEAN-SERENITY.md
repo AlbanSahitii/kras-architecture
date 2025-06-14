@@ -5,6 +5,8 @@ title: SUBTERRANEAN SERENITY
 germanTitle: SUBTERRANEAN SERENITY
 type: architecturalDesign
 phase: Conceptual
+mainPage: false
+
 city: 'Prishtina, Kosovo'
 description: >
   This luxury house is thoughtfully designed on a sloping site. As the terrain
@@ -43,4 +45,3 @@ images:
     description: ''
     germanDescription: ''
 ---
-

@@ -6,6 +6,8 @@ germanTitle: OBSIDIAN NEST
 type: architecturalDesign
 subType: housing
 phase: Conceptual
+mainPage: false
+
 city: 'Peja, Kosovo'
 description: >
   Obsidian Nest is a refined exploration of contrast, form, and calm density.
@@ -60,4 +62,3 @@ images:
       eingerichtet sind, eines davon ist das Hauptschlafzimmer. Die Verbindung
       zum ersten Stock ist über die Treppe ganz einfach.
 ---
-

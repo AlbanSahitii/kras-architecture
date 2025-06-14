@@ -7,6 +7,7 @@ type: architecturalDesign
 subType: commercial
 phase: Conceptual
 city: 'Theth, Albania'
+mainPage: false
 description: >
   Lumen Haus is a contemporary cabin retreat inspired by the rugged beauty of
   the Theth mountains in northern Albania. De- signed to foster a deep
@@ -65,3 +66,4 @@ images:
       bietet mit integriertem Brennholzlager sowohl Funktionalität als auch
       Charme.
 ---
+

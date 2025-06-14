@@ -7,6 +7,7 @@ type: interiorDesign
 subType: ''
 phase: ''
 city: 'Prishtina, Kosovo'
+mainPage: false
 description: >
   A serene apartment interior designed around a soft, muted palette of blush
   pink, beige, and black. Blush & Bone balances warmth and minimalism, creating
@@ -30,6 +31,8 @@ thumbnail: /100 interiors web-01.png
 thumbnailMobile: /100 interiors web-01.png
 images:
   - image: /100 interiors web-02.png
+    photoDescriptionTitle: TEST
+    photoDescriptionTitleGerman: TEST1
     description: >
       The adjoining dining space continues the design language with a
       clean-lined black dining table and upholstered chairs in muted tones. A
@@ -67,6 +70,8 @@ images:
       Zurückhaltung und Komfort ausgerichtet ist, wobei jedes Detail sowohl
       ästhetischen als auch funktionalen Zwecken dient.
   - image: /100 interiors web-01.png
+    photoDescriptionTitle: TEST2
+    photoDescriptionTitleGerman: TESDT2
     description: >
       This residential interior presents a refined balance between modern
       minimalism and classical elegance. The space is defined by a soft, neutral

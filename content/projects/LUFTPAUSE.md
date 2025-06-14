@@ -1,11 +1,12 @@
 ---
+germanType: Kommerziell
+germanPhase: Konzeptionell
 title: LUFTPAUSE
 germanTitle: LUFTPAUSE
 type: landscapeDesign
-germanType: Kommerziell
-germanPhase: Konzeptionell
 phase: Conceptual
 city: 'Graz, Austria'
+mainPage: false
 description: >
   Luftpause is a compact urban installation designed to offer a serene pause
   within the fast pace of city life. Centered around a colorful circular pod,

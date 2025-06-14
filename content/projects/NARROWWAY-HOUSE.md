@@ -7,6 +7,8 @@ type: architecturalDesign
 subType: housing
 phase: Conceptual
 city: 'Prishtina, Kosovo'
+mainPage: true
+
 description: >
   This two-story house is a bold example of contemporary brutalist design,
   featuring a striking concrete façade that emphasizes clean lines and raw
@@ -65,4 +67,3 @@ images:
       Schritt 1: Den Standort verstehen Schritt 2: Vertikale Entwicklung Schritt
       3: Das Design verfeinern
 ---
-
