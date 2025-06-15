@@ -40,6 +40,8 @@ images:
       öffentlichen Raum in einen poetischen Moment der Stille, der zwischen
       Fantasie und Funktion in der alltäglichen Stadtlandschaft schwebt.
   - image: /Project%20Images/07 luftpause_01 RESHAPING THE BENCH.png
+    photoDescriptionTitle: Reshaping The Bench
+    photoDescriptionTitleGerman: Neugestaltung der Bank
     description: >
       Set against a grayscale city backdrop, the installation creates a striking
       contrast between the calm it offers and the energy of its surroundings. A
@@ -52,4 +54,3 @@ images:
       und lädt Passanten dazu ein, sich informell mit dem Raum
       auseinanderzusetzen.
 ---
-

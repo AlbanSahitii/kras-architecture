@@ -8,7 +8,6 @@ subType: housing
 phase: Conceptual
 city: 'Prishtina, Kosovo'
 mainPage: true
-
 description: >
   This two-story house is a bold example of contemporary brutalist design,
   featuring a striking concrete façade that emphasizes clean lines and raw
@@ -26,6 +25,8 @@ thumbnail: /20 Web_Thumbnails-1920x1080-04.png
 thumbnailMobile: /10 Web_Thumbnails-01-04.png
 images:
   - image: /20 Web_Thumbnails-1920x1080-04.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/04 NarrowwayHouse_05 SouthWest Elevation.png
     description: ''
     germanDescription: ''
@@ -35,9 +36,9 @@ images:
   - image: /Project Images/04 NarrowwayHouse_03 Floorplans.png
     description: ''
     germanDescription: ''
-    type: 1.GROUND LEVEL  2.FIRST LEVEL
-    germanType: 1. ERDGESCHOSS 2. ERSTE EBENE
-  - image: /Project Images/04 NarrowwayHouse_02 Diagrams.png
+    type: ''
+    germanType: ''
+  - image: /ZONING DIAGRAM.jpg
     description: >
       The ground floor accommodates a spacious open-plan living room and
       kitchen, seamlessly connected to a guest bedroom. The first floor includes
@@ -55,8 +56,8 @@ images:
       Licht, Grün und ein Gefühl von Offenheit auf das kompakte Grundstück
       bringt. Das Ergebnis ist ein Haus, das Platz, Funktionalität und Ästhetik
       maximiert und gleichzeitig seine Einschränkungen berücksichtigt.
-    type: 1.ZONING DIAGRAM  2.VOLUMETRIC CONCEPT
-    germanType: 1.ZONENDIAGRAMM 2.VOLUMETRISCHES KONZEPT
+    type: ''
+    germanType: ''
   - image: /04 NarrowwayHouse_01 Form Development.png
     description: ''
     germanDescription: ''
@@ -67,3 +68,4 @@ images:
       Schritt 1: Den Standort verstehen Schritt 2: Vertikale Entwicklung Schritt
       3: Das Design verfeinern
 ---
+

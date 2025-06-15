@@ -63,7 +63,7 @@ export const AnimatedLines = ({text, className = ""}: AnimatedLinesProps) => {
       {/* Static layout-preserving fallback */}
       <div
         ref={containerRef}
-        className="opacity-0 pointer-events-none select-none whitespace-pre-line"
+        className="opacity-0 pointer-events-none select-none whitespace-pre-line "
       >
         {text}
       </div>

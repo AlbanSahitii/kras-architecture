@@ -79,7 +79,7 @@ function AboutClientSide({
             variants={containerVariants}
             className={`flex justify-center items-center text-start`}
           >
-            <motion.div variants={lineVariants} className="pt-10 md:pt-20">
+            <motion.div variants={lineVariants} className="py-10 md:py-20">
               <p className="font-bold pt-8 text-2xl">{titleValue}</p>
               <div className="flex flex-col items-center">
                 <ol>
@@ -109,12 +109,12 @@ function AboutClientSide({
           </motion.div>
         </div>
       </div>
-
+      {/*
       <motion.div
         ref={teamDiv}
-        // initial={{opacity: 0, y: 100}}
-        // transition={{duration: 0.7}}
-        // animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
+        initial={{opacity: 0, y: 100}}
+        transition={{duration: 0.7}}
+        animate={{opacity: teamDivInView ? 1 : 0, y: teamDivInView ? 0 : 50}}
       >
         <p className=" pt-20 text-5xl flex justify-center  md:pt-20">{team}</p>
 
@@ -187,6 +187,7 @@ function AboutClientSide({
           ""
         )}
       </motion.div>
+      */}
     </>
   );
 }

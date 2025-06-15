@@ -6,15 +6,14 @@ germanTitle: PINEGLASS VILLA
 type: architecturalDesign
 subType: housing
 phase: Conceptual
-mainPage: false
-
 city: 'Bogë, Kosovo'
+mainPage: false
 description: >
   Pineglass Villa is a contemporary A-frame dwelling that blends modern design
-  with the serenity of its forested environment. De- fined by its steep roofline
-  and symmetrical geometry, the villa fea- tures a front façade of full-height
+  with the serenity of its forested environment. Defined by its steep roofline
+  and symmetrical geometry, the villa features a front façade of full height
   glass framed in steel and lined with warm timber, creating a harmonious
-  balance between mini- malism and warmth.
+  balance between minimalism and warmth.
 germanDescription: >
   Die Pineglass Villa ist ein modernes A-förmiges Wohnhaus, das modernes Design
   mit der Ruhe seiner waldreichen Umgebung verbindet. Die Villa zeichnet sich
@@ -43,13 +42,15 @@ images:
       – ein idealer Zufluchtsort zum Ausruhen, Nachdenken und für ein ruhiges
       Leben im Einklang mit der Landschaft.
   - image: /Project Images/03 pineglass_01 FORM FINDING DIAGRAM.png
+    photoDescriptionTitle: Form Finding Diagram
+    photoDescriptionTitleGerman: Formularfindungsdiagramm
     description: >
-      he structure is raised on a natural stone plinth, allowing it to sit
+      The structure is raised on a natural stone plinth, allowing it to sit
       lightly on the landscape while enhancing its architectural presence.
-      Verti- cal wooden slats across the exterior and loft area mirror the
-      rhythm of surrounding trees, offering privacy and visual texture. Inside,
-      an open-plan layout connects seamlessly to the natural surroundings, with
-      a mezzanine level providing a cozy retreat and elevated views.
+      Vertical wooden slats across the exterior and loft area mirror the rhythm
+      of surrounding trees, offering privacy and visual texture. Inside, an
+      open-plan layout connects seamlessly to the natural surroundings, with a
+      mezzanine level providing a cozy retreat and elevated views.
     germanDescription: >
       Das Gebäude steht auf einem Natursteinsockel und fügt sich dadurch sanft
       in die Landschaft ein, während seine architektonische Präsenz betont wird.
@@ -59,3 +60,4 @@ images:
       natürliche Umgebung ein. Ein Zwischengeschoss bietet einen gemütlichen
       Rückzugsort und eine erhöhte Aussicht.
 ---
+

@@ -195,7 +195,7 @@ function ProjectDetailPageClient({
         </div>
         <div className="px-5 md:mx-20 lg:mx-96  flex flex-col items-center ">
           {imagesReversed.map((image, i) => (
-            <div key={i} className="w-full  ">
+            <div key={i} className="w-full ">
               <Image
                 src={image.image}
                 alt=""
@@ -212,18 +212,20 @@ function ProjectDetailPageClient({
                 </p>
               ) : null}
               {params!.locale === "en" ? (
-                <h3>{image.photoDescriptionTitle}</h3>
+                <h3 className="text-2xl mt-7">{image.photoDescriptionTitle}</h3>
               ) : (
-                <h3>{image.photoDescriptionTitleGerman}</h3>
+                <h3 className="text-2xl mt-7">
+                  {image.photoDescriptionTitleGerman}
+                </h3>
               )}
               {params!.locale === "en" && image.description
                 ? image?.description.children.map((description, i) => (
-                    <p key={i} className="transform my-7 ">
+                    <p key={i} className="transform mt-2 mb-6 ">
                       {description.children[0].text}
                     </p>
                   ))
                 : image?.germanDescription.children.map((description, i) => (
-                    <p key={i} className="transform my-7">
+                    <p key={i} className="transform mt-2 mb-6">
                       {description.children[0].text}
                     </p>
                   ))}
@@ -261,9 +263,7 @@ function ProjectDetailPageClient({
                   }}
                   transition={{duration: 0.6}}
                 >
-                  {params!.locale === "en"
-                    ? suggestedProject.type
-                    : suggestedProject.germanType}
+                  {projectTypes[project.type].type}
                 </motion.h1>
 
                 <motion.h1
