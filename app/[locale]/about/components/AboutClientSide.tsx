@@ -1,5 +1,5 @@
 "use client";
-import React, {useRef} from "react";
+import React from "react";
 // import EmployeesCard from "./EmployeesCard";
 import {AnimatedLines} from "./AnimatedLines";
 import {motion} from "framer-motion";
@@ -21,7 +21,7 @@ function AboutClientSide({
   fourthValue,
   fifthValue,
 }) {
-  const teamDiv = useRef(null);
+  // const teamDiv = useRef(null);
   // const teamDivInView = useInView(teamDiv, {once: true});
   const containerVariants = {
     visible: {
