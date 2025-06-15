@@ -67,12 +67,12 @@ async function AboutServerSide() {
           thirdValue={aboutUs("description.ourValues.third")}
           fourthValue={aboutUs("description.ourValues.fourth")}
           fifthValue={aboutUs("description.ourValues.fifth")}
-          ceoDescription={aboutUs("ceoDescription")}
-          partnerDescription={aboutUs("partnerDescription")}
-          teamLeaderDescription={aboutUs("teamLeaderDescription")}
-          supervisorDescription={aboutUs("supervisorDescription")}
-          architectDescription={aboutUs("architectDescription")}
-          financeDescription={aboutUs("financeDescription")}
+          // ceoDescription={aboutUs("ceoDescription")}
+          // partnerDescription={aboutUs("partnerDescription")}
+          // teamLeaderDescription={aboutUs("teamLeaderDescription")}
+          // supervisorDescription={aboutUs("supervisorDescription")}
+          // architectDescription={aboutUs("architectDescription")}
+          // financeDescription={aboutUs("financeDescription")}
         />
       </main>
       <Footer />

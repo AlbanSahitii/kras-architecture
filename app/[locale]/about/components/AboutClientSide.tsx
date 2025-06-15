@@ -1,6 +1,6 @@
 "use client";
 import React, {useRef} from "react";
-import EmployeesCard from "./EmployeesCard";
+// import EmployeesCard from "./EmployeesCard";
 import {AnimatedLines} from "./AnimatedLines";
 import {motion} from "framer-motion";
 import {CircleCheck} from "lucide-react";
@@ -20,12 +20,6 @@ function AboutClientSide({
   thirdValue,
   fourthValue,
   fifthValue,
-  ceoDescription,
-  partnerDescription,
-  teamLeaderDescription,
-  supervisorDescription,
-  architectDescription,
-  financeDescription,
 }) {
   const teamDiv = useRef(null);
   // const teamDivInView = useInView(teamDiv, {once: true});
