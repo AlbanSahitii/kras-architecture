@@ -1,6 +1,6 @@
 import React from "react";
 import AboutClientSide from "./components/AboutClientSide";
-import {getEmployees} from "../../lib/tina/queris";
+// import {getEmployees} from "../../lib/tina/queris";
 import {getTranslations} from "next-intl/server";
 import {Metadata} from "next";
 import Footer from "../components/Footer";
@@ -47,7 +47,7 @@ export async function generateMetadata({
 }
 
 async function AboutServerSide() {
-  const employees = await getEmployees();
+  // const employees = await getEmployees();
   const aboutUs = await getTranslations("AboutUs");
 
   return (
