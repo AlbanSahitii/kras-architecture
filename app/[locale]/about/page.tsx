@@ -54,13 +54,13 @@ async function AboutServerSide() {
     <>
       <main>
         <AboutClientSide
-          employees={employees}
+          // employees={employees}
           aboutUsTitle={aboutUs("title")}
           firstDescription={aboutUs("description.first")}
           secondDescription={aboutUs("description.second")}
           thirdDescription={aboutUs("description.third")}
           fourthDescription={aboutUs("description.fourth")}
-          team={aboutUs("team")}
+          // team={aboutUs("team")}
           titleValue={aboutUs("description.ourValues.title")}
           firstValue={aboutUs("description.ourValues.first")}
           secondValue={aboutUs("description.ourValues.second")}

@@ -6,13 +6,13 @@ import {motion} from "framer-motion";
 import {CircleCheck} from "lucide-react";
 
 function AboutClientSide({
-  employees,
+  // employees,
   aboutUsTitle,
   firstDescription,
   secondDescription,
   thirdDescription,
   fourthDescription,
-  team,
+  // team,
 
   titleValue,
   firstValue,
