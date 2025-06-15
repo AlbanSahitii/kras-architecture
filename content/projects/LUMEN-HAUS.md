@@ -7,6 +7,7 @@ type: architecturalDesign
 subType: commercial
 phase: Conceptual
 city: 'Theth, Albania'
+mainPage: false
 description: >
   Lumen Haus is a contemporary cabin retreat inspired by the rugged beauty of
   the Theth mountains in northern Albania. De- signed to foster a deep
@@ -40,6 +41,8 @@ images:
       lichtdurchfluteter Rückzugsort – eine perfekte Balance aus modernem Design
       und natürlicher Ruhe. Es lädt zu Stille, Besinnung und einem entspannten,
       geerdeten Lebenstempo ein.
+    type: FLOORPLANS
+    germanType: GRUNDRISSE
   - image: /Project%20Images/05 lumen haus_01 THE PROCESS OF FORM BUILDING (1).png
     description: >
       Its name, “Lumen Haus,” reflects the abundant natural light that pours in
@@ -49,9 +52,7 @@ images:
 
       The compact, efficient layout emphasizes simplicity, warmth, and
       functionality. Inside, natural wood finishes and open, airy spaces create
-      a serene environment ideal for quiet, intentional living. A raised timber
-      deck extends the interior outdoors, complete with in- tegrated firewood
-      storage for both utility and charm.
+      a serene environment ideal for quiet, intentional living. 
     germanDescription: >
       Der Name „Lumen Haus“ spiegelt das reichlich vorhandene Tageslicht wider,
       das durch die großzügigen, raumhohen Fenster einfällt und einen
@@ -61,7 +62,8 @@ images:
       Der kompakte, effiziente Grundriss betont Schlichtheit, Wärme und
       Funktionalität. Im Inneren schaffen natürliche Holzoberflächen und offene,
       luftige Räume eine ruhige Atmosphäre, ideal für ein ruhiges, bewusstes
-      Leben. Eine erhöhte Holzterrasse erweitert den Innenraum nach außen und
-      bietet mit integriertem Brennholzlager sowohl Funktionalität als auch
-      Charme.
+      Leben. 
+    type: THE PROCESS OF FORM BUILDING
+    germanType: DER PROZESS DES FORMULARBAUES
 ---
+

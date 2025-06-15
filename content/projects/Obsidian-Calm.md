@@ -2,7 +2,9 @@
 title: Obsidian Calm
 germanTitle: Obsidian Calm
 type: interiorDesign
-city: Zurich. Switzerland
+mainPage: false
+
+city: Zurich, Switzerland
 description: >
   Designed for minimalism lovers, Obsidian Calm is a dark-toned bedroom that
   invites rest and reflection. A refined palette of black, charcoal, and muted
@@ -30,4 +32,3 @@ images:
     description: ''
     germanDescription: ''
 ---
-

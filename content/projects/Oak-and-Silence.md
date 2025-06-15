@@ -3,6 +3,8 @@ title: Oak and Silence
 germanTitle: Oak and Silence
 type: interiorDesign
 city: 'Prishtina, Kosovo'
+mainPage: false
+
 description: >
   Rooted in Japandi principles, Oak and Silence is a soft beige apartment that
   exudes calm, simplicity, and balance. The palette is minimal yet warm, with
@@ -27,4 +29,3 @@ images:
     description: ''
     germanDescription: ''
 ---
-

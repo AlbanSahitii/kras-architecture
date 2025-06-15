@@ -6,6 +6,7 @@ germanTitle: TREETOPIA
 type: landscapeDesign
 phase: Conceptual
 city: 'Peja, Kosovo'
+mainPage: false
 description: >
   Treetopia is a bold, nature integrated playscape located in a vibrant park in
   Peja, designed to ignite adventurous, open-ended play. Built primarily from
@@ -34,6 +35,8 @@ images:
     description: ''
     germanDescription: ''
   - image: /Project Images/09 treetopia_01 BRINGING A BOX TO LIFE.png
+    photoDescriptionTitle: Bringing a Box To Life
+    photoDescriptionTitleGerman: Eine Box zum Leben erwecken
     description: >
       Treetopia isn’t just a playground it’s a celebration of bravery,
       imagination, and the beautiful chaos of real play, rooted in the heart of
@@ -43,6 +46,8 @@ images:
       Fantasie und dem schönen Chaos des echten Spiels, verwurzelt im Herzen des
       naturliebenden Peja.
   - image: /Project Images/09 treetopia_01 THE HIERARCHY TO THE DESIGN PROCESS.png
+    photoDescriptionTitle: The Hierarchy To The Design Process
+    photoDescriptionTitleGerman: Die Hierarchie des Designprozesses
     description: >
       Rather than prescribing how to play, Treetopia offers endless
       possibilities. Children choose their own routes and set their own pace,
@@ -57,4 +62,3 @@ images:
       Gänge – durch Bewegung und Entdeckung entwickeln sie Unabhängigkeit,
       Widerstandsfähigkeit und Freude.
 ---
-

@@ -6,6 +6,7 @@ germanTitle: ELEMENTAL ECHOES
 type: landscapeDesign
 phase: Conceptual
 city: 'Szentendre, Hungary'
+mainPage: false
 description: >
   Elemental Echoes is a site-specific land art and architectural installation on
   the riverbank of Szentendre, composed of four pavilions that represent the
@@ -28,16 +29,16 @@ thumbnail: /20 Web_Thumbnails-1920x1080-09.png
 thumbnailMobile: /10 Web_Thumbnails-01-08.png
 images:
   - image: /20 Web_Thumbnails-1920x1080-09.png
+    description: ''
+    germanDescription: ''
   - image: '/Project Images/08 elemental echoes_02 EARTH AND AIR, FIRE AND WATER.png'
+    photoDescriptionTitle: 'Earth and Air, Fire and Water'
+    photoDescriptionTitleGerman: 'Erde und Luft, Feuer und Wasser'
     description: >
-      By blending art, architectBy blending art, architecture, landscape, and
-      memory, Elemental Echoes transforms the natural setting into a space of
-      reflection. It invites visitors to experience the passage of time and the
-      elements as a unified expression of Szentendre’s identity and
-      resilience.ure, landscape, and memory, Elemental Echoes transforms the
-      natural setting into a space of reflection. It in- vites visitors to
-      experience the passage of time and the elements as a unified expression of
-      Szentendre’s identity and resilience.
+      By blending art, architecture, landscape, and memory, Elemental Echoes
+      transforms the natural setting into a space of reflection. It invites
+      visitors to experience the passage of time and the elements as a unified
+      expression of Szentendre’s identity and resilience, landscape, and memory.
     germanDescription: >
       Durch die Verbindung von Kunst, Architektur, Landschaft und Erinnerung
       verwandelt Elemental Echoes die natürliche Umgebung in einen Raum der
@@ -45,6 +46,8 @@ images:
       einheitlichen Ausdruck von Szentendres Identität und Widerstandsfähigkeit
       zu erleben.
   - image: /Project Images/08 elemental echoes_01 CONTEXTUALIZING THE PAVILIONS.png
+    photoDescriptionTitle: Contextualizing the Pavilions
+    photoDescriptionTitleGerman: Kontextualisierung der Pavillons
     description: >
       The installation responds to the fluctuating levels of the Danube, with
       the autumn and winter pavilions becoming temporarily submerged during high

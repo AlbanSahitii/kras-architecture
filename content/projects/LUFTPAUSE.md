@@ -1,11 +1,12 @@
 ---
+germanType: Kommerziell
+germanPhase: Konzeptionell
 title: LUFTPAUSE
 germanTitle: LUFTPAUSE
 type: landscapeDesign
-germanType: Kommerziell
-germanPhase: Konzeptionell
 phase: Conceptual
 city: 'Graz, Austria'
+mainPage: false
 description: >
   Luftpause is a compact urban installation designed to offer a serene pause
   within the fast pace of city life. Centered around a colorful circular pod,
@@ -39,6 +40,8 @@ images:
       öffentlichen Raum in einen poetischen Moment der Stille, der zwischen
       Fantasie und Funktion in der alltäglichen Stadtlandschaft schwebt.
   - image: /Project%20Images/07 luftpause_01 RESHAPING THE BENCH.png
+    photoDescriptionTitle: Reshaping The Bench
+    photoDescriptionTitleGerman: Neugestaltung der Bank
     description: >
       Set against a grayscale city backdrop, the installation creates a striking
       contrast between the calm it offers and the energy of its surroundings. A
@@ -51,4 +54,3 @@ images:
       und lädt Passanten dazu ein, sich informell mit dem Raum
       auseinanderzusetzen.
 ---
-

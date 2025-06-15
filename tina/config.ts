@@ -32,6 +32,9 @@ export default defineConfig({
         name: "Projects",
         label: "Projects",
         path: "content/projects",
+        defaultItem: {
+          mainPage: false,
+        },
         fields: [
           {
             type: "string",
@@ -87,6 +90,11 @@ export default defineConfig({
             type: "string",
             name: "address",
             label: "Address",
+          },
+          {
+            name: "mainPage",
+            label: "Show on main page",
+            type: "boolean",
           },
           {
             type: "string",
@@ -151,6 +159,16 @@ export default defineConfig({
                 ui: {
                   component: "image",
                 },
+              },
+              {
+                type: "string",
+                name: "photoDescriptionTitle",
+                label: "Photo Description Title",
+              },
+              {
+                type: "string",
+                name: "photoDescriptionTitleGerman",
+                label: "Photo Description Title German",
               },
               {
                 type: "rich-text",

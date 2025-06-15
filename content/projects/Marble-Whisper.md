@@ -3,6 +3,7 @@ title: Marble Whisper
 germanTitle: Marble Whisper
 type: interiorDesign
 city: 'Düsseldorf, Germany'
+mainPage: false
 description: >
   Marble Whisper is a contemporary apartment defined by greyscale and soft beige
   tones, anchored by a striking marble centerpiece. The design celebrates

@@ -7,6 +7,7 @@ type: architecturalDesign
 subType: housing
 phase: Conceptual
 city: 'Peja, Kosovo'
+mainPage: false
 description: >
   Obsidian Nest is a refined exploration of contrast, form, and calm density.
   This residence draws its identity from the deep, stone-like façade evoking the
@@ -47,17 +48,13 @@ thumbnail: /20 Web_Thumbnails-1920x1080-02.png
 thumbnailMobile: /10 Web_Thumbnails-01-02.png
 images:
   - image: /20 Web_Thumbnails-1920x1080-02.png
+    description: ''
+    germanDescription: ''
   - image: /Project Images/02 obsidian nest_01 EXPLODED AXONOMETRY.png
     description: ''
     germanDescription: ''
   - image: /02 obsidian nest_02 FLOORPLANS.png
-    description: >
-      The Second Floor contains 3 Sleep Rooms, each of them are designed to be
-      comfy, on of them is Master Bed Room, The comunication with thr First
-      floor its to simple with the stairs.
-    germanDescription: >
-      Der zweite Stock enthält drei Schlafzimmer, die alle gemütlich
-      eingerichtet sind, eines davon ist das Hauptschlafzimmer. Die Verbindung
-      zum ersten Stock ist über die Treppe ganz einfach.
+    description: ''
+    germanDescription: ''
 ---
 
