@@ -6,7 +6,7 @@ germanTitle: ELEMENTAL ECHOES
 type: landscapeDesign
 phase: Conceptual
 city: 'Szentendre, Hungary'
-mainPage: false
+mainPage: true
 description: >
   Elemental Echoes is a site-specific land art and architectural installation on
   the riverbank of Szentendre, composed of four pavilions that represent the

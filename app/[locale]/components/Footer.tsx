@@ -94,19 +94,30 @@ function Footer() {
 
               <AccordionContent className="ml-2">
                 <Facebook className="inline mr-2" />
-                <Link href="https://www.facebook.com/profile.php?id=61576569491054">
+                <Link
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61576569491054"
+                >
                   Facebook
                 </Link>
               </AccordionContent>
               <AccordionContent className="ml-2">
                 <Instagram className="inline mr-2" />
-                <Link href="https://www.instagram.com/krasarchitecture/">
+                <Link
+                  target="_blank"
+                  href="https://www.instagram.com/krasarchitecture/"
+                >
                   Instagram
                 </Link>
               </AccordionContent>
               <AccordionContent className="ml-2">
                 <Linkedin className="inline mr-2" />
-                <Link href="https://www.linkedin.com">LinkedIn</Link>
+                <Link
+                  target="_blank"
+                  href="https://www.linkedin.com/company/kras-architecture-design"
+                >
+                  LinkedIn
+                </Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

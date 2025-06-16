@@ -56,6 +56,7 @@ async function AboutServerSide() {
         <AboutClientSide
           // employees={employees}
           aboutUsTitle={aboutUs("title")}
+          secondTitleValue={aboutUs("titleSecond")}
           firstDescription={aboutUs("description.first")}
           secondDescription={aboutUs("description.second")}
           thirdDescription={aboutUs("description.third")}

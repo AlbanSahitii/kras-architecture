@@ -7,7 +7,7 @@ type: architecturalDesign
 subType: housing
 phase: Conceptual
 city: 'Peja, Kosovo'
-mainPage: false
+mainPage: true
 description: >
   Obsidian Nest is a refined exploration of contrast, form, and calm density.
   This residence draws its identity from the deep, stone-like façade evoking the

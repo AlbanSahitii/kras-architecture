@@ -8,6 +8,7 @@ import {CircleCheck} from "lucide-react";
 function AboutClientSide({
   // employees,
   aboutUsTitle,
+  secondTitleValue,
   firstDescription,
   secondDescription,
   thirdDescription,
@@ -50,8 +51,12 @@ function AboutClientSide({
 
       <div className="pt-28 px-5 w-full flex justify-center items-center">
         <div className="md:flex md:flex-col md:w-4/5">
-          <h1 id="page1" className="text-4xl w-full leading-snug">
+          <h1
+            id="page1"
+            className="text-4xl w-full leading-snug flex items-center flex-col mb-10"
+          >
             <AnimatedLines text={aboutUsTitle} />
+            <AnimatedLines text={secondTitleValue} />
           </h1>
           <div className="w-full   0 md:flex md:flex-wrap  md:justify-between md:items-center">
             <div className="m-3 md:w-2/5">
