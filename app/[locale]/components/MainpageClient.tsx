@@ -15,10 +15,6 @@ const MainpageClient = ({
   heroLearnMoreAboutUs,
   newTitle,
 }) => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const params = useParams!();
   const divRef = useRef(projectsData.map(() => React.createRef()));
   const paragraphRef = useRef(null);
@@ -106,7 +102,7 @@ const MainpageClient = ({
         className="overflow-y-scroll snap-y snap-mandatory h-[calc(var(--vh,1vh)*100)] pt-[60px]"
         id="main-menu-scroll-container"
       >
-        <section className="snap-start h-[calc(var(--vh,1vh)*100)] w-full flex items-center justify-center bg-black z-10 relative">
+        <section className="snap-start  w-full flex items-center justify-center bg-black z-10 relative">
           <LogoAnimation />
         </section>
 
