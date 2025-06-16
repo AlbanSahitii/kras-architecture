@@ -15,6 +15,10 @@ const MainpageClient = ({
   heroLearnMoreAboutUs,
   newTitle,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const params = useParams!();
   const divRef = useRef(projectsData.map(() => React.createRef()));
   const paragraphRef = useRef(null);
