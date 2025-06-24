@@ -205,6 +205,7 @@ function ProjectDetailPageClient({
                 height={0}
                 quality={75}
                 sizes="100vw"
+                unoptimized
               />
               {image.type || image.germanType ? (
                 <p className="text-black/30">

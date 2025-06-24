@@ -40,6 +40,7 @@ function ProjectCard({project, projectTypes}) {
             alt={project.title}
             fill
             quality={75}
+            unoptimized
           />
           <p className="text-xs absolute top-2 left-2 md:top-4 md:left-3 md:text-xl md:tracking-wider text-white">
             {projectTypes[project.type].type.toUpperCase()}

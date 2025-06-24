@@ -119,6 +119,7 @@ const MainpageClient = ({
                 alt={item.title}
                 fill
                 priority
+                unoptimized
               />
             ) : (
               <Image
@@ -127,6 +128,7 @@ const MainpageClient = ({
                 alt={item.title}
                 fill
                 priority
+                unoptimized
               />
             )}
 
@@ -197,6 +199,7 @@ const MainpageClient = ({
                     src={project.thumbnail}
                     alt="thumbnail"
                     fill
+                    unoptimized
                   />
                 </div>
                 <p className="mt-4 truncate whitespace-nowrap">
