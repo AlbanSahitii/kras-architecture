@@ -20,12 +20,14 @@ export default defineConfig({
     publicFolder: "public",
   },
   media: {
-    tina: {
-      mediaRoot: "",
-      publicFolder: "public",
+    loadCustomStore: async () => {
+      const {GitHubMediaStore} = await import("next-tinacms-github");
+      return new GitHubMediaStore({
+        mediaRoot: "public",
+        publicFolder: "public",
+      });
     },
-  },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
+  }, // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
