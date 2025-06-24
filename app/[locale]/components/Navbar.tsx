@@ -133,6 +133,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                   alt="Logo"
                   width={30}
                   height={30}
+                  unoptimized
                 />
               ) : (
                 <Image
@@ -140,6 +141,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                   alt="Logo"
                   width={30}
                   height={30}
+                  unoptimized
                 />
               )}
             </motion.div>
