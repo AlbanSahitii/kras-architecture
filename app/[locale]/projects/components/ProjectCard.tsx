@@ -7,7 +7,6 @@ import Link from "next/link";
 import {seededRandomColor} from "@/app/lib/seededRandomColor";
 import {useParams} from "next/navigation";
 import Image from "next/image";
-import {hybridLoader} from "@/app/lib/hybridLoader";
 function ProjectCard({project, projectTypes}) {
   const params = useParams();
 
@@ -36,7 +35,6 @@ function ProjectCard({project, projectTypes}) {
       <Link href={`/${params!.locale}/project/${project.title}`}>
         <div className="w-full h-full relative z-0">
           <Image
-            loader={hybridLoader}
             src={project.thumbnail}
             className="w-full h-full object-cover opacity-60"
             alt={project.title}
