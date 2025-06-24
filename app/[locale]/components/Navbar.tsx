@@ -17,6 +17,7 @@ import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
 import logoBlackNoText from "../../../public/black-logo-notext.png";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
   const params = useParams();
   const pathName = usePathname();
@@ -129,6 +130,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
             >
               {isWhitePage ? (
                 <Image
+                  loader={hybridLoader}
                   src={logoBlackNoText}
                   alt="Logo"
                   width={30}
@@ -137,6 +139,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                 />
               ) : (
                 <Image
+                  loader={hybridLoader}
                   src={logoWhiteNoText}
                   alt="Logo"
                   width={30}

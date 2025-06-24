@@ -4,6 +4,7 @@ import {useEffect, useRef} from "react";
 import {useInView, motion} from "framer-motion";
 import {useParams} from "next/navigation";
 import Image from "next/image";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 function ProjectDetailPageClient({
   projectTypes,
   project,
@@ -196,6 +197,7 @@ function ProjectDetailPageClient({
           {imagesReversed.map((image, i) => (
             <div key={i} className="w-full ">
               <Image
+                loader={hybridLoader}
                 src={image.image}
                 alt=""
                 className="w-full h-auto"

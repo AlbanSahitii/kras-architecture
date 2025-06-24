@@ -7,6 +7,7 @@ import Image from "next/image";
 import LogoAnimation from "./LogoAnimation";
 import {useParams} from "next/navigation";
 import Footer from "./Footer";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 
 const MainpageClient = ({
   projectTypes,
@@ -114,6 +115,7 @@ const MainpageClient = ({
           >
             {isMobile ? (
               <Image
+                loader={hybridLoader}
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none snap-start"
                 src={item.thumbnailMobile}
                 alt={item.title}
@@ -123,6 +125,7 @@ const MainpageClient = ({
               />
             ) : (
               <Image
+                loader={hybridLoader}
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none snap-start"
                 src={item.thumbnail}
                 alt={item.title}
@@ -195,6 +198,7 @@ const MainpageClient = ({
                 </p>
                 <div className="relative h-96 w-96">
                   <Image
+                    loader={hybridLoader}
                     className="h-full w-full object-cover"
                     src={project.thumbnail}
                     alt="thumbnail"
