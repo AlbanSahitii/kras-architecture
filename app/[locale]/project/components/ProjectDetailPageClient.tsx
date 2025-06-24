@@ -58,7 +58,6 @@ function ProjectDetailPageClient({
       clipPath: "inset(0 0 0 0)",
       transition: {
         duration: 1,
-        ease: "easeInOut",
       },
     },
   };
