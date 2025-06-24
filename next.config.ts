@@ -2,9 +2,12 @@ import {NextConfig} from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["*"],
+  allowedDevOrigins: ["*", "media.tina.io"],
 
   reactStrictMode: true,
+  images: {
+    domains: ["media.tina.io"],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
