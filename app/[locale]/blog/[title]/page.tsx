@@ -6,6 +6,7 @@ import Image from "next/image";
 import Head from "next/head";
 import {getTranslations} from "next-intl/server";
 import Footer from "../../components/Footer";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 
 interface props {
   params: Promise<{
@@ -141,6 +142,7 @@ async function BlogsServerSideTitle({params}: props) {
           </h1>
           <div className="w-[90%] md:w-[60%] lg:w-[40%] object-contain h- flex items-center justify-center ">
             <Image
+              loader={hybridLoader}
               className="w-full h-[800px] rounded-xl object-cover"
               src={blog.thumbnail}
               alt={locale === "en" ? blog.title : blog.germanTitle}

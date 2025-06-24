@@ -17,6 +17,7 @@ import LanguageToggle from "./LanguageToggle";
 import ContactDialog from "./ContactDialog";
 import logoWhiteNoText from "../../../public/white-logo-notext.png";
 import logoBlackNoText from "../../../public/black-logo-notext.png";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
   const params = useParams();
   const pathName = usePathname();
@@ -87,18 +88,18 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {type: "spring", stiffness: 200},
+      transition: {stiffness: 200},
     },
-    exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
+    exit: {y: 50, opacity: 0, transition: {stiffness: 200}},
   };
   const navBarAnimation = {
     hidden: {y: -50, opacity: 0},
     visible: {
       y: 0,
       opacity: 1,
-      transition: {type: "easeInOut", stiffness: 1400},
+      transition: {stiffness: 1400},
     },
-    exit: {y: 50, opacity: 0, transition: {type: "spring", stiffness: 200}},
+    exit: {y: 50, opacity: 0, transition: {stiffness: 200}},
   };
   return (
     <>
@@ -129,6 +130,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
             >
               {isWhitePage ? (
                 <Image
+                  loader={hybridLoader}
                   src={logoBlackNoText}
                   alt="Logo"
                   width={30}
@@ -137,6 +139,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                 />
               ) : (
                 <Image
+                  loader={hybridLoader}
                   src={logoWhiteNoText}
                   alt="Logo"
                   width={30}

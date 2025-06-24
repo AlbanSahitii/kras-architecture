@@ -2,6 +2,7 @@ import {useParams} from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {hybridLoader} from "@/app/lib/hybridLoader";
 function BlogListShow({blog}) {
   const params = useParams();
   return (
@@ -30,6 +31,7 @@ function BlogListShow({blog}) {
         <div className="hidden md:block h-80 ">
           <Link href={`/${params!.locale}/blog/${blog.title}`}>
             <Image
+              loader={hybridLoader}
               className="rounded-xl h-80 "
               alt="blog image"
               src={blog.thumbnail}
