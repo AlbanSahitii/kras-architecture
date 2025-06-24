@@ -6,7 +6,15 @@ const nextConfig: NextConfig = {
 
   reactStrictMode: true,
   images: {
-    domains: ["media.tina.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.tina.io",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+    domains: ["assets.tina.io"],
   },
 };
 
