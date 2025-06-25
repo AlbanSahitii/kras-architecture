@@ -35,6 +35,7 @@ function BlogListShow({blog}) {
               src={blog.thumbnail}
               width={300}
               height={200}
+              quality={75}
               sizes="(max-height: 200px) 100vw, 50vw"
             />
           </Link>

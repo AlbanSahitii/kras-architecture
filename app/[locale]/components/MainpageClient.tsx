@@ -118,17 +118,17 @@ const MainpageClient = ({
                 src={item.thumbnailMobile}
                 alt={item.title}
                 fill
+                quality={75}
                 priority
-                unoptimized
               />
             ) : (
               <Image
                 className="absolute top-0 left-0 w-full h-full object-cover opacity-50 transition-transform duration-1000 ease-in-out scale-125 pointer-events-none snap-start"
                 src={item.thumbnail}
                 alt={item.title}
+                quality={75}
                 fill
                 priority
-                unoptimized
               />
             )}
 
@@ -199,7 +199,7 @@ const MainpageClient = ({
                     src={project.thumbnail}
                     alt="thumbnail"
                     fill
-                    unoptimized
+                    quality={75}
                   />
                 </div>
                 <p className="mt-4 truncate whitespace-nowrap">

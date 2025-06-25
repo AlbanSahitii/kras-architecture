@@ -132,8 +132,8 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                   src={logoBlackNoText}
                   alt="Logo"
                   width={30}
+                  quality={75}
                   height={30}
-                  unoptimized
                 />
               ) : (
                 <Image
@@ -141,7 +141,7 @@ function Navbar({projects, aboutUs, contact, closeText, blog, bookMeeting}) {
                   alt="Logo"
                   width={30}
                   height={30}
-                  unoptimized
+                  quality={75}
                 />
               )}
             </motion.div>
